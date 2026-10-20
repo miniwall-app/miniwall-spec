@@ -9,7 +9,7 @@ Which SDK version was tested against which version of this standard, and which v
 | Android | app.miniwall:sdk (Maven Central) | 0.1.0 (unreleased) | 6f803d0 2026-10-20 | v1 |
 | React Native | @miniwall/react-native (npm) | 0.1.0 (unreleased) | 6f803d0 2026-10-20 | v1 |
 | Flutter | miniwall_flutter (pub.dev) | 0.1.0 (unreleased) | 6f803d0 2026-10-20 | v1 |
-| Web | @miniwall/web, @miniwall/react (npm) | 0.1.0 (unreleased) | not used (the renderer is tested in the browser) | v1 |
+| Web | @miniwall/web, @miniwall/react (npm) | 0.1.0 | not used (the renderer is tested in the browser) | v1 |
 <!-- compat:end -->
 
 ## How to read it
