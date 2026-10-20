@@ -108,12 +108,21 @@ test('mock API serves placements, screens, events and an offline switch', async 
   }
 });
 
+test('the published templates are a small set and valid screens', () => {
+  const names = jsonFiles('fixtures/templates');
+  assert.ok(names.length >= 1 && names.length <= 12, `expected a small set of templates, found ${names.length}`);
+  for (const file of names) {
+    const template = readJson(join(root, 'fixtures/templates', file));
+    assertValid(`templates/${file}`, template.paywall ?? template);
+  }
+});
+
 test('nothing private is in the repository', () => {
   const FORBIDDEN_TEXT = /packages\/ui-sdk|apps\/(dashboard|api|web)|sdks\/|\.svelte\b|\bs_[a-z-]+\.d\.ts|sourceMappingURL|sk_(live|test)_|SUPABASE|POLAR_/;
   const problems = [];
   for (const file of walk(root)) {
     const rel = relative(root, file);
-    if (/(^|\/)templates(\/|$)/.test(rel)) problems.push(`${rel}: templates are not part of the standard`);
+    if (/(^|\/)templates(\/|$)/.test(rel) && !/^fixtures\/templates\/[a-z-]+\.json$/.test(rel)) problems.push(`${rel}: only fixtures/templates/*.json is allowed`);
     if (statSync(file).size > 1_000_000) problems.push(`${rel}: larger than 1 MB`);
     if (rel === 'tests/spec.test.mjs' || rel === 'package-lock.json') continue;
     if (!/\.(json|md|mjs|js|yml)$/.test(rel)) continue;

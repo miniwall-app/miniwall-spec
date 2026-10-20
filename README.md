@@ -9,6 +9,7 @@ This repository is data and documentation. There is no runtime code to install.
 | `schema/paywall.schema.json` | JSON Schema (draft-07) for a screen (`PaywallData`). Structural: it checks types, allowed values and shapes, but only requires the frame of a screen (the renderer fills in defaults), and unknown extra properties are allowed, so an SDK can read a screen written by a newer editor. |
 | `docs/01-layout.md` | How stacks are sized and placed, written so a native renderer can reproduce it frame for frame. |
 | `fixtures/layout`, `fixtures/components` | Small screens, one rule each (`{ description, paywall }`). |
+| `fixtures/templates` | A small set of ready-made screens (a paywall, a trial timeline, a countdown offer, a banner, a toast, a slide-in, a multi-screen onboarding, a survey, a billing notice) to try an SDK on real-looking content. Not a complete library. |
 | `fixtures/icons` | The icon set the fixtures use, as SVG. |
 | `golden/layout`, `golden/components`, `golden/icons` | The expected frames (`id -> { x, y, w, h }`, in CSS px = pt = dp) for each fixture at two viewports (375x812 and 768x1024). |
 | `vectors/*.json` | Logic cases for the parts every SDK must agree on: `{ input, expected }` for variables, markdown, conditions, targeting, A/B buckets, URLs, countdowns, product variables, flows. |
