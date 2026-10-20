@@ -1,0 +1,598 @@
+{
+  "description": "Tabs with a tab control of two buttons (tab_control_button); the first tab is shown",
+  "paywall": {
+    "id": "tabs-buttons",
+    "default_locale": "en_US",
+    "components_config": {
+      "base": {
+        "background": {
+          "type": "color",
+          "value": {
+            "light": {
+              "type": "hex",
+              "value": "#FFFFFF"
+            }
+          }
+        },
+        "stack": {
+          "type": "stack",
+          "id": "root",
+          "name": "root",
+          "components": [
+            {
+              "type": "tabs",
+              "id": "tabs",
+              "name": "tabs",
+              "visible": true,
+              "size": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "fit"
+                }
+              },
+              "padding": {
+                "top": 0,
+                "bottom": 0,
+                "leading": 0,
+                "trailing": 0
+              },
+              "margin": {
+                "top": 0,
+                "bottom": 0,
+                "leading": 0,
+                "trailing": 0
+              },
+              "control": {
+                "type": "buttons",
+                "stack": {
+                  "type": "stack",
+                  "id": "ctl",
+                  "name": "ctl",
+                  "components": [
+                    {
+                      "type": "tab_control_button",
+                      "id": "btn0",
+                      "name": "btn0",
+                      "tab_id": "t0",
+                      "tab_index": 0,
+                      "stack": {
+                        "type": "stack",
+                        "id": "btn0-s",
+                        "name": "btn0-s",
+                        "components": [
+                          {
+                            "type": "text",
+                            "id": "btn0-t",
+                            "name": "btn0-t",
+                            "text_lid": "b0",
+                            "font_name": "Inter@600",
+                            "font_weight": "regular",
+                            "font_weight_int": 600,
+                            "font_size": 14,
+                            "color": {
+                              "light": {
+                                "type": "hex",
+                                "value": "#0F172A"
+                              }
+                            },
+                            "horizontal_alignment": "center",
+                            "background_color": null,
+                            "size": {
+                              "width": {
+                                "type": "fill"
+                              },
+                              "height": {
+                                "type": "fit"
+                              }
+                            },
+                            "padding": {
+                              "top": 0,
+                              "bottom": 0,
+                              "leading": 0,
+                              "trailing": 0
+                            },
+                            "margin": {
+                              "top": 0,
+                              "bottom": 0,
+                              "leading": 0,
+                              "trailing": 0
+                            }
+                          }
+                        ],
+                        "size": {
+                          "width": {
+                            "type": "fill"
+                          },
+                          "height": {
+                            "type": "fixed",
+                            "value": 44
+                          }
+                        },
+                        "dimension": {
+                          "type": "vertical",
+                          "alignment": "center",
+                          "distribution": "start"
+                        },
+                        "spacing": 0,
+                        "margin": {
+                          "top": 0,
+                          "bottom": 0,
+                          "leading": 0,
+                          "trailing": 0
+                        },
+                        "padding": {
+                          "top": 0,
+                          "bottom": 0,
+                          "leading": 0,
+                          "trailing": 0
+                        },
+                        "background_color": {
+                          "light": {
+                            "type": "hex",
+                            "value": "#E2E8F0"
+                          }
+                        },
+                        "background": null,
+                        "border": null,
+                        "shape": null,
+                        "shadow": null
+                      }
+                    },
+                    {
+                      "type": "tab_control_button",
+                      "id": "btn1",
+                      "name": "btn1",
+                      "tab_id": "t1",
+                      "tab_index": 0,
+                      "stack": {
+                        "type": "stack",
+                        "id": "btn1-s",
+                        "name": "btn1-s",
+                        "components": [
+                          {
+                            "type": "text",
+                            "id": "btn1-t",
+                            "name": "btn1-t",
+                            "text_lid": "b1",
+                            "font_name": "Inter@600",
+                            "font_weight": "regular",
+                            "font_weight_int": 600,
+                            "font_size": 14,
+                            "color": {
+                              "light": {
+                                "type": "hex",
+                                "value": "#0F172A"
+                              }
+                            },
+                            "horizontal_alignment": "center",
+                            "background_color": null,
+                            "size": {
+                              "width": {
+                                "type": "fill"
+                              },
+                              "height": {
+                                "type": "fit"
+                              }
+                            },
+                            "padding": {
+                              "top": 0,
+                              "bottom": 0,
+                              "leading": 0,
+                              "trailing": 0
+                            },
+                            "margin": {
+                              "top": 0,
+                              "bottom": 0,
+                              "leading": 0,
+                              "trailing": 0
+                            }
+                          }
+                        ],
+                        "size": {
+                          "width": {
+                            "type": "fill"
+                          },
+                          "height": {
+                            "type": "fixed",
+                            "value": 44
+                          }
+                        },
+                        "dimension": {
+                          "type": "vertical",
+                          "alignment": "center",
+                          "distribution": "start"
+                        },
+                        "spacing": 0,
+                        "margin": {
+                          "top": 0,
+                          "bottom": 0,
+                          "leading": 0,
+                          "trailing": 0
+                        },
+                        "padding": {
+                          "top": 0,
+                          "bottom": 0,
+                          "leading": 0,
+                          "trailing": 0
+                        },
+                        "background_color": {
+                          "light": {
+                            "type": "hex",
+                            "value": "#E2E8F0"
+                          }
+                        },
+                        "background": null,
+                        "border": null,
+                        "shape": null,
+                        "shadow": null
+                      }
+                    }
+                  ],
+                  "size": {
+                    "width": {
+                      "type": "fill"
+                    },
+                    "height": {
+                      "type": "fit"
+                    }
+                  },
+                  "dimension": {
+                    "type": "horizontal",
+                    "alignment": "top",
+                    "distribution": "start"
+                  },
+                  "spacing": 8,
+                  "margin": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "background_color": {
+                    "light": {
+                      "type": "hex",
+                      "value": "#F8FAFC"
+                    }
+                  },
+                  "background": null,
+                  "border": null,
+                  "shape": null,
+                  "shadow": null
+                }
+              },
+              "tabs": [
+                {
+                  "id": "t0",
+                  "type": "tab",
+                  "name": "t0",
+                  "stack": {
+                    "type": "stack",
+                    "id": "pane0",
+                    "name": "pane0",
+                    "components": [
+                      {
+                        "type": "tab_control",
+                        "id": "ctl0",
+                        "name": "ctl0"
+                      },
+                      {
+                        "type": "stack",
+                        "id": "pane0-card",
+                        "name": "pane0-card",
+                        "components": [
+                          {
+                            "type": "text",
+                            "id": "pane0-card-t",
+                            "name": "pane0-card-t",
+                            "text_lid": "c0",
+                            "font_name": "Inter@600",
+                            "font_weight": "regular",
+                            "font_weight_int": 600,
+                            "font_size": 14,
+                            "color": {
+                              "light": {
+                                "type": "hex",
+                                "value": "#FFFFFF"
+                              }
+                            },
+                            "horizontal_alignment": "center",
+                            "background_color": null,
+                            "size": {
+                              "width": {
+                                "type": "fill"
+                              },
+                              "height": {
+                                "type": "fit"
+                              }
+                            },
+                            "padding": {
+                              "top": 0,
+                              "bottom": 0,
+                              "leading": 0,
+                              "trailing": 0
+                            },
+                            "margin": {
+                              "top": 0,
+                              "bottom": 0,
+                              "leading": 0,
+                              "trailing": 0
+                            }
+                          }
+                        ],
+                        "size": {
+                          "width": {
+                            "type": "fill"
+                          },
+                          "height": {
+                            "type": "fixed",
+                            "value": 120
+                          }
+                        },
+                        "dimension": {
+                          "type": "vertical",
+                          "alignment": "center",
+                          "distribution": "start"
+                        },
+                        "spacing": 0,
+                        "margin": {
+                          "top": 0,
+                          "bottom": 0,
+                          "leading": 0,
+                          "trailing": 0
+                        },
+                        "padding": {
+                          "top": 0,
+                          "bottom": 0,
+                          "leading": 0,
+                          "trailing": 0
+                        },
+                        "background_color": {
+                          "light": {
+                            "type": "hex",
+                            "value": "#6366F1"
+                          }
+                        },
+                        "background": null,
+                        "border": null,
+                        "shape": null,
+                        "shadow": null
+                      }
+                    ],
+                    "size": {
+                      "width": {
+                        "type": "fill"
+                      },
+                      "height": {
+                        "type": "fit"
+                      }
+                    },
+                    "dimension": {
+                      "type": "vertical",
+                      "alignment": "leading",
+                      "distribution": "start"
+                    },
+                    "spacing": 12,
+                    "margin": {
+                      "top": 0,
+                      "bottom": 0,
+                      "leading": 0,
+                      "trailing": 0
+                    },
+                    "padding": {
+                      "top": 16,
+                      "bottom": 16,
+                      "leading": 16,
+                      "trailing": 16
+                    },
+                    "background_color": {
+                      "light": {
+                        "type": "hex",
+                        "value": "#F8FAFC"
+                      }
+                    },
+                    "background": null,
+                    "border": null,
+                    "shape": null,
+                    "shadow": null
+                  }
+                },
+                {
+                  "id": "t1",
+                  "type": "tab",
+                  "name": "t1",
+                  "stack": {
+                    "type": "stack",
+                    "id": "pane1",
+                    "name": "pane1",
+                    "components": [
+                      {
+                        "type": "tab_control",
+                        "id": "ctl1",
+                        "name": "ctl1"
+                      },
+                      {
+                        "type": "stack",
+                        "id": "pane1-card",
+                        "name": "pane1-card",
+                        "components": [
+                          {
+                            "type": "text",
+                            "id": "pane1-card-t",
+                            "name": "pane1-card-t",
+                            "text_lid": "c1",
+                            "font_name": "Inter@600",
+                            "font_weight": "regular",
+                            "font_weight_int": 600,
+                            "font_size": 14,
+                            "color": {
+                              "light": {
+                                "type": "hex",
+                                "value": "#FFFFFF"
+                              }
+                            },
+                            "horizontal_alignment": "center",
+                            "background_color": null,
+                            "size": {
+                              "width": {
+                                "type": "fill"
+                              },
+                              "height": {
+                                "type": "fit"
+                              }
+                            },
+                            "padding": {
+                              "top": 0,
+                              "bottom": 0,
+                              "leading": 0,
+                              "trailing": 0
+                            },
+                            "margin": {
+                              "top": 0,
+                              "bottom": 0,
+                              "leading": 0,
+                              "trailing": 0
+                            }
+                          }
+                        ],
+                        "size": {
+                          "width": {
+                            "type": "fill"
+                          },
+                          "height": {
+                            "type": "fixed",
+                            "value": 120
+                          }
+                        },
+                        "dimension": {
+                          "type": "vertical",
+                          "alignment": "center",
+                          "distribution": "start"
+                        },
+                        "spacing": 0,
+                        "margin": {
+                          "top": 0,
+                          "bottom": 0,
+                          "leading": 0,
+                          "trailing": 0
+                        },
+                        "padding": {
+                          "top": 0,
+                          "bottom": 0,
+                          "leading": 0,
+                          "trailing": 0
+                        },
+                        "background_color": {
+                          "light": {
+                            "type": "hex",
+                            "value": "#F59E0B"
+                          }
+                        },
+                        "background": null,
+                        "border": null,
+                        "shape": null,
+                        "shadow": null
+                      }
+                    ],
+                    "size": {
+                      "width": {
+                        "type": "fill"
+                      },
+                      "height": {
+                        "type": "fit"
+                      }
+                    },
+                    "dimension": {
+                      "type": "vertical",
+                      "alignment": "leading",
+                      "distribution": "start"
+                    },
+                    "spacing": 12,
+                    "margin": {
+                      "top": 0,
+                      "bottom": 0,
+                      "leading": 0,
+                      "trailing": 0
+                    },
+                    "padding": {
+                      "top": 16,
+                      "bottom": 16,
+                      "leading": 16,
+                      "trailing": 16
+                    },
+                    "background_color": {
+                      "light": {
+                        "type": "hex",
+                        "value": "#F8FAFC"
+                      }
+                    },
+                    "background": null,
+                    "border": null,
+                    "shape": null,
+                    "shadow": null
+                  }
+                }
+              ],
+              "default_tab_id": "t0",
+              "background": null,
+              "shape": null,
+              "border": null,
+              "shadow": null
+            }
+          ],
+          "size": {
+            "width": {
+              "type": "fill"
+            },
+            "height": {
+              "type": "fill"
+            }
+          },
+          "dimension": {
+            "type": "vertical",
+            "alignment": "leading",
+            "distribution": "start"
+          },
+          "spacing": 0,
+          "margin": {
+            "top": 0,
+            "bottom": 0,
+            "leading": 0,
+            "trailing": 0
+          },
+          "padding": {
+            "top": 0,
+            "bottom": 0,
+            "leading": 0,
+            "trailing": 0
+          },
+          "background_color": {
+            "light": {
+              "type": "hex",
+              "value": "#F8FAFC"
+            }
+          },
+          "background": null,
+          "border": null,
+          "shape": null,
+          "shadow": null
+        }
+      }
+    },
+    "components_localizations": {
+      "en_US": {
+        "b0": "Monthly",
+        "b1": "Annual",
+        "c0": "Monthly plan content",
+        "c1": "Annual plan content"
+      }
+    }
+  }
+}

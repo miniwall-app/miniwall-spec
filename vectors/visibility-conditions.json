@@ -1,0 +1,3716 @@
+{
+  "description": "evaluateVisibilityConditions(context, overrides, baseVisible)",
+  "source": "reference renderer: visibility conditions",
+  "node": "22.22.2",
+  "icu": "78.2",
+  "cases": [
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": null,
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": null,
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": null,
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "monthly",
+                  "weekly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "monthly",
+                  "weekly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "monthly",
+                  "weekly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "not in",
+                "packages": [
+                  "monthly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "not in",
+                "packages": [
+                  "monthly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "not in",
+                "packages": [
+                  "monthly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "!=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "!=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "!=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "promo_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "promo_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "promo_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "plan",
+                "value": {
+                  "type": "string",
+                  "value": "pro"
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "plan",
+                "value": {
+                  "type": "string",
+                  "value": "pro"
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "plan",
+                "value": {
+                  "type": "string",
+                  "value": "pro"
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "!=",
+                "variable": "plan",
+                "value": {
+                  "type": "string",
+                  "value": "pro"
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "!=",
+                "variable": "plan",
+                "value": {
+                  "type": "string",
+                  "value": "pro"
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "!=",
+                "variable": "plan",
+                "value": {
+                  "type": "string",
+                  "value": "pro"
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "count",
+                "value": {
+                  "type": "number",
+                  "value": 3
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "count",
+                "value": {
+                  "type": "number",
+                  "value": 3
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "count",
+                "value": {
+                  "type": "number",
+                  "value": 3
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "flag",
+                "value": {
+                  "type": "boolean",
+                  "value": false
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "flag",
+                "value": {
+                  "type": "boolean",
+                  "value": false
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "flag",
+                "value": {
+                  "type": "boolean",
+                  "value": false
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              },
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "monthly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              },
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "monthly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              },
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "monthly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              }
+            ],
+            "properties": {}
+          },
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "annual"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              }
+            ],
+            "properties": {}
+          },
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "annual"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              }
+            ],
+            "properties": {}
+          },
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "annual"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              },
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              },
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "monthly",
+          "packageInfo": {
+            "hasIntroOffer": true
+          },
+          "variables": {
+            "plan": "pro",
+            "count": "3"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              },
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": null,
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": null,
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": null,
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "monthly",
+                  "weekly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "monthly",
+                  "weekly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "monthly",
+                  "weekly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "not in",
+                "packages": [
+                  "monthly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "not in",
+                "packages": [
+                  "monthly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "not in",
+                "packages": [
+                  "monthly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "!=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "!=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "!=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "promo_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "promo_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "promo_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "plan",
+                "value": {
+                  "type": "string",
+                  "value": "pro"
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "plan",
+                "value": {
+                  "type": "string",
+                  "value": "pro"
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "plan",
+                "value": {
+                  "type": "string",
+                  "value": "pro"
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "!=",
+                "variable": "plan",
+                "value": {
+                  "type": "string",
+                  "value": "pro"
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "!=",
+                "variable": "plan",
+                "value": {
+                  "type": "string",
+                  "value": "pro"
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "!=",
+                "variable": "plan",
+                "value": {
+                  "type": "string",
+                  "value": "pro"
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "count",
+                "value": {
+                  "type": "number",
+                  "value": 3
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "count",
+                "value": {
+                  "type": "number",
+                  "value": 3
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "count",
+                "value": {
+                  "type": "number",
+                  "value": 3
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "flag",
+                "value": {
+                  "type": "boolean",
+                  "value": false
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "flag",
+                "value": {
+                  "type": "boolean",
+                  "value": false
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "flag",
+                "value": {
+                  "type": "boolean",
+                  "value": false
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              },
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "monthly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              },
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "monthly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              },
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "monthly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              }
+            ],
+            "properties": {}
+          },
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "annual"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              }
+            ],
+            "properties": {}
+          },
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "annual"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              }
+            ],
+            "properties": {}
+          },
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "annual"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              },
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              },
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": "annual",
+          "packageInfo": {
+            "hasTrial": true,
+            "hasPromoOffer": true
+          },
+          "variables": {}
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              },
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": null,
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": null,
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": null,
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "monthly",
+                  "weekly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "monthly",
+                  "weekly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "monthly",
+                  "weekly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "not in",
+                "packages": [
+                  "monthly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "not in",
+                "packages": [
+                  "monthly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "not in",
+                "packages": [
+                  "monthly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "!=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "!=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "!=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "promo_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "promo_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "promo_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "plan",
+                "value": {
+                  "type": "string",
+                  "value": "pro"
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "plan",
+                "value": {
+                  "type": "string",
+                  "value": "pro"
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "plan",
+                "value": {
+                  "type": "string",
+                  "value": "pro"
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "!=",
+                "variable": "plan",
+                "value": {
+                  "type": "string",
+                  "value": "pro"
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "!=",
+                "variable": "plan",
+                "value": {
+                  "type": "string",
+                  "value": "pro"
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "!=",
+                "variable": "plan",
+                "value": {
+                  "type": "string",
+                  "value": "pro"
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "count",
+                "value": {
+                  "type": "number",
+                  "value": 3
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "count",
+                "value": {
+                  "type": "number",
+                  "value": 3
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "count",
+                "value": {
+                  "type": "number",
+                  "value": 3
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "flag",
+                "value": {
+                  "type": "boolean",
+                  "value": false
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "flag",
+                "value": {
+                  "type": "boolean",
+                  "value": false
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "variable_condition",
+                "operator": "=",
+                "variable": "flag",
+                "value": {
+                  "type": "boolean",
+                  "value": false
+                }
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              },
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "monthly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              },
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "monthly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              },
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "monthly"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              }
+            ],
+            "properties": {}
+          },
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "annual"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              }
+            ],
+            "properties": {}
+          },
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "annual"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              }
+            ],
+            "properties": {}
+          },
+          {
+            "conditions": [
+              {
+                "type": "selected_package_condition",
+                "operator": "in",
+                "packages": [
+                  "annual"
+                ]
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              },
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              },
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "context": {
+          "selectedPackageId": null,
+          "packageInfo": null,
+          "variables": {
+            "plan": "free"
+          }
+        },
+        "overrides": [
+          {
+            "conditions": [
+              {
+                "type": "selected"
+              },
+              {
+                "type": "intro_offer_condition",
+                "operator": "=",
+                "value": true
+              }
+            ],
+            "properties": {}
+          }
+        ],
+        "baseVisible": false
+      },
+      "expected": false
+    }
+  ]
+}

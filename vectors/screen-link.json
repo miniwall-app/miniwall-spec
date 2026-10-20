@@ -1,0 +1,58 @@
+{
+  "description": "screenLink(actionId): screen:<id> / screen:back / custom action",
+  "source": "Web SDK: links between screens",
+  "node": "22.22.2",
+  "icu": "78.2",
+  "cases": [
+    {
+      "input": {
+        "actionId": "screen:back"
+      },
+      "expected": {
+        "kind": "back"
+      }
+    },
+    {
+      "input": {
+        "actionId": "screen:abc-123"
+      },
+      "expected": {
+        "kind": "goto",
+        "id": "abc-123"
+      }
+    },
+    {
+      "input": {
+        "actionId": "screen:"
+      },
+      "expected": null
+    },
+    {
+      "input": {
+        "actionId": "get_started"
+      },
+      "expected": null
+    },
+    {
+      "input": {
+        "actionId": ""
+      },
+      "expected": null
+    },
+    {
+      "input": {
+        "actionId": "SCREEN:x"
+      },
+      "expected": null
+    },
+    {
+      "input": {
+        "actionId": "screen:screen:x"
+      },
+      "expected": {
+        "kind": "goto",
+        "id": "screen:x"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "miniwall-spec",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The Miniwall screen format, layout rules and shared test data for every Miniwall SDK.",
+  "license": "MIT",
+  "type": "module",
+  "repository": { "type": "git", "url": "git+https://github.com/miniwall-app/miniwall-spec.git" },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "mock-api": "node mock-api/server.cjs"
+  },
+  "devDependencies": {
+    "ajv": "8.17.1"
+  }
+}

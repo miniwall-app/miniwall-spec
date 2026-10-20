@@ -1,0 +1,533 @@
+{
+  "description": "Multiple choice question (min 1, max 2, required) with three options",
+  "paywall": {
+    "id": "choice-multiple",
+    "default_locale": "en_US",
+    "components_config": {
+      "base": {
+        "background": {
+          "type": "color",
+          "value": {
+            "light": {
+              "type": "hex",
+              "value": "#FFFFFF"
+            }
+          }
+        },
+        "stack": {
+          "type": "stack",
+          "id": "root",
+          "name": "root",
+          "components": [
+            {
+              "type": "stack",
+              "id": "q",
+              "name": "q",
+              "components": [
+                {
+                  "type": "input_multiple_choice",
+                  "id": "multi",
+                  "name": "topics",
+                  "field_id": "topics",
+                  "required": true,
+                  "selection_range": {
+                    "min": 1,
+                    "max": 2
+                  },
+                  "stack": {
+                    "type": "stack",
+                    "id": "opts",
+                    "name": "opts",
+                    "components": [
+                      {
+                        "type": "input_option",
+                        "id": "opt-a",
+                        "name": "opt-a",
+                        "option_id": "a",
+                        "stack": {
+                          "type": "stack",
+                          "id": "opt-a-s",
+                          "name": "opt-a-s",
+                          "components": [
+                            {
+                              "type": "text",
+                              "id": "opt-a-t",
+                              "name": "opt-a-t",
+                              "text_lid": "oa",
+                              "font_name": "Inter@600",
+                              "font_weight": "regular",
+                              "font_weight_int": 600,
+                              "font_size": 14,
+                              "color": {
+                                "light": {
+                                  "type": "hex",
+                                  "value": "#0F172A"
+                                }
+                              },
+                              "horizontal_alignment": "leading",
+                              "background_color": null,
+                              "size": {
+                                "width": {
+                                  "type": "fill"
+                                },
+                                "height": {
+                                  "type": "fit"
+                                }
+                              },
+                              "padding": {
+                                "top": 0,
+                                "bottom": 0,
+                                "leading": 0,
+                                "trailing": 0
+                              },
+                              "margin": {
+                                "top": 0,
+                                "bottom": 0,
+                                "leading": 0,
+                                "trailing": 0
+                              }
+                            }
+                          ],
+                          "size": {
+                            "width": {
+                              "type": "fill"
+                            },
+                            "height": {
+                              "type": "fixed",
+                              "value": 52
+                            }
+                          },
+                          "dimension": {
+                            "type": "vertical",
+                            "alignment": "center",
+                            "distribution": "start"
+                          },
+                          "spacing": 0,
+                          "margin": {
+                            "top": 0,
+                            "bottom": 0,
+                            "leading": 0,
+                            "trailing": 0
+                          },
+                          "padding": {
+                            "top": 0,
+                            "bottom": 0,
+                            "leading": 0,
+                            "trailing": 0
+                          },
+                          "background_color": {
+                            "light": {
+                              "type": "hex",
+                              "value": "#FFFFFF"
+                            }
+                          },
+                          "background": null,
+                          "border": {
+                            "color": {
+                              "light": {
+                                "type": "hex",
+                                "value": "#CBD5E1"
+                              }
+                            },
+                            "width": 1.5
+                          },
+                          "shape": null,
+                          "shadow": null,
+                          "overrides": [
+                            {
+                              "conditions": [
+                                {
+                                  "type": "selected"
+                                }
+                              ],
+                              "properties": {
+                                "background_color": {
+                                  "light": {
+                                    "type": "hex",
+                                    "value": "#E0E7FF"
+                                  }
+                                },
+                                "border": {
+                                  "color": {
+                                    "light": {
+                                      "type": "hex",
+                                      "value": "#6366F1"
+                                    }
+                                  },
+                                  "width": 2
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "input_option",
+                        "id": "opt-b",
+                        "name": "opt-b",
+                        "option_id": "b",
+                        "stack": {
+                          "type": "stack",
+                          "id": "opt-b-s",
+                          "name": "opt-b-s",
+                          "components": [
+                            {
+                              "type": "text",
+                              "id": "opt-b-t",
+                              "name": "opt-b-t",
+                              "text_lid": "ob",
+                              "font_name": "Inter@600",
+                              "font_weight": "regular",
+                              "font_weight_int": 600,
+                              "font_size": 14,
+                              "color": {
+                                "light": {
+                                  "type": "hex",
+                                  "value": "#0F172A"
+                                }
+                              },
+                              "horizontal_alignment": "leading",
+                              "background_color": null,
+                              "size": {
+                                "width": {
+                                  "type": "fill"
+                                },
+                                "height": {
+                                  "type": "fit"
+                                }
+                              },
+                              "padding": {
+                                "top": 0,
+                                "bottom": 0,
+                                "leading": 0,
+                                "trailing": 0
+                              },
+                              "margin": {
+                                "top": 0,
+                                "bottom": 0,
+                                "leading": 0,
+                                "trailing": 0
+                              }
+                            }
+                          ],
+                          "size": {
+                            "width": {
+                              "type": "fill"
+                            },
+                            "height": {
+                              "type": "fixed",
+                              "value": 52
+                            }
+                          },
+                          "dimension": {
+                            "type": "vertical",
+                            "alignment": "center",
+                            "distribution": "start"
+                          },
+                          "spacing": 0,
+                          "margin": {
+                            "top": 0,
+                            "bottom": 0,
+                            "leading": 0,
+                            "trailing": 0
+                          },
+                          "padding": {
+                            "top": 0,
+                            "bottom": 0,
+                            "leading": 0,
+                            "trailing": 0
+                          },
+                          "background_color": {
+                            "light": {
+                              "type": "hex",
+                              "value": "#FFFFFF"
+                            }
+                          },
+                          "background": null,
+                          "border": {
+                            "color": {
+                              "light": {
+                                "type": "hex",
+                                "value": "#CBD5E1"
+                              }
+                            },
+                            "width": 1.5
+                          },
+                          "shape": null,
+                          "shadow": null,
+                          "overrides": [
+                            {
+                              "conditions": [
+                                {
+                                  "type": "selected"
+                                }
+                              ],
+                              "properties": {
+                                "background_color": {
+                                  "light": {
+                                    "type": "hex",
+                                    "value": "#E0E7FF"
+                                  }
+                                },
+                                "border": {
+                                  "color": {
+                                    "light": {
+                                      "type": "hex",
+                                      "value": "#6366F1"
+                                    }
+                                  },
+                                  "width": 2
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "type": "input_option",
+                        "id": "opt-c",
+                        "name": "opt-c",
+                        "option_id": "c",
+                        "stack": {
+                          "type": "stack",
+                          "id": "opt-c-s",
+                          "name": "opt-c-s",
+                          "components": [
+                            {
+                              "type": "text",
+                              "id": "opt-c-t",
+                              "name": "opt-c-t",
+                              "text_lid": "oc",
+                              "font_name": "Inter@600",
+                              "font_weight": "regular",
+                              "font_weight_int": 600,
+                              "font_size": 14,
+                              "color": {
+                                "light": {
+                                  "type": "hex",
+                                  "value": "#0F172A"
+                                }
+                              },
+                              "horizontal_alignment": "leading",
+                              "background_color": null,
+                              "size": {
+                                "width": {
+                                  "type": "fill"
+                                },
+                                "height": {
+                                  "type": "fit"
+                                }
+                              },
+                              "padding": {
+                                "top": 0,
+                                "bottom": 0,
+                                "leading": 0,
+                                "trailing": 0
+                              },
+                              "margin": {
+                                "top": 0,
+                                "bottom": 0,
+                                "leading": 0,
+                                "trailing": 0
+                              }
+                            }
+                          ],
+                          "size": {
+                            "width": {
+                              "type": "fill"
+                            },
+                            "height": {
+                              "type": "fixed",
+                              "value": 52
+                            }
+                          },
+                          "dimension": {
+                            "type": "vertical",
+                            "alignment": "center",
+                            "distribution": "start"
+                          },
+                          "spacing": 0,
+                          "margin": {
+                            "top": 0,
+                            "bottom": 0,
+                            "leading": 0,
+                            "trailing": 0
+                          },
+                          "padding": {
+                            "top": 0,
+                            "bottom": 0,
+                            "leading": 0,
+                            "trailing": 0
+                          },
+                          "background_color": {
+                            "light": {
+                              "type": "hex",
+                              "value": "#FFFFFF"
+                            }
+                          },
+                          "background": null,
+                          "border": {
+                            "color": {
+                              "light": {
+                                "type": "hex",
+                                "value": "#CBD5E1"
+                              }
+                            },
+                            "width": 1.5
+                          },
+                          "shape": null,
+                          "shadow": null,
+                          "overrides": [
+                            {
+                              "conditions": [
+                                {
+                                  "type": "selected"
+                                }
+                              ],
+                              "properties": {
+                                "background_color": {
+                                  "light": {
+                                    "type": "hex",
+                                    "value": "#E0E7FF"
+                                  }
+                                },
+                                "border": {
+                                  "color": {
+                                    "light": {
+                                      "type": "hex",
+                                      "value": "#6366F1"
+                                    }
+                                  },
+                                  "width": 2
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "size": {
+                      "width": {
+                        "type": "fill"
+                      },
+                      "height": {
+                        "type": "fit"
+                      }
+                    },
+                    "dimension": {
+                      "type": "vertical",
+                      "alignment": "leading",
+                      "distribution": "start"
+                    },
+                    "spacing": 10,
+                    "margin": {
+                      "top": 0,
+                      "bottom": 0,
+                      "leading": 0,
+                      "trailing": 0
+                    },
+                    "padding": {
+                      "top": 0,
+                      "bottom": 0,
+                      "leading": 0,
+                      "trailing": 0
+                    },
+                    "background_color": {
+                      "light": {
+                        "type": "hex",
+                        "value": "#F8FAFC"
+                      }
+                    },
+                    "background": null,
+                    "border": null,
+                    "shape": null,
+                    "shadow": null
+                  }
+                }
+              ],
+              "size": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "fit"
+                }
+              },
+              "dimension": {
+                "type": "vertical",
+                "alignment": "leading",
+                "distribution": "start"
+              },
+              "spacing": 10,
+              "margin": {
+                "top": 0,
+                "bottom": 0,
+                "leading": 0,
+                "trailing": 0
+              },
+              "padding": {
+                "top": 16,
+                "bottom": 16,
+                "leading": 16,
+                "trailing": 16
+              },
+              "background_color": {
+                "light": {
+                  "type": "hex",
+                  "value": "#F8FAFC"
+                }
+              },
+              "background": null,
+              "border": null,
+              "shape": null,
+              "shadow": null
+            }
+          ],
+          "size": {
+            "width": {
+              "type": "fill"
+            },
+            "height": {
+              "type": "fill"
+            }
+          },
+          "dimension": {
+            "type": "vertical",
+            "alignment": "leading",
+            "distribution": "start"
+          },
+          "spacing": 0,
+          "margin": {
+            "top": 0,
+            "bottom": 0,
+            "leading": 0,
+            "trailing": 0
+          },
+          "padding": {
+            "top": 0,
+            "bottom": 0,
+            "leading": 0,
+            "trailing": 0
+          },
+          "background_color": {
+            "light": {
+              "type": "hex",
+              "value": "#F8FAFC"
+            }
+          },
+          "background": null,
+          "border": null,
+          "shape": null,
+          "shadow": null
+        }
+      }
+    },
+    "components_localizations": {
+      "en_US": {
+        "oa": "Sleep",
+        "ob": "Focus",
+        "oc": "Energy"
+      }
+    }
+  }
+}

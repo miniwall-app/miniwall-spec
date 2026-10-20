@@ -1,0 +1,138 @@
+{
+ "id": "flow_welcome",
+ "default_locale": "en_US",
+ "components_localizations": {
+  "en_US": {
+   "l_h": "Welcome aboard",
+   "l_next": "Next"
+  }
+ },
+ "components_config": {
+  "base": {
+   "stack": {
+    "type": "stack",
+    "id": "root",
+    "size": {
+     "width": {
+      "type": "fill"
+     },
+     "height": {
+      "type": "fill"
+     }
+    },
+    "dimension": {
+     "type": "vertical",
+     "alignment": "center",
+     "distribution": "start"
+    },
+    "spacing": 12,
+    "components": [
+     {
+      "type": "button",
+      "id": "close",
+      "name": "Close",
+      "action": {
+       "type": "navigate_back"
+      },
+      "stack": {
+       "type": "stack",
+       "id": "close_s",
+       "components": [],
+       "size": {
+        "width": {
+         "type": "fixed",
+         "value": 44
+        },
+        "height": {
+         "type": "fixed",
+         "value": 44
+        }
+       },
+       "dimension": {
+        "type": "vertical",
+        "alignment": "center",
+        "distribution": "start"
+       },
+       "spacing": 8,
+       "padding": {
+        "top": 12,
+        "bottom": 12,
+        "leading": 16,
+        "trailing": 16
+       }
+      }
+     },
+     {
+      "type": "text",
+      "id": "h",
+      "name": "h",
+      "text_lid": "l_h",
+      "font_size": 16,
+      "size": {
+       "width": {
+        "type": "fill"
+       },
+       "height": {
+        "type": "fit"
+       }
+      },
+      "horizontal_alignment": "center"
+     },
+     {
+      "type": "button",
+      "id": "next",
+      "name": "Next",
+      "action": {
+       "type": "workflow"
+      },
+      "stack": {
+       "type": "stack",
+       "id": "next_s",
+       "components": [
+        {
+         "type": "text",
+         "id": "next_t",
+         "name": "next_t",
+         "text_lid": "l_next",
+         "font_size": 16,
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "horizontal_alignment": "center"
+        }
+       ],
+       "size": {
+        "width": {
+         "type": "fill"
+        },
+        "height": {
+         "type": "fit"
+        }
+       },
+       "dimension": {
+        "type": "vertical",
+        "alignment": "center",
+        "distribution": "start"
+       },
+       "spacing": 8,
+       "padding": {
+        "top": 12,
+        "bottom": 12,
+        "leading": 16,
+        "trailing": 16
+       }
+      },
+      "triggers": {
+       "on_press": "screen:flow_question"
+      }
+     }
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,6179 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Action": {
+      "anyOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "workflow",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "restore_purchases",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "navigate_back",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "destination": {
+              "enum": [
+                "customer_center",
+                "offer_code",
+                "screen_redirect"
+              ],
+              "type": "string"
+            },
+            "type": {
+              "const": "navigate_to",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "destination": {
+              "const": "sheet",
+              "type": "string"
+            },
+            "sheet": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/SheetProps"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": {
+              "const": "navigate_to",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "custom_url_options": {},
+            "destination": {
+              "const": "web_paywall_link",
+              "type": "string"
+            },
+            "type": {
+              "const": "navigate_to",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "destination": {
+              "enum": [
+                "privacy_policy",
+                "terms",
+                "url"
+              ],
+              "type": "string"
+            },
+            "sheet": {
+              "type": "null"
+            },
+            "type": {
+              "const": "navigate_to",
+              "type": "string"
+            },
+            "url": {
+              "properties": {
+                "method": {
+                  "enum": [
+                    "deep_link",
+                    "external_browser",
+                    "in_app_browser"
+                  ],
+                  "type": "string"
+                },
+                "url_lid": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "description": "End the workflow and open a URL (optional query params, e.g. app user ID).",
+          "properties": {
+            "type": {
+              "const": "complete_workflow",
+              "type": "string"
+            },
+            "url": {
+              "properties": {
+                "method": {
+                  "enum": [
+                    "deep_link",
+                    "external_browser",
+                    "in_app_browser"
+                  ],
+                  "type": "string"
+                },
+                "url_lid": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "url_query_params": {
+              "$ref": "#/definitions/CompleteWorkflowUrlQueryParams"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "Background": {
+      "anyOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "color",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/definitions/ColorGradientScheme"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "color_overlay": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ColorGradientScheme"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "fit_mode": {
+              "$ref": "#/definitions/FitMode"
+            },
+            "type": {
+              "const": "image",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/definitions/ImageInfo"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "color_overlay": {
+              "anyOf": [
+                {
+                  "$ref": "#/definitions/ColorGradientScheme"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": {
+              "const": "video",
+              "type": "string"
+            },
+            "value": {
+              "$ref": "#/definitions/VideoInfo"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "Badge": {
+      "properties": {
+        "alignment": {
+          "enum": [
+            "top_leading",
+            "top",
+            "top_trailing",
+            "bottom_leading",
+            "bottom",
+            "bottom_trailing"
+          ],
+          "type": "string"
+        },
+        "stack": {
+          "$ref": "#/definitions/StackProps"
+        },
+        "style": {
+          "enum": [
+            "overlay",
+            "nested",
+            "edge_to_edge"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ButtonProps": {
+      "properties": {
+        "action": {
+          "$ref": "#/definitions/Action"
+        },
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "overrides": {
+          "$ref": "#/definitions/ButtonOverrides"
+        },
+        "stack": {
+          "$ref": "#/definitions/StackProps"
+        },
+        "transition": {
+          "type": "null"
+        },
+        "triggers": {
+          "properties": {
+            "on_press": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "button",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "CarouselProps": {
+      "properties": {
+        "auto_advance": {
+          "anyOf": [
+            {
+              "properties": {
+                "ms_time_per_page": {
+                  "type": "number"
+                },
+                "ms_transition_time": {
+                  "type": "number"
+                },
+                "transition_type": {
+                  "enum": [
+                    "fade",
+                    "slide"
+                  ],
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "background": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Background"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "border": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "type": "string"
+        },
+        "initial_page_index": {
+          "type": "number"
+        },
+        "loop": {
+          "type": "boolean"
+        },
+        "margin": {},
+        "name": {
+          "type": "string"
+        },
+        "overrides": {
+          "$ref": "#/definitions/CarouselOverrides"
+        },
+        "padding": {},
+        "page_alignment": {
+          "$ref": "#/definitions/VerticalAlignment"
+        },
+        "page_control": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/PageControl"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "page_peek": {
+          "type": "number"
+        },
+        "page_spacing": {
+          "type": "number"
+        },
+        "pages": {
+          "items": {
+            "$ref": "#/definitions/StackProps"
+          },
+          "type": "array"
+        },
+        "shadow": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "shape": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "carousel",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "ColorGradientInfo": {
+      "anyOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "alias",
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "hex",
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "degrees": {
+              "type": "number"
+            },
+            "points": {
+              "items": {
+                "properties": {
+                  "color": {
+                    "type": "string"
+                  },
+                  "percent": {
+                    "type": "number"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "type": {
+              "const": "linear",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "points": {
+              "items": {
+                "properties": {
+                  "color": {
+                    "type": "string"
+                  },
+                  "percent": {
+                    "type": "number"
+                  }
+                },
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "type": {
+              "const": "radial",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "ColorGradientScheme": {
+      "properties": {
+        "dark": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ColorGradientInfo"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "light": {
+          "$ref": "#/definitions/ColorGradientInfo"
+        }
+      },
+      "type": "object"
+    },
+    "ColorScheme": {
+      "properties": {
+        "dark": {
+          "anyOf": [
+            {
+              "properties": {
+                "type": {
+                  "const": "alias",
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "type": {
+                  "const": "hex",
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "light": {
+          "anyOf": [
+            {
+              "properties": {
+                "type": {
+                  "const": "alias",
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "type": "object"
+            },
+            {
+              "properties": {
+                "type": {
+                  "const": "hex",
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "type"
+              ],
+              "type": "object"
+            }
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "CompleteWorkflowUrlQueryParams": {
+      "description": "Optional query params for complete_workflow URLs (host merges values).",
+      "properties": {
+        "app_user_id": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "Component": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ButtonProps"
+        },
+        {
+          "$ref": "#/definitions/CarouselProps"
+        },
+        {
+          "$ref": "#/definitions/CountdownProps"
+        },
+        {
+          "$ref": "#/definitions/ExpressPurchaseButtonProps"
+        },
+        {
+          "$ref": "#/definitions/FooterProps"
+        },
+        {
+          "$ref": "#/definitions/HeaderProps"
+        },
+        {
+          "$ref": "#/definitions/IconProps"
+        },
+        {
+          "$ref": "#/definitions/ImageProps"
+        },
+        {
+          "$ref": "#/definitions/InputMultipleChoiceProps"
+        },
+        {
+          "$ref": "#/definitions/InputOptionProps"
+        },
+        {
+          "$ref": "#/definitions/InputSingleChoiceProps"
+        },
+        {
+          "$ref": "#/definitions/InputTextProps"
+        },
+        {
+          "$ref": "#/definitions/PackageProps"
+        },
+        {
+          "$ref": "#/definitions/PurchaseButtonProps"
+        },
+        {
+          "$ref": "#/definitions/RedemptionButtonProps"
+        },
+        {
+          "$ref": "#/definitions/SkeletonLoaderProps"
+        },
+        {
+          "$ref": "#/definitions/StackProps"
+        },
+        {
+          "$ref": "#/definitions/TabControlButtonProps"
+        },
+        {
+          "$ref": "#/definitions/TabControlToggleProps"
+        },
+        {
+          "$ref": "#/definitions/TabControlProps"
+        },
+        {
+          "$ref": "#/definitions/TabProps"
+        },
+        {
+          "$ref": "#/definitions/TabsProps"
+        },
+        {
+          "$ref": "#/definitions/TextNodeProps"
+        },
+        {
+          "$ref": "#/definitions/TimelineProps"
+        },
+        {
+          "$ref": "#/definitions/WalletButtonProps"
+        },
+        {
+          "$ref": "#/definitions/VideoProps"
+        }
+      ]
+    },
+    "ComponentConfig": {
+      "properties": {
+        "asset_base_url": {
+          "type": "string"
+        },
+        "base": {
+          "$ref": "#/definitions/RootPaywall"
+        },
+        "colors": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "fonts": {
+          "additionalProperties": {
+            "properties": {
+              "android": {
+                "type": "string"
+              },
+              "ios": {
+                "type": "string"
+              },
+              "web": {
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "type": "object"
+        }
+      },
+      "required": [
+        "base"
+      ],
+      "type": "object"
+    },
+    "CountdownProps": {
+      "properties": {
+        "countdown_stack": {
+          "$ref": "#/definitions/StackProps"
+        },
+        "end_stack": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/StackProps"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "style": {
+          "$ref": "#/definitions/CountdownStyle"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "countdown",
+          "type": "string"
+        },
+        "visible": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "CountdownStyle": {
+      "properties": {
+        "date": {
+          "type": "string"
+        },
+        "type": {
+          "const": "date",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "CustomVariableValue": {
+      "anyOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "string",
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "number",
+              "type": "string"
+            },
+            "value": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "boolean",
+              "type": "string"
+            },
+            "value": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        }
+      ],
+      "description": "A value type for custom paywall variables that can be passed to paywalls at runtime.\n\nCustom variables allow developers to personalize paywall text with dynamic values. Variables are defined in the MonetKit dashboard and can be overridden at runtime.   Factory methods for creating CustomVariableValue instances."
+    },
+    "Dimension": {
+      "anyOf": [
+        {
+          "properties": {
+            "alignment": {
+              "$ref": "#/definitions/VerticalAlignment"
+            },
+            "distribution": {
+              "$ref": "#/definitions/Distribution"
+            },
+            "type": {
+              "const": "horizontal",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "alignment": {
+              "$ref": "#/definitions/HorizontalAlignment"
+            },
+            "distribution": {
+              "$ref": "#/definitions/Distribution"
+            },
+            "type": {
+              "const": "vertical",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "alignment": {
+              "$ref": "#/definitions/ZAlignment"
+            },
+            "distribution": {},
+            "type": {
+              "const": "zlayer",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "Distribution": {
+      "enum": [
+        "start",
+        "center",
+        "end",
+        "space_between",
+        "space_around",
+        "space_evenly"
+      ],
+      "type": "string"
+    },
+    "ExpressPurchaseButtonProps": {
+      "properties": {
+        "background": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Background"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "border": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "type": "string"
+        },
+        "margin": {},
+        "name": {
+          "type": "string"
+        },
+        "overrides": {
+          "$ref": "#/definitions/StackOverrides"
+        },
+        "padding": {},
+        "shadow": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "shape": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "size": {},
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "express_purchase_button",
+          "type": "string"
+        },
+        "wallet_available_stack": {
+          "$ref": "#/definitions/StackProps"
+        },
+        "wallet_unavailable_stack": {
+          "$ref": "#/definitions/StackProps"
+        },
+        "wallet_unknown_stack": {
+          "$ref": "#/definitions/StackProps"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "FitMode": {
+      "enum": [
+        "fit",
+        "fill"
+      ],
+      "type": "string"
+    },
+    "FooterProps": {
+      "properties": {
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "stack": {
+          "$ref": "#/definitions/StackProps"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "footer",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "HeaderProps": {
+      "properties": {
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "stack": {
+          "$ref": "#/definitions/StackProps"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "header",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "HorizontalAlignment": {
+      "enum": [
+        "leading",
+        "center",
+        "trailing"
+      ],
+      "type": "string"
+    },
+    "IconBackground": {
+      "properties": {
+        "border": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "color": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ColorScheme"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "shadow": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "shape": {}
+      },
+      "type": "object"
+    },
+    "IconProps": {
+      "properties": {
+        "base_url": {
+          "type": "string"
+        },
+        "color": {
+          "$ref": "#/definitions/ColorScheme"
+        },
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "formats": {
+          "properties": {
+            "heic": {
+              "type": "string"
+            },
+            "png": {
+              "type": "string"
+            },
+            "svg": {
+              "type": "string"
+            },
+            "webp": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "icon_background": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/IconBackground"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "icon_name": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "margin": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "overrides": {
+          "$ref": "#/definitions/IconOverrides"
+        },
+        "padding": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "size": {},
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "icon",
+          "type": "string"
+        },
+        "visible": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "ImageFiles": {
+      "properties": {
+        "heic": {
+          "type": "string"
+        },
+        "heic_low_res": {
+          "type": "string"
+        },
+        "height": {
+          "type": "number"
+        },
+        "original": {
+          "type": "string"
+        },
+        "webp": {
+          "type": "string"
+        },
+        "webp_low_res": {
+          "type": "string"
+        },
+        "width": {
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "ImageInfo": {
+      "properties": {
+        "dark": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ImageFiles"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "light": {
+          "$ref": "#/definitions/ImageFiles"
+        }
+      },
+      "type": "object"
+    },
+    "ImageProps": {
+      "properties": {
+        "border": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "color_overlay": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ColorGradientScheme"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "fit_mode": {
+          "$ref": "#/definitions/FitMode"
+        },
+        "id": {
+          "type": "string"
+        },
+        "margin": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mask_shape": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "override_source_lid": {
+          "type": "string"
+        },
+        "overrides": {
+          "$ref": "#/definitions/ImageOverrides"
+        },
+        "padding": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "shadow": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "size": {},
+        "source": {
+          "$ref": "#/definitions/ImageInfo"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "image",
+          "type": "string"
+        },
+        "visible": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "InputMultipleChoiceProps": {
+      "properties": {
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "field_id": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "selection_range": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "stack": {
+          "$ref": "#/definitions/StackProps"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "input_multiple_choice",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "InputOptionProps": {
+      "properties": {
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "option_id": {
+          "type": "string"
+        },
+        "stack": {
+          "$ref": "#/definitions/StackProps"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "input_option",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "InputSingleChoiceProps": {
+      "properties": {
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "field_id": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "selection_range": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "stack": {
+          "$ref": "#/definitions/StackProps"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "input_single_choice",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "InputTextCapitalizeType": {
+      "enum": [
+        "none",
+        "sentences",
+        "words",
+        "characters"
+      ],
+      "type": "string"
+    },
+    "InputTextKeyboardType": {
+      "enum": [
+        "decimal",
+        "email",
+        "numeric",
+        "tel",
+        "text",
+        "url"
+      ],
+      "type": "string"
+    },
+    "InputTextProps": {
+      "properties": {
+        "background_color": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ColorGradientScheme"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "border": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "capitalize": {
+          "$ref": "#/definitions/InputTextCapitalizeType"
+        },
+        "color": {
+          "$ref": "#/definitions/ColorGradientScheme"
+        },
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "field_id": {
+          "type": "string"
+        },
+        "font_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "font_size": {
+          "type": "number"
+        },
+        "font_weight_int": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "horizontal_alignment": {
+          "enum": [
+            "leading",
+            "center",
+            "trailing"
+          ],
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "keyboard_type": {
+          "$ref": "#/definitions/InputTextKeyboardType"
+        },
+        "margin": {},
+        "name": {
+          "type": "string"
+        },
+        "overrides": {
+          "$ref": "#/definitions/InputTextOverrides"
+        },
+        "padding": {},
+        "placeholder_color": {
+          "$ref": "#/definitions/ColorGradientScheme"
+        },
+        "placeholder_font_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "placeholder_font_size": {
+          "type": "number"
+        },
+        "placeholder_font_weight_int": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "placeholder_horizontal_alignment": {
+          "enum": [
+            "leading",
+            "center",
+            "trailing"
+          ],
+          "type": "string"
+        },
+        "placeholder_lid": {
+          "type": "string"
+        },
+        "required": {
+          "type": "boolean"
+        },
+        "shadow": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "shape": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "size": {},
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "input_text",
+          "type": "string"
+        },
+        "visible": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "Localizations": {
+      "additionalProperties": {
+        "additionalProperties": {
+          "type": "string"
+        },
+        "type": "object"
+      },
+      "type": "object"
+    },
+    "ButtonOverrides": {
+      "items": {
+        "properties": {
+          "conditions": {
+            "items": {
+              "anyOf": [
+                {
+                  "properties": {
+                    "type": {
+                      "const": "intro_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "multiple_intro_offers",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "selected",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "hover",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "focus",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "error",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "promo_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "intro_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "promo_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "in",
+                        "not in"
+                      ],
+                      "type": "string"
+                    },
+                    "packages": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "type": {
+                      "const": "selected_package_condition",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "variable_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "$ref": "#/definitions/CustomVariableValue"
+                    },
+                    "variable": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "properties": {
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "CarouselOverrides": {
+      "items": {
+        "properties": {
+          "conditions": {
+            "items": {
+              "anyOf": [
+                {
+                  "properties": {
+                    "type": {
+                      "const": "intro_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "multiple_intro_offers",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "selected",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "hover",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "focus",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "error",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "promo_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "intro_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "promo_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "in",
+                        "not in"
+                      ],
+                      "type": "string"
+                    },
+                    "packages": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "type": {
+                      "const": "selected_package_condition",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "variable_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "$ref": "#/definitions/CustomVariableValue"
+                    },
+                    "variable": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "properties": {
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "IconOverrides": {
+      "items": {
+        "properties": {
+          "conditions": {
+            "items": {
+              "anyOf": [
+                {
+                  "properties": {
+                    "type": {
+                      "const": "intro_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "multiple_intro_offers",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "selected",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "hover",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "focus",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "error",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "promo_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "intro_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "promo_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "in",
+                        "not in"
+                      ],
+                      "type": "string"
+                    },
+                    "packages": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "type": {
+                      "const": "selected_package_condition",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "variable_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "$ref": "#/definitions/CustomVariableValue"
+                    },
+                    "variable": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "properties": {
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "ImageOverrides": {
+      "items": {
+        "properties": {
+          "conditions": {
+            "items": {
+              "anyOf": [
+                {
+                  "properties": {
+                    "type": {
+                      "const": "intro_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "multiple_intro_offers",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "selected",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "hover",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "focus",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "error",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "promo_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "intro_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "promo_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "in",
+                        "not in"
+                      ],
+                      "type": "string"
+                    },
+                    "packages": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "type": {
+                      "const": "selected_package_condition",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "variable_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "$ref": "#/definitions/CustomVariableValue"
+                    },
+                    "variable": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "properties": {
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "InputTextOverrides": {
+      "items": {
+        "properties": {
+          "conditions": {
+            "items": {
+              "anyOf": [
+                {
+                  "properties": {
+                    "type": {
+                      "const": "intro_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "multiple_intro_offers",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "selected",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "hover",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "focus",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "error",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "promo_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "intro_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "promo_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "in",
+                        "not in"
+                      ],
+                      "type": "string"
+                    },
+                    "packages": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "type": {
+                      "const": "selected_package_condition",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "variable_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "$ref": "#/definitions/CustomVariableValue"
+                    },
+                    "variable": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "properties": {
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "SheetOverrides": {
+      "items": {
+        "properties": {
+          "conditions": {
+            "items": {
+              "anyOf": [
+                {
+                  "properties": {
+                    "type": {
+                      "const": "intro_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "multiple_intro_offers",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "selected",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "hover",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "focus",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "error",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "promo_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "intro_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "promo_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "in",
+                        "not in"
+                      ],
+                      "type": "string"
+                    },
+                    "packages": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "type": {
+                      "const": "selected_package_condition",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "variable_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "$ref": "#/definitions/CustomVariableValue"
+                    },
+                    "variable": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "properties": {
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "StackOverrides": {
+      "items": {
+        "properties": {
+          "conditions": {
+            "items": {
+              "anyOf": [
+                {
+                  "properties": {
+                    "type": {
+                      "const": "intro_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "multiple_intro_offers",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "selected",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "hover",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "focus",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "error",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "promo_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "intro_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "promo_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "in",
+                        "not in"
+                      ],
+                      "type": "string"
+                    },
+                    "packages": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "type": {
+                      "const": "selected_package_condition",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "variable_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "$ref": "#/definitions/CustomVariableValue"
+                    },
+                    "variable": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "properties": {
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "TabsOverrides4": {
+      "items": {
+        "properties": {
+          "conditions": {
+            "items": {
+              "anyOf": [
+                {
+                  "properties": {
+                    "type": {
+                      "const": "intro_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "multiple_intro_offers",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "selected",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "hover",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "focus",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "error",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "promo_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "intro_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "promo_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "in",
+                        "not in"
+                      ],
+                      "type": "string"
+                    },
+                    "packages": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "type": {
+                      "const": "selected_package_condition",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "variable_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "$ref": "#/definitions/CustomVariableValue"
+                    },
+                    "variable": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "properties": {
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "TabsOverrides5": {
+      "items": {
+        "properties": {
+          "conditions": {
+            "items": {
+              "anyOf": [
+                {
+                  "properties": {
+                    "type": {
+                      "const": "intro_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "multiple_intro_offers",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "selected",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "hover",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "focus",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "error",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "promo_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "intro_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "promo_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "in",
+                        "not in"
+                      ],
+                      "type": "string"
+                    },
+                    "packages": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "type": {
+                      "const": "selected_package_condition",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "variable_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "$ref": "#/definitions/CustomVariableValue"
+                    },
+                    "variable": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "properties": {
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "TabsOverrides": {
+      "items": {
+        "properties": {
+          "conditions": {
+            "items": {
+              "anyOf": [
+                {
+                  "properties": {
+                    "type": {
+                      "const": "intro_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "multiple_intro_offers",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "selected",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "hover",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "focus",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "error",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "promo_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "intro_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "promo_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "in",
+                        "not in"
+                      ],
+                      "type": "string"
+                    },
+                    "packages": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "type": {
+                      "const": "selected_package_condition",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "variable_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "$ref": "#/definitions/CustomVariableValue"
+                    },
+                    "variable": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "properties": {
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "TabsOverrides2": {
+      "items": {
+        "properties": {
+          "conditions": {
+            "items": {
+              "anyOf": [
+                {
+                  "properties": {
+                    "type": {
+                      "const": "intro_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "multiple_intro_offers",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "selected",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "hover",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "focus",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "error",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "promo_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "intro_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "promo_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "in",
+                        "not in"
+                      ],
+                      "type": "string"
+                    },
+                    "packages": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "type": {
+                      "const": "selected_package_condition",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "variable_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "$ref": "#/definitions/CustomVariableValue"
+                    },
+                    "variable": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "properties": {
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "TabsOverrides3": {
+      "items": {
+        "properties": {
+          "conditions": {
+            "items": {
+              "anyOf": [
+                {
+                  "properties": {
+                    "type": {
+                      "const": "intro_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "multiple_intro_offers",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "selected",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "hover",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "focus",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "error",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "promo_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "intro_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "promo_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "in",
+                        "not in"
+                      ],
+                      "type": "string"
+                    },
+                    "packages": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "type": {
+                      "const": "selected_package_condition",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "variable_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "$ref": "#/definitions/CustomVariableValue"
+                    },
+                    "variable": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "properties": {
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "TextOverrides": {
+      "items": {
+        "properties": {
+          "conditions": {
+            "items": {
+              "anyOf": [
+                {
+                  "properties": {
+                    "type": {
+                      "const": "intro_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "multiple_intro_offers",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "selected",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "hover",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "focus",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "error",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "promo_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "intro_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "promo_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "in",
+                        "not in"
+                      ],
+                      "type": "string"
+                    },
+                    "packages": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "type": {
+                      "const": "selected_package_condition",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "variable_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "$ref": "#/definitions/CustomVariableValue"
+                    },
+                    "variable": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "properties": {
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "TimelineOverrides": {
+      "items": {
+        "properties": {
+          "conditions": {
+            "items": {
+              "anyOf": [
+                {
+                  "properties": {
+                    "type": {
+                      "const": "intro_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "multiple_intro_offers",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "selected",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "hover",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "focus",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "error",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "promo_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "intro_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "promo_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "in",
+                        "not in"
+                      ],
+                      "type": "string"
+                    },
+                    "packages": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "type": {
+                      "const": "selected_package_condition",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "variable_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "$ref": "#/definitions/CustomVariableValue"
+                    },
+                    "variable": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "properties": {
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "TimelineOverrides2": {
+      "items": {
+        "properties": {
+          "conditions": {
+            "items": {
+              "anyOf": [
+                {
+                  "properties": {
+                    "type": {
+                      "const": "intro_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "multiple_intro_offers",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "selected",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "hover",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "focus",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "error",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "promo_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "intro_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "promo_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "in",
+                        "not in"
+                      ],
+                      "type": "string"
+                    },
+                    "packages": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "type": {
+                      "const": "selected_package_condition",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "variable_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "$ref": "#/definitions/CustomVariableValue"
+                    },
+                    "variable": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "properties": {
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "VideoOverrides": {
+      "items": {
+        "properties": {
+          "conditions": {
+            "items": {
+              "anyOf": [
+                {
+                  "properties": {
+                    "type": {
+                      "const": "intro_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "multiple_intro_offers",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "selected",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "hover",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "focus",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "error",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "type": {
+                      "const": "promo_offer",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "intro_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "promo_offer_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "in",
+                        "not in"
+                      ],
+                      "type": "string"
+                    },
+                    "packages": {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "type": {
+                      "const": "selected_package_condition",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                },
+                {
+                  "properties": {
+                    "operator": {
+                      "enum": [
+                        "=",
+                        "!="
+                      ],
+                      "type": "string"
+                    },
+                    "type": {
+                      "const": "variable_condition",
+                      "type": "string"
+                    },
+                    "value": {
+                      "$ref": "#/definitions/CustomVariableValue"
+                    },
+                    "variable": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "type"
+                  ],
+                  "type": "object"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "properties": {
+            "type": "object"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "PackageProps": {
+      "properties": {
+        "apple_promo_offer_product_code": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "type": "string"
+        },
+        "is_selected_by_default": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "package_id": {
+          "type": "string"
+        },
+        "stack": {
+          "$ref": "#/definitions/StackProps"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "package",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "PageControl": {
+      "properties": {
+        "active": {
+          "$ref": "#/definitions/PageControlIndicator"
+        },
+        "background_color": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ColorScheme"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "border": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "default": {
+          "$ref": "#/definitions/PageControlIndicator"
+        },
+        "margin": {},
+        "padding": {},
+        "position": {
+          "enum": [
+            "top",
+            "bottom"
+          ],
+          "type": "string"
+        },
+        "shadow": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "shape": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "spacing": {
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "PageControlIndicator": {
+      "properties": {
+        "color": {
+          "$ref": "#/definitions/ColorScheme"
+        },
+        "height": {
+          "type": "number"
+        },
+        "stroke_color": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ColorScheme"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "stroke_width": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "width": {
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "PurchaseButtonAction": {
+      "enum": [
+        "in_app_checkout",
+        "web_checkout",
+        "web_product_selection"
+      ],
+      "type": "string"
+    },
+    "PurchaseButtonMethod": {
+      "anyOf": [
+        {
+          "properties": {
+            "type": {
+              "const": "in_app_checkout",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "auto_dismiss": {
+              "type": "boolean"
+            },
+            "open_method": {
+              "enum": [
+                "deep_link",
+                "external_browser",
+                "in_app_browser"
+              ],
+              "type": "string"
+            },
+            "type": {
+              "const": "web_checkout",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "auto_dismiss": {
+              "type": "boolean"
+            },
+            "open_method": {
+              "enum": [
+                "deep_link",
+                "external_browser",
+                "in_app_browser"
+              ],
+              "type": "string"
+            },
+            "type": {
+              "const": "web_product_selection",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "auto_dismiss": {
+              "type": "boolean"
+            },
+            "custom_url": {
+              "properties": {
+                "package_param": {
+                  "type": "string"
+                },
+                "url_lid": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            "open_method": {
+              "enum": [
+                "deep_link",
+                "external_browser",
+                "in_app_browser"
+              ],
+              "type": "string"
+            },
+            "type": {
+              "const": "custom_web_checkout",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        },
+        {
+          "properties": {
+            "type": {
+              "const": "unknown",
+              "type": "string"
+            }
+          },
+          "required": [
+            "type"
+          ],
+          "type": "object"
+        }
+      ]
+    },
+    "PurchaseButtonProps": {
+      "properties": {
+        "action": {
+          "$ref": "#/definitions/PurchaseButtonAction"
+        },
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "type": "string"
+        },
+        "method": {
+          "$ref": "#/definitions/PurchaseButtonMethod"
+        },
+        "name": {
+          "type": "string"
+        },
+        "stack": {
+          "$ref": "#/definitions/StackProps"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "purchase_button",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "RedemptionButtonProps": {
+      "properties": {
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "stack": {
+          "$ref": "#/definitions/StackProps"
+        },
+        "transition": {
+          "type": "null"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "redemption_button",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "RootPaywall": {
+      "properties": {
+        "background": {
+          "$ref": "#/definitions/Background"
+        },
+        "header": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/HeaderProps"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "stack": {
+          "$ref": "#/definitions/StackProps"
+        },
+        "sticky_footer": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/FooterProps"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "stack"
+      ],
+      "type": "object"
+    },
+    "SheetProps": {
+      "properties": {
+        "background": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Background"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "background_blur": {
+          "type": "boolean"
+        },
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "overrides": {
+          "$ref": "#/definitions/SheetOverrides"
+        },
+        "position": {
+          "enum": [
+            "bottom",
+            "top",
+            "center",
+            "left",
+            "right"
+          ],
+          "type": "string"
+        },
+        "size": {},
+        "stack": {
+          "$ref": "#/definitions/StackProps"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "sheet",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "SkeletonLoaderProps": {
+      "properties": {
+        "border": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "dimension": {
+          "$ref": "#/definitions/Dimension"
+        },
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "type": "string"
+        },
+        "margin": {},
+        "name": {
+          "type": "string"
+        },
+        "shadow": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "shape": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "size": {},
+        "spacing": {
+          "type": "number"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "skeleton_loader",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "StackProps": {
+      "properties": {
+        "background": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Background"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "background_color": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ColorGradientScheme"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "badge": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Badge"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "border": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "components": {
+          "items": {
+            "$ref": "#/definitions/Component"
+          },
+          "type": "array"
+        },
+        "dimension": {
+          "$ref": "#/definitions/Dimension"
+        },
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "type": "string"
+        },
+        "margin": {},
+        "name": {
+          "type": "string"
+        },
+        "overrides": {
+          "$ref": "#/definitions/StackOverrides"
+        },
+        "padding": {},
+        "shadow": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "shape": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "size": {},
+        "spacing": {
+          "type": "number"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "stack",
+          "type": "string"
+        },
+        "visible": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "TabControl": {
+      "properties": {
+        "stack": {
+          "$ref": "#/definitions/StackProps"
+        },
+        "type": {
+          "enum": [
+            "buttons",
+            "toggle"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "TabControlButtonProps": {
+      "properties": {
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "overrides": {
+          "$ref": "#/definitions/TabsOverrides4"
+        },
+        "stack": {
+          "$ref": "#/definitions/StackProps"
+        },
+        "tab_id": {
+          "type": "string"
+        },
+        "tab_index": {
+          "deprecated": "Use `tab_id` instead. This stores the index of the tab the control is related to,\nwe'll utilize the `tab_id` field instead but need this for backwards compatibility",
+          "type": "number"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "tab_control_button",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "TabControlProps": {
+      "properties": {
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "overrides": {
+          "$ref": "#/definitions/TabsOverrides3"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "tab_control",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "TabControlToggleProps": {
+      "properties": {
+        "default_value": {
+          "type": "boolean"
+        },
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "overrides": {
+          "$ref": "#/definitions/TabsOverrides5"
+        },
+        "thumb_color_off": {
+          "$ref": "#/definitions/ColorGradientScheme"
+        },
+        "thumb_color_on": {
+          "$ref": "#/definitions/ColorGradientScheme"
+        },
+        "track_color_off": {
+          "$ref": "#/definitions/ColorGradientScheme"
+        },
+        "track_color_on": {
+          "$ref": "#/definitions/ColorGradientScheme"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "tab_control_toggle",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "TabProps": {
+      "properties": {
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "overrides": {
+          "$ref": "#/definitions/TabsOverrides"
+        },
+        "stack": {
+          "$ref": "#/definitions/StackProps"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "tab",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "TabsProps": {
+      "properties": {
+        "background": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Background"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "border": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "control": {
+          "$ref": "#/definitions/TabControl"
+        },
+        "default_tab_id": {
+          "type": "string"
+        },
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "type": "string"
+        },
+        "margin": {},
+        "name": {
+          "type": "string"
+        },
+        "overrides": {
+          "$ref": "#/definitions/TabsOverrides2"
+        },
+        "padding": {},
+        "shadow": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "shape": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "size": {},
+        "tabs": {
+          "items": {
+            "$ref": "#/definitions/TabProps"
+          },
+          "type": "array"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "tabs",
+          "type": "string"
+        },
+        "visible": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "TextNodeProps": {
+      "properties": {
+        "background_color": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ColorGradientScheme"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "color": {
+          "$ref": "#/definitions/ColorGradientScheme"
+        },
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "font_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "font_size": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "const": "body_s",
+              "type": "string"
+            },
+            {
+              "const": "body_m",
+              "type": "string"
+            },
+            {
+              "const": "body_l",
+              "type": "string"
+            },
+            {
+              "const": "body_xl",
+              "type": "string"
+            },
+            {
+              "const": "heading_xs",
+              "type": "string"
+            },
+            {
+              "const": "heading_s",
+              "type": "string"
+            },
+            {
+              "const": "heading_m",
+              "type": "string"
+            },
+            {
+              "const": "heading_l",
+              "type": "string"
+            },
+            {
+              "const": "heading_xl",
+              "type": "string"
+            },
+            {
+              "const": "heading_xxl",
+              "type": "string"
+            }
+          ]
+        },
+        "font_weight": {
+          "enum": [
+            "extra_light",
+            "thin",
+            "light",
+            "regular",
+            "medium",
+            "semibold",
+            "bold",
+            "extra_bold",
+            "black"
+          ],
+          "type": "string"
+        },
+        "font_weight_int": {
+          "type": "number"
+        },
+        "horizontal_alignment": {
+          "enum": [
+            "leading",
+            "center",
+            "trailing"
+          ],
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "margin": {},
+        "name": {
+          "type": "string"
+        },
+        "overrides": {
+          "$ref": "#/definitions/TextOverrides"
+        },
+        "padding": {},
+        "size": {},
+        "text_lid": {
+          "type": "string"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "text",
+          "type": "string"
+        },
+        "visible": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "TimelineConnectorProps": {
+      "properties": {
+        "color": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ColorGradientScheme"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "margin": {
+          "properties": {
+            "bottom": {
+              "type": "number"
+            },
+            "top": {
+              "type": "number"
+            }
+          },
+          "type": "object"
+        },
+        "width": {
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "TimelineItemProps": {
+      "properties": {
+        "connector": {
+          "$ref": "#/definitions/TimelineConnectorProps"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/TextNodeProps"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "icon": {
+          "$ref": "#/definitions/IconProps"
+        },
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "overrides": {
+          "$ref": "#/definitions/TimelineOverrides2"
+        },
+        "title": {
+          "$ref": "#/definitions/TextNodeProps"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "timeline_item",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "TimelineProps": {
+      "properties": {
+        "column_gutter": {
+          "type": "number"
+        },
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "icon_alignment": {
+          "enum": [
+            "title",
+            "title_and_description"
+          ],
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "item_spacing": {
+          "type": "number"
+        },
+        "items": {
+          "items": {
+            "$ref": "#/definitions/TimelineItemProps"
+          },
+          "type": "array"
+        },
+        "margin": {},
+        "name": {
+          "type": "string"
+        },
+        "overrides": {
+          "$ref": "#/definitions/TimelineOverrides"
+        },
+        "padding": {},
+        "size": {},
+        "text_spacing": {
+          "type": "number"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "timeline",
+          "type": "string"
+        },
+        "visible": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "VerticalAlignment": {
+      "enum": [
+        "top",
+        "center",
+        "bottom"
+      ],
+      "type": "string"
+    },
+    "VideoFiles": {
+      "properties": {
+        "checksum": {
+          "anyOf": [
+            {
+              "properties": {
+                "algo": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "checksum_low_res": {
+          "anyOf": [
+            {
+              "properties": {
+                "algo": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                }
+              },
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "height": {
+          "type": "number"
+        },
+        "url": {
+          "type": "string"
+        },
+        "url_low_res": {
+          "type": "string"
+        },
+        "width": {
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "VideoInfo": {
+      "properties": {
+        "dark": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/VideoFiles"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "light": {
+          "$ref": "#/definitions/VideoFiles"
+        }
+      },
+      "type": "object"
+    },
+    "VideoProps": {
+      "properties": {
+        "auto_play": {
+          "type": "boolean"
+        },
+        "border": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "color_overlay": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ColorGradientScheme"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "fallback_source": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/ImageInfo"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "fit_mode": {
+          "$ref": "#/definitions/FitMode"
+        },
+        "id": {
+          "type": "string"
+        },
+        "loop": {
+          "type": "boolean"
+        },
+        "margin": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mask_shape": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mute_audio": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "override_source_lid": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "overrides": {
+          "$ref": "#/definitions/VideoOverrides"
+        },
+        "padding": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "shadow": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "show_controls": {
+          "type": "boolean"
+        },
+        "size": {},
+        "source": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/VideoInfo"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "video",
+          "type": "string"
+        },
+        "visible": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "WalletButtonProps": {
+      "properties": {
+        "border": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "dimension": {
+          "$ref": "#/definitions/Dimension"
+        },
+        "fallback": {
+          "$ref": "#/definitions/Component"
+        },
+        "id": {
+          "type": "string"
+        },
+        "margin": {},
+        "name": {
+          "type": "string"
+        },
+        "onWalletButtonReady": {
+          "$comment": "(walletButtonAvailable?: boolean) => void",
+          "properties": {
+            "namedArgs": {
+              "additionalProperties": false,
+              "properties": {
+                "walletButtonAvailable": {
+                  "type": "boolean"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
+        "shadow": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "shape": {
+          "anyOf": [
+            {},
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "size": {},
+        "spacing": {
+          "type": "number"
+        },
+        "triggers": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "type": {
+          "const": "wallet_button",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "type": "object"
+    },
+    "ZAlignment": {
+      "enum": [
+        "top_leading",
+        "top",
+        "top_trailing",
+        "leading",
+        "center",
+        "trailing",
+        "bottom_leading",
+        "bottom",
+        "bottom_trailing"
+      ],
+      "type": "string"
+    }
+  },
+  "properties": {
+    "components_config": {
+      "$ref": "#/definitions/ComponentConfig"
+    },
+    "components_localizations": {
+      "$ref": "#/definitions/Localizations"
+    },
+    "default_locale": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "default_locale",
+    "components_config",
+    "components_localizations"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,120 @@
+{
+  "description": "bucketOf(experimentId, visitorId): FNV-1a 0-99 bucket for A/B and holdout",
+  "source": "Web SDK: A/B bucket assignment",
+  "node": "22.22.2",
+  "icu": "78.2",
+  "cases": [
+    {
+      "input": {
+        "experimentId": "exp-1",
+        "visitorId": "v-123"
+      },
+      "expected": 75
+    },
+    {
+      "input": {
+        "experimentId": "exp-1",
+        "visitorId": "c7a1c1f0-9a8b-4c3d-8e2f-1234567890ab"
+      },
+      "expected": 59
+    },
+    {
+      "input": {
+        "experimentId": "exp-1",
+        "visitorId": "ünï"
+      },
+      "expected": 3
+    },
+    {
+      "input": {
+        "experimentId": "exp-1",
+        "visitorId": ""
+      },
+      "expected": 76
+    },
+    {
+      "input": {
+        "experimentId": "holdout:abc",
+        "visitorId": "v-123"
+      },
+      "expected": 43
+    },
+    {
+      "input": {
+        "experimentId": "holdout:abc",
+        "visitorId": "c7a1c1f0-9a8b-4c3d-8e2f-1234567890ab"
+      },
+      "expected": 27
+    },
+    {
+      "input": {
+        "experimentId": "holdout:abc",
+        "visitorId": "ünï"
+      },
+      "expected": 99
+    },
+    {
+      "input": {
+        "experimentId": "holdout:abc",
+        "visitorId": ""
+      },
+      "expected": 68
+    },
+    {
+      "input": {
+        "experimentId": "1f0c2d3e-0000-4000-8000-000000000000",
+        "visitorId": "v-123"
+      },
+      "expected": 56
+    },
+    {
+      "input": {
+        "experimentId": "1f0c2d3e-0000-4000-8000-000000000000",
+        "visitorId": "c7a1c1f0-9a8b-4c3d-8e2f-1234567890ab"
+      },
+      "expected": 54
+    },
+    {
+      "input": {
+        "experimentId": "1f0c2d3e-0000-4000-8000-000000000000",
+        "visitorId": "ünï"
+      },
+      "expected": 72
+    },
+    {
+      "input": {
+        "experimentId": "1f0c2d3e-0000-4000-8000-000000000000",
+        "visitorId": ""
+      },
+      "expected": 5
+    },
+    {
+      "input": {
+        "experimentId": "",
+        "visitorId": "v-123"
+      },
+      "expected": 48
+    },
+    {
+      "input": {
+        "experimentId": "",
+        "visitorId": "c7a1c1f0-9a8b-4c3d-8e2f-1234567890ab"
+      },
+      "expected": 94
+    },
+    {
+      "input": {
+        "experimentId": "",
+        "visitorId": "ünï"
+      },
+      "expected": 80
+    },
+    {
+      "input": {
+        "experimentId": "",
+        "visitorId": ""
+      },
+      "expected": 53
+    }
+  ]
+}

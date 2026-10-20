@@ -1,0 +1,398 @@
+{
+  "description": "replaceVariables(template, variables): {{ }} substitution with modifiers",
+  "source": "reference renderer: {{ variable }} replacement",
+  "node": "22.22.2",
+  "icu": "78.2",
+  "cases": [
+    {
+      "input": {
+        "template": "Only {{ product.price }}/{{ product.period }}",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "Only $9.99/month"
+    },
+    {
+      "input": {
+        "template": "{{product.price}}",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "$9.99"
+    },
+    {
+      "input": {
+        "template": "{{  product.price  }}",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "$9.99"
+    },
+    {
+      "input": {
+        "template": "{{ product.price | uppercase }}",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "$9.99"
+    },
+    {
+      "input": {
+        "template": "{{ product.store_product_name | capitalize }}",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "Pro Plan Été"
+    },
+    {
+      "input": {
+        "template": "{{ name | capitalize }}",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "Élan Vital"
+    },
+    {
+      "input": {
+        "template": "{{ name | uppercase }}",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "ÉLAN VITAL"
+    },
+    {
+      "input": {
+        "template": "{{ product.store_product_name | lowercase }}",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "pro plan été"
+    },
+    {
+      "input": {
+        "template": "{{ product.price | unknown_mod }}",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "$9.99"
+    },
+    {
+      "input": {
+        "template": "{{ missing }} end",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": " end"
+    },
+    {
+      "input": {
+        "template": "{{ custom.name }}",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "élan vital"
+    },
+    {
+      "input": {
+        "template": "{{ $custom.name }}",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "élan vital"
+    },
+    {
+      "input": {
+        "template": "{{ custom.custom.x }}",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "nested"
+    },
+    {
+      "input": {
+        "template": "{{ custom.x }}",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": ""
+    },
+    {
+      "input": {
+        "template": "{{ empty }}|",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "|"
+    },
+    {
+      "input": {
+        "template": "{{ count }} days",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "3 days"
+    },
+    {
+      "input": {
+        "template": "no vars",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "no vars"
+    },
+    {
+      "input": {
+        "template": "{{ product.price ",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "{{ product.price "
+    },
+    {
+      "input": {
+        "template": "{ product.price }",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "{ product.price }"
+    },
+    {
+      "input": {
+        "template": "{{product.price}}{{product.period}}",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "$9.99month"
+    },
+    {
+      "input": {
+        "template": "{{ PRODUCT.PRICE }}",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": ""
+    },
+    {
+      "input": {
+        "template": "{{ product-price }}",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": ""
+    },
+    {
+      "input": {
+        "template": "{{ name|capitalize }}",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "Élan Vital"
+    },
+    {
+      "input": {
+        "template": "{{ name | capitalize | uppercase }}",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "élan vital"
+    },
+    {
+      "input": {
+        "template": "a {{ x.y.z }} b",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": "a  b"
+    },
+    {
+      "input": {
+        "template": "",
+        "variables": {
+          "product.price": "$9.99",
+          "product.period": "month",
+          "product.store_product_name": "pro plan ÉTÉ",
+          "name": "élan vital",
+          "custom.x": "nested",
+          "count": "3",
+          "empty": ""
+        }
+      },
+      "expected": ""
+    }
+  ]
+}

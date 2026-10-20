@@ -1,0 +1,129 @@
+{
+  "description": "applyAnswer(answers, kind, fieldId, value)",
+  "source": "Web SDK: recording a question answer",
+  "node": "22.22.2",
+  "icu": "78.2",
+  "cases": [
+    {
+      "input": {
+        "answers": {},
+        "kind": "single",
+        "fieldId": "goal",
+        "value": "fit"
+      },
+      "expected": {
+        "goal": "fit"
+      }
+    },
+    {
+      "input": {
+        "answers": {
+          "goal": "fit"
+        },
+        "kind": "single",
+        "fieldId": "goal",
+        "value": "lose"
+      },
+      "expected": {
+        "goal": "lose"
+      }
+    },
+    {
+      "input": {
+        "answers": {
+          "goal": "fit"
+        },
+        "kind": "text",
+        "fieldId": "goal",
+        "value": ""
+      },
+      "expected": {}
+    },
+    {
+      "input": {
+        "answers": {},
+        "kind": "multiple",
+        "fieldId": "topics",
+        "value": "a"
+      },
+      "expected": {
+        "topics": [
+          "a"
+        ]
+      }
+    },
+    {
+      "input": {
+        "answers": {
+          "topics": [
+            "a"
+          ]
+        },
+        "kind": "multiple",
+        "fieldId": "topics",
+        "value": "b"
+      },
+      "expected": {
+        "topics": [
+          "a",
+          "b"
+        ]
+      }
+    },
+    {
+      "input": {
+        "answers": {
+          "topics": [
+            "a",
+            "b"
+          ]
+        },
+        "kind": "multiple",
+        "fieldId": "topics",
+        "value": "a"
+      },
+      "expected": {
+        "topics": [
+          "b"
+        ]
+      }
+    },
+    {
+      "input": {
+        "answers": {
+          "topics": [
+            "a"
+          ]
+        },
+        "kind": "multiple",
+        "fieldId": "topics",
+        "value": "a"
+      },
+      "expected": {}
+    },
+    {
+      "input": {
+        "answers": {
+          "name": "Al"
+        },
+        "kind": "text",
+        "fieldId": "name",
+        "value": "Alice"
+      },
+      "expected": {
+        "name": "Alice"
+      }
+    },
+    {
+      "input": {
+        "answers": {},
+        "kind": null,
+        "fieldId": "x",
+        "value": "y"
+      },
+      "expected": {
+        "x": "y"
+      }
+    }
+  ]
+}

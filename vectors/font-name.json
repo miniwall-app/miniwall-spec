@@ -1,0 +1,77 @@
+{
+  "description": "parseFontName(name): Family@weight",
+  "source": "Web SDK: font name parsing",
+  "node": "22.22.2",
+  "icu": "78.2",
+  "cases": [
+    {
+      "input": {
+        "name": "Fraunces@700"
+      },
+      "expected": {
+        "family": "Fraunces",
+        "weight": 700
+      }
+    },
+    {
+      "input": {
+        "name": "Inter@400"
+      },
+      "expected": {
+        "family": "Inter",
+        "weight": 400
+      }
+    },
+    {
+      "input": {
+        "name": "Open Sans@600"
+      },
+      "expected": {
+        "family": "Open Sans",
+        "weight": 600
+      }
+    },
+    {
+      "input": {
+        "name": "MW:Inter@500"
+      },
+      "expected": {
+        "family": "Inter",
+        "weight": 500
+      }
+    },
+    {
+      "input": {
+        "name": "Inter"
+      },
+      "expected": null
+    },
+    {
+      "input": {
+        "name": "Inter@70"
+      },
+      "expected": null
+    },
+    {
+      "input": {
+        "name": "Inter@7000"
+      },
+      "expected": null
+    },
+    {
+      "input": {
+        "name": "@400"
+      },
+      "expected": null
+    },
+    {
+      "input": {
+        "name": "lower:Inter@400"
+      },
+      "expected": {
+        "family": "lower:Inter",
+        "weight": 400
+      }
+    }
+  ]
+}

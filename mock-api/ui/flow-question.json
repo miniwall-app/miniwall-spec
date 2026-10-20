@@ -1,0 +1,289 @@
+{
+ "id": "flow_question",
+ "default_locale": "en_US",
+ "components_localizations": {
+  "en_US": {
+   "l_q": "What is your goal?",
+   "l_a": "Lose weight",
+   "l_b": "Build strength",
+   "l_cont": "Continue",
+   "l_back": "Back"
+  }
+ },
+ "components_config": {
+  "base": {
+   "stack": {
+    "type": "stack",
+    "id": "root",
+    "size": {
+     "width": {
+      "type": "fill"
+     },
+     "height": {
+      "type": "fill"
+     }
+    },
+    "dimension": {
+     "type": "vertical",
+     "alignment": "center",
+     "distribution": "start"
+    },
+    "spacing": 12,
+    "components": [
+     {
+      "type": "text",
+      "id": "q",
+      "name": "q",
+      "text_lid": "l_q",
+      "font_size": 16,
+      "size": {
+       "width": {
+        "type": "fill"
+       },
+       "height": {
+        "type": "fit"
+       }
+      },
+      "horizontal_alignment": "center"
+     },
+     {
+      "type": "input_single_choice",
+      "id": "goal_in",
+      "name": "goal",
+      "field_id": "goal",
+      "required": true,
+      "selection_range": null,
+      "stack": {
+       "type": "stack",
+       "id": "goal_s",
+       "components": [
+        {
+         "type": "input_option",
+         "id": "o_a",
+         "name": "lose_weight",
+         "option_id": "lose_weight",
+         "stack": {
+          "type": "stack",
+          "id": "o_a_s",
+          "components": [
+           {
+            "type": "text",
+            "id": "o_a_t",
+            "name": "o_a_t",
+            "text_lid": "l_a",
+            "font_size": 16,
+            "size": {
+             "width": {
+              "type": "fill"
+             },
+             "height": {
+              "type": "fit"
+             }
+            },
+            "horizontal_alignment": "center"
+           }
+          ],
+          "size": {
+           "width": {
+            "type": "fill"
+           },
+           "height": {
+            "type": "fit"
+           }
+          },
+          "dimension": {
+           "type": "vertical",
+           "alignment": "center",
+           "distribution": "start"
+          },
+          "spacing": 8,
+          "padding": {
+           "top": 12,
+           "bottom": 12,
+           "leading": 16,
+           "trailing": 16
+          }
+         }
+        },
+        {
+         "type": "input_option",
+         "id": "o_b",
+         "name": "strength",
+         "option_id": "strength",
+         "stack": {
+          "type": "stack",
+          "id": "o_b_s",
+          "components": [
+           {
+            "type": "text",
+            "id": "o_b_t",
+            "name": "o_b_t",
+            "text_lid": "l_b",
+            "font_size": 16,
+            "size": {
+             "width": {
+              "type": "fill"
+             },
+             "height": {
+              "type": "fit"
+             }
+            },
+            "horizontal_alignment": "center"
+           }
+          ],
+          "size": {
+           "width": {
+            "type": "fill"
+           },
+           "height": {
+            "type": "fit"
+           }
+          },
+          "dimension": {
+           "type": "vertical",
+           "alignment": "center",
+           "distribution": "start"
+          },
+          "spacing": 8,
+          "padding": {
+           "top": 12,
+           "bottom": 12,
+           "leading": 16,
+           "trailing": 16
+          }
+         }
+        }
+       ],
+       "size": {
+        "width": {
+         "type": "fill"
+        },
+        "height": {
+         "type": "fit"
+        }
+       },
+       "dimension": {
+        "type": "vertical",
+        "alignment": "center",
+        "distribution": "start"
+       },
+       "spacing": 8,
+       "padding": {
+        "top": 12,
+        "bottom": 12,
+        "leading": 16,
+        "trailing": 16
+       }
+      }
+     },
+     {
+      "type": "button",
+      "id": "cont",
+      "name": "Continue",
+      "action": {
+       "type": "workflow"
+      },
+      "stack": {
+       "type": "stack",
+       "id": "cont_s",
+       "components": [
+        {
+         "type": "text",
+         "id": "cont_t",
+         "name": "cont_t",
+         "text_lid": "l_cont",
+         "font_size": 16,
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "horizontal_alignment": "center"
+        }
+       ],
+       "size": {
+        "width": {
+         "type": "fill"
+        },
+        "height": {
+         "type": "fit"
+        }
+       },
+       "dimension": {
+        "type": "vertical",
+        "alignment": "center",
+        "distribution": "start"
+       },
+       "spacing": 8,
+       "padding": {
+        "top": 12,
+        "bottom": 12,
+        "leading": 16,
+        "trailing": 16
+       }
+      },
+      "triggers": {
+       "on_press": "screen:flow_done"
+      }
+     },
+     {
+      "type": "button",
+      "id": "back",
+      "name": "Back",
+      "action": {
+       "type": "workflow"
+      },
+      "stack": {
+       "type": "stack",
+       "id": "back_s",
+       "components": [
+        {
+         "type": "text",
+         "id": "back_t",
+         "name": "back_t",
+         "text_lid": "l_back",
+         "font_size": 16,
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "horizontal_alignment": "center"
+        }
+       ],
+       "size": {
+        "width": {
+         "type": "fill"
+        },
+        "height": {
+         "type": "fit"
+        }
+       },
+       "dimension": {
+        "type": "vertical",
+        "alignment": "center",
+        "distribution": "start"
+       },
+       "spacing": 8,
+       "padding": {
+        "top": 12,
+        "bottom": 12,
+        "leading": 16,
+        "trailing": 16
+       }
+      },
+      "triggers": {
+       "on_press": "screen:back"
+      }
+     }
+    ]
+   }
+  }
+ }
+}

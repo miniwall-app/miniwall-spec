@@ -1,0 +1,242 @@
+{
+  "description": "Vertical stack with fixed height, distribution space_around",
+  "paywall": {
+    "id": "stack-vertical-distribution-space_around",
+    "default_locale": "en_US",
+    "components_config": {
+      "base": {
+        "background": {
+          "type": "color",
+          "value": {
+            "light": {
+              "type": "hex",
+              "value": "#FFFFFF"
+            }
+          }
+        },
+        "stack": {
+          "type": "stack",
+          "id": "root",
+          "name": "root",
+          "components": [
+            {
+              "type": "stack",
+              "id": "s",
+              "name": "s",
+              "components": [
+                {
+                  "type": "stack",
+                  "id": "a",
+                  "name": "a",
+                  "components": [],
+                  "size": {
+                    "width": {
+                      "type": "fixed",
+                      "value": 100
+                    },
+                    "height": {
+                      "type": "fixed",
+                      "value": 60
+                    }
+                  },
+                  "dimension": {
+                    "type": "vertical",
+                    "alignment": "leading",
+                    "distribution": "start"
+                  },
+                  "spacing": 0,
+                  "margin": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "background_color": {
+                    "light": {
+                      "type": "hex",
+                      "value": "#6366F1"
+                    }
+                  },
+                  "background": null,
+                  "border": null,
+                  "shape": null,
+                  "shadow": null
+                },
+                {
+                  "type": "stack",
+                  "id": "b",
+                  "name": "b",
+                  "components": [],
+                  "size": {
+                    "width": {
+                      "type": "fixed",
+                      "value": 150
+                    },
+                    "height": {
+                      "type": "fixed",
+                      "value": 40
+                    }
+                  },
+                  "dimension": {
+                    "type": "vertical",
+                    "alignment": "leading",
+                    "distribution": "start"
+                  },
+                  "spacing": 0,
+                  "margin": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "background_color": {
+                    "light": {
+                      "type": "hex",
+                      "value": "#F59E0B"
+                    }
+                  },
+                  "background": null,
+                  "border": null,
+                  "shape": null,
+                  "shadow": null
+                },
+                {
+                  "type": "stack",
+                  "id": "c",
+                  "name": "c",
+                  "components": [],
+                  "size": {
+                    "width": {
+                      "type": "fixed",
+                      "value": 80
+                    },
+                    "height": {
+                      "type": "fixed",
+                      "value": 80
+                    }
+                  },
+                  "dimension": {
+                    "type": "vertical",
+                    "alignment": "leading",
+                    "distribution": "start"
+                  },
+                  "spacing": 0,
+                  "margin": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "background_color": {
+                    "light": {
+                      "type": "hex",
+                      "value": "#10B981"
+                    }
+                  },
+                  "background": null,
+                  "border": null,
+                  "shape": null,
+                  "shadow": null
+                }
+              ],
+              "size": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 400
+                }
+              },
+              "dimension": {
+                "type": "vertical",
+                "alignment": "center",
+                "distribution": "space_around"
+              },
+              "spacing": 10,
+              "margin": {
+                "top": 0,
+                "bottom": 0,
+                "leading": 0,
+                "trailing": 0
+              },
+              "padding": {
+                "top": 20,
+                "bottom": 20,
+                "leading": 20,
+                "trailing": 20
+              },
+              "background_color": {
+                "light": {
+                  "type": "hex",
+                  "value": "#EF4444"
+                }
+              },
+              "background": null,
+              "border": null,
+              "shape": null,
+              "shadow": null
+            }
+          ],
+          "size": {
+            "width": {
+              "type": "fill"
+            },
+            "height": {
+              "type": "fill"
+            }
+          },
+          "dimension": {
+            "type": "vertical",
+            "alignment": "leading",
+            "distribution": "start"
+          },
+          "spacing": 0,
+          "margin": {
+            "top": 0,
+            "bottom": 0,
+            "leading": 0,
+            "trailing": 0
+          },
+          "padding": {
+            "top": 0,
+            "bottom": 0,
+            "leading": 0,
+            "trailing": 0
+          },
+          "background_color": {
+            "light": {
+              "type": "hex",
+              "value": "#F8FAFC"
+            }
+          },
+          "background": null,
+          "border": null,
+          "shape": null,
+          "shadow": null
+        }
+      }
+    },
+    "components_localizations": {
+      "en_US": {}
+    }
+  }
+}

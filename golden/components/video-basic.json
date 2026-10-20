@@ -1,0 +1,62 @@
+{
+  "fixture": "components/video-basic",
+  "generator": "web renderer (@miniwall/web) in Chromium",
+  "viewports": {
+    "375x812": {
+      "nodes": {
+        "root": {
+          "x": 0,
+          "y": 0,
+          "w": 375,
+          "h": 812
+        },
+        "before": {
+          "x": 0,
+          "y": 0,
+          "w": 375,
+          "h": 40
+        },
+        "wrap": {
+          "x": 0,
+          "y": 40,
+          "w": 375,
+          "h": 232
+        },
+        "after": {
+          "x": 0,
+          "y": 272,
+          "w": 375,
+          "h": 40
+        }
+      }
+    },
+    "768x1024": {
+      "nodes": {
+        "root": {
+          "x": 0,
+          "y": 0,
+          "w": 768,
+          "h": 1024
+        },
+        "before": {
+          "x": 0,
+          "y": 0,
+          "w": 768,
+          "h": 40
+        },
+        "wrap": {
+          "x": 0,
+          "y": 40,
+          "w": 768,
+          "h": 232
+        },
+        "after": {
+          "x": 0,
+          "y": 272,
+          "w": 768,
+          "h": 40
+        }
+      }
+    }
+  }
+}

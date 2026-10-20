@@ -1,0 +1,1700 @@
+{
+  "description": "matches(condition, actual): audience condition operators",
+  "source": "Web SDK: audience targeting",
+  "node": "22.22.2",
+  "icu": "78.2",
+  "cases": [
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": "pro"
+        },
+        "actual": "Pro"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": "pro"
+        },
+        "actual": "pro"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": "pro"
+        },
+        "actual": "professional"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": "pro"
+        },
+        "actual": ""
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": "pro"
+        },
+        "actual": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": "pro"
+        },
+        "actual": 5
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": "pro"
+        },
+        "actual": "5"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": "pro"
+        },
+        "actual": "10"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": "pro"
+        },
+        "actual": 2.5
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": "pro"
+        },
+        "actual": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": "pro"
+        },
+        "actual": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": "pro"
+        },
+        "actual": "abc"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "neq",
+          "value": "pro"
+        },
+        "actual": "Pro"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "neq",
+          "value": "pro"
+        },
+        "actual": "pro"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "neq",
+          "value": "pro"
+        },
+        "actual": "professional"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "neq",
+          "value": "pro"
+        },
+        "actual": ""
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "neq",
+          "value": "pro"
+        },
+        "actual": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "neq",
+          "value": "pro"
+        },
+        "actual": 5
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "neq",
+          "value": "pro"
+        },
+        "actual": "5"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "neq",
+          "value": "pro"
+        },
+        "actual": "10"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "neq",
+          "value": "pro"
+        },
+        "actual": 2.5
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "neq",
+          "value": "pro"
+        },
+        "actual": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "neq",
+          "value": "pro"
+        },
+        "actual": false
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "neq",
+          "value": "pro"
+        },
+        "actual": "abc"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "contains",
+          "value": "ro"
+        },
+        "actual": "Pro"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "contains",
+          "value": "ro"
+        },
+        "actual": "pro"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "contains",
+          "value": "ro"
+        },
+        "actual": "professional"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "contains",
+          "value": "ro"
+        },
+        "actual": ""
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "contains",
+          "value": "ro"
+        },
+        "actual": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "contains",
+          "value": "ro"
+        },
+        "actual": 5
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "contains",
+          "value": "ro"
+        },
+        "actual": "5"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "contains",
+          "value": "ro"
+        },
+        "actual": "10"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "contains",
+          "value": "ro"
+        },
+        "actual": 2.5
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "contains",
+          "value": "ro"
+        },
+        "actual": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "contains",
+          "value": "ro"
+        },
+        "actual": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "contains",
+          "value": "ro"
+        },
+        "actual": "abc"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "starts_with",
+          "value": "PR"
+        },
+        "actual": "Pro"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "starts_with",
+          "value": "PR"
+        },
+        "actual": "pro"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "starts_with",
+          "value": "PR"
+        },
+        "actual": "professional"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "starts_with",
+          "value": "PR"
+        },
+        "actual": ""
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "starts_with",
+          "value": "PR"
+        },
+        "actual": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "starts_with",
+          "value": "PR"
+        },
+        "actual": 5
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "starts_with",
+          "value": "PR"
+        },
+        "actual": "5"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "starts_with",
+          "value": "PR"
+        },
+        "actual": "10"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "starts_with",
+          "value": "PR"
+        },
+        "actual": 2.5
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "starts_with",
+          "value": "PR"
+        },
+        "actual": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "starts_with",
+          "value": "PR"
+        },
+        "actual": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "starts_with",
+          "value": "PR"
+        },
+        "actual": "abc"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": 4
+        },
+        "actual": "Pro"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": 4
+        },
+        "actual": "pro"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": 4
+        },
+        "actual": "professional"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": 4
+        },
+        "actual": ""
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": 4
+        },
+        "actual": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": 4
+        },
+        "actual": 5
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": 4
+        },
+        "actual": "5"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": 4
+        },
+        "actual": "10"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": 4
+        },
+        "actual": 2.5
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": 4
+        },
+        "actual": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": 4
+        },
+        "actual": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": 4
+        },
+        "actual": "abc"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gte",
+          "value": "5"
+        },
+        "actual": "Pro"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gte",
+          "value": "5"
+        },
+        "actual": "pro"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gte",
+          "value": "5"
+        },
+        "actual": "professional"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gte",
+          "value": "5"
+        },
+        "actual": ""
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gte",
+          "value": "5"
+        },
+        "actual": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gte",
+          "value": "5"
+        },
+        "actual": 5
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gte",
+          "value": "5"
+        },
+        "actual": "5"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gte",
+          "value": "5"
+        },
+        "actual": "10"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gte",
+          "value": "5"
+        },
+        "actual": 2.5
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gte",
+          "value": "5"
+        },
+        "actual": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gte",
+          "value": "5"
+        },
+        "actual": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gte",
+          "value": "5"
+        },
+        "actual": "abc"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lt",
+          "value": 10
+        },
+        "actual": "Pro"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lt",
+          "value": 10
+        },
+        "actual": "pro"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lt",
+          "value": 10
+        },
+        "actual": "professional"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lt",
+          "value": 10
+        },
+        "actual": ""
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lt",
+          "value": 10
+        },
+        "actual": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lt",
+          "value": 10
+        },
+        "actual": 5
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lt",
+          "value": 10
+        },
+        "actual": "5"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lt",
+          "value": 10
+        },
+        "actual": "10"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lt",
+          "value": 10
+        },
+        "actual": 2.5
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lt",
+          "value": 10
+        },
+        "actual": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lt",
+          "value": 10
+        },
+        "actual": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lt",
+          "value": 10
+        },
+        "actual": "abc"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lte",
+          "value": 2.5
+        },
+        "actual": "Pro"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lte",
+          "value": 2.5
+        },
+        "actual": "pro"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lte",
+          "value": 2.5
+        },
+        "actual": "professional"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lte",
+          "value": 2.5
+        },
+        "actual": ""
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lte",
+          "value": 2.5
+        },
+        "actual": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lte",
+          "value": 2.5
+        },
+        "actual": 5
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lte",
+          "value": 2.5
+        },
+        "actual": "5"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lte",
+          "value": 2.5
+        },
+        "actual": "10"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lte",
+          "value": 2.5
+        },
+        "actual": 2.5
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lte",
+          "value": 2.5
+        },
+        "actual": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lte",
+          "value": 2.5
+        },
+        "actual": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "lte",
+          "value": 2.5
+        },
+        "actual": "abc"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "exists"
+        },
+        "actual": "Pro"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "exists"
+        },
+        "actual": "pro"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "exists"
+        },
+        "actual": "professional"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "exists"
+        },
+        "actual": ""
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "exists"
+        },
+        "actual": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "exists"
+        },
+        "actual": 5
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "exists"
+        },
+        "actual": "5"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "exists"
+        },
+        "actual": "10"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "exists"
+        },
+        "actual": 2.5
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "exists"
+        },
+        "actual": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "exists"
+        },
+        "actual": false
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "exists"
+        },
+        "actual": "abc"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "not_exists"
+        },
+        "actual": "Pro"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "not_exists"
+        },
+        "actual": "pro"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "not_exists"
+        },
+        "actual": "professional"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "not_exists"
+        },
+        "actual": ""
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "not_exists"
+        },
+        "actual": null
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "not_exists"
+        },
+        "actual": 5
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "not_exists"
+        },
+        "actual": "5"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "not_exists"
+        },
+        "actual": "10"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "not_exists"
+        },
+        "actual": 2.5
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "not_exists"
+        },
+        "actual": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "not_exists"
+        },
+        "actual": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "not_exists"
+        },
+        "actual": "abc"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": true
+        },
+        "actual": "Pro"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": true
+        },
+        "actual": "pro"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": true
+        },
+        "actual": "professional"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": true
+        },
+        "actual": ""
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": true
+        },
+        "actual": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": true
+        },
+        "actual": 5
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": true
+        },
+        "actual": "5"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": true
+        },
+        "actual": "10"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": true
+        },
+        "actual": 2.5
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": true
+        },
+        "actual": true
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": true
+        },
+        "actual": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": true
+        },
+        "actual": "abc"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": 5
+        },
+        "actual": "Pro"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": 5
+        },
+        "actual": "pro"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": 5
+        },
+        "actual": "professional"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": 5
+        },
+        "actual": ""
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": 5
+        },
+        "actual": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": 5
+        },
+        "actual": 5
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": 5
+        },
+        "actual": "5"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": 5
+        },
+        "actual": "10"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": 5
+        },
+        "actual": 2.5
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": 5
+        },
+        "actual": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": 5
+        },
+        "actual": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "eq",
+          "value": 5
+        },
+        "actual": "abc"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": "x"
+        },
+        "actual": "Pro"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": "x"
+        },
+        "actual": "pro"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": "x"
+        },
+        "actual": "professional"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": "x"
+        },
+        "actual": ""
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": "x"
+        },
+        "actual": null
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": "x"
+        },
+        "actual": 5
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": "x"
+        },
+        "actual": "5"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": "x"
+        },
+        "actual": "10"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": "x"
+        },
+        "actual": 2.5
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": "x"
+        },
+        "actual": true
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": "x"
+        },
+        "actual": false
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "condition": {
+          "field": "user.x",
+          "op": "gt",
+          "value": "x"
+        },
+        "actual": "abc"
+      },
+      "expected": false
+    }
+  ]
+}

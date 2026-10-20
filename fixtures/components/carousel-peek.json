@@ -1,0 +1,389 @@
+{
+  "description": "Carousel with page_peek 24, page_spacing 12, top page control and initial_page_index 1",
+  "paywall": {
+    "id": "carousel-peek",
+    "default_locale": "en_US",
+    "components_config": {
+      "base": {
+        "background": {
+          "type": "color",
+          "value": {
+            "light": {
+              "type": "hex",
+              "value": "#FFFFFF"
+            }
+          }
+        },
+        "stack": {
+          "type": "stack",
+          "id": "root",
+          "name": "root",
+          "components": [
+            {
+              "type": "carousel",
+              "id": "car",
+              "name": "car",
+              "pages": [
+                {
+                  "type": "stack",
+                  "id": "page0",
+                  "name": "page0",
+                  "components": [
+                    {
+                      "type": "text",
+                      "id": "page0-t",
+                      "name": "page0-t",
+                      "text_lid": "p0",
+                      "font_name": "Inter@600",
+                      "font_weight": "regular",
+                      "font_weight_int": 600,
+                      "font_size": 14,
+                      "color": {
+                        "light": {
+                          "type": "hex",
+                          "value": "#FFFFFF"
+                        }
+                      },
+                      "horizontal_alignment": "center",
+                      "background_color": null,
+                      "size": {
+                        "width": {
+                          "type": "fill"
+                        },
+                        "height": {
+                          "type": "fit"
+                        }
+                      },
+                      "padding": {
+                        "top": 0,
+                        "bottom": 0,
+                        "leading": 0,
+                        "trailing": 0
+                      },
+                      "margin": {
+                        "top": 0,
+                        "bottom": 0,
+                        "leading": 0,
+                        "trailing": 0
+                      }
+                    }
+                  ],
+                  "size": {
+                    "width": {
+                      "type": "fill"
+                    },
+                    "height": {
+                      "type": "fixed",
+                      "value": 140
+                    }
+                  },
+                  "dimension": {
+                    "type": "vertical",
+                    "alignment": "center",
+                    "distribution": "start"
+                  },
+                  "spacing": 0,
+                  "margin": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "background_color": {
+                    "light": {
+                      "type": "hex",
+                      "value": "#6366F1"
+                    }
+                  },
+                  "background": null,
+                  "border": null,
+                  "shape": null,
+                  "shadow": null
+                },
+                {
+                  "type": "stack",
+                  "id": "page1",
+                  "name": "page1",
+                  "components": [
+                    {
+                      "type": "text",
+                      "id": "page1-t",
+                      "name": "page1-t",
+                      "text_lid": "p1",
+                      "font_name": "Inter@600",
+                      "font_weight": "regular",
+                      "font_weight_int": 600,
+                      "font_size": 14,
+                      "color": {
+                        "light": {
+                          "type": "hex",
+                          "value": "#FFFFFF"
+                        }
+                      },
+                      "horizontal_alignment": "center",
+                      "background_color": null,
+                      "size": {
+                        "width": {
+                          "type": "fill"
+                        },
+                        "height": {
+                          "type": "fit"
+                        }
+                      },
+                      "padding": {
+                        "top": 0,
+                        "bottom": 0,
+                        "leading": 0,
+                        "trailing": 0
+                      },
+                      "margin": {
+                        "top": 0,
+                        "bottom": 0,
+                        "leading": 0,
+                        "trailing": 0
+                      }
+                    }
+                  ],
+                  "size": {
+                    "width": {
+                      "type": "fill"
+                    },
+                    "height": {
+                      "type": "fixed",
+                      "value": 140
+                    }
+                  },
+                  "dimension": {
+                    "type": "vertical",
+                    "alignment": "center",
+                    "distribution": "start"
+                  },
+                  "spacing": 0,
+                  "margin": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "background_color": {
+                    "light": {
+                      "type": "hex",
+                      "value": "#F59E0B"
+                    }
+                  },
+                  "background": null,
+                  "border": null,
+                  "shape": null,
+                  "shadow": null
+                },
+                {
+                  "type": "stack",
+                  "id": "page2",
+                  "name": "page2",
+                  "components": [
+                    {
+                      "type": "text",
+                      "id": "page2-t",
+                      "name": "page2-t",
+                      "text_lid": "p2",
+                      "font_name": "Inter@600",
+                      "font_weight": "regular",
+                      "font_weight_int": 600,
+                      "font_size": 14,
+                      "color": {
+                        "light": {
+                          "type": "hex",
+                          "value": "#FFFFFF"
+                        }
+                      },
+                      "horizontal_alignment": "center",
+                      "background_color": null,
+                      "size": {
+                        "width": {
+                          "type": "fill"
+                        },
+                        "height": {
+                          "type": "fit"
+                        }
+                      },
+                      "padding": {
+                        "top": 0,
+                        "bottom": 0,
+                        "leading": 0,
+                        "trailing": 0
+                      },
+                      "margin": {
+                        "top": 0,
+                        "bottom": 0,
+                        "leading": 0,
+                        "trailing": 0
+                      }
+                    }
+                  ],
+                  "size": {
+                    "width": {
+                      "type": "fill"
+                    },
+                    "height": {
+                      "type": "fixed",
+                      "value": 140
+                    }
+                  },
+                  "dimension": {
+                    "type": "vertical",
+                    "alignment": "center",
+                    "distribution": "start"
+                  },
+                  "spacing": 0,
+                  "margin": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "background_color": {
+                    "light": {
+                      "type": "hex",
+                      "value": "#10B981"
+                    }
+                  },
+                  "background": null,
+                  "border": null,
+                  "shape": null,
+                  "shadow": null
+                }
+              ],
+              "padding": {
+                "top": 0,
+                "bottom": 0,
+                "leading": 0,
+                "trailing": 0
+              },
+              "margin": {
+                "top": 0,
+                "bottom": 0,
+                "leading": 0,
+                "trailing": 0
+              },
+              "background": null,
+              "shape": null,
+              "border": null,
+              "shadow": null,
+              "page_alignment": "top",
+              "page_spacing": 12,
+              "page_peek": 24,
+              "page_control": {
+                "position": "top",
+                "spacing": 6,
+                "margin": {
+                  "top": 8,
+                  "bottom": 0,
+                  "leading": 0,
+                  "trailing": 0
+                },
+                "padding": {
+                  "top": 0,
+                  "bottom": 0,
+                  "leading": 0,
+                  "trailing": 0
+                },
+                "background_color": null,
+                "border": null,
+                "shape": null,
+                "shadow": null,
+                "active": {
+                  "width": 20,
+                  "height": 8,
+                  "color": {
+                    "light": {
+                      "type": "hex",
+                      "value": "#6366F1"
+                    }
+                  },
+                  "stroke_color": null,
+                  "stroke_width": null
+                },
+                "default": {
+                  "width": 8,
+                  "height": 8,
+                  "color": {
+                    "light": {
+                      "type": "hex",
+                      "value": "#CBD5E1"
+                    }
+                  },
+                  "stroke_color": null,
+                  "stroke_width": null
+                }
+              },
+              "initial_page_index": 1,
+              "loop": false,
+              "auto_advance": null
+            }
+          ],
+          "size": {
+            "width": {
+              "type": "fill"
+            },
+            "height": {
+              "type": "fill"
+            }
+          },
+          "dimension": {
+            "type": "vertical",
+            "alignment": "leading",
+            "distribution": "start"
+          },
+          "spacing": 0,
+          "margin": {
+            "top": 0,
+            "bottom": 0,
+            "leading": 0,
+            "trailing": 0
+          },
+          "padding": {
+            "top": 0,
+            "bottom": 0,
+            "leading": 0,
+            "trailing": 0
+          },
+          "background_color": {
+            "light": {
+              "type": "hex",
+              "value": "#F8FAFC"
+            }
+          },
+          "background": null,
+          "border": null,
+          "shape": null,
+          "shadow": null
+        }
+      }
+    },
+    "components_localizations": {
+      "en_US": {
+        "p0": "Page one",
+        "p1": "Page two",
+        "p2": "Page three"
+      }
+    }
+  }
+}

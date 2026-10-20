@@ -1,0 +1,157 @@
+{
+ "id": "flow_done",
+ "default_locale": "en_US",
+ "components_localizations": {
+  "en_US": {
+   "l_d": "All set",
+   "l_fin": "Finish",
+   "l_back": "Back"
+  }
+ },
+ "components_config": {
+  "base": {
+   "stack": {
+    "type": "stack",
+    "id": "root",
+    "size": {
+     "width": {
+      "type": "fill"
+     },
+     "height": {
+      "type": "fill"
+     }
+    },
+    "dimension": {
+     "type": "vertical",
+     "alignment": "center",
+     "distribution": "start"
+    },
+    "spacing": 12,
+    "components": [
+     {
+      "type": "text",
+      "id": "d",
+      "name": "d",
+      "text_lid": "l_d",
+      "font_size": 16,
+      "size": {
+       "width": {
+        "type": "fill"
+       },
+       "height": {
+        "type": "fit"
+       }
+      },
+      "horizontal_alignment": "center"
+     },
+     {
+      "type": "button",
+      "id": "fin",
+      "name": "Finish",
+      "action": {
+       "type": "workflow"
+      },
+      "stack": {
+       "type": "stack",
+       "id": "fin_s",
+       "components": [
+        {
+         "type": "text",
+         "id": "fin_t",
+         "name": "fin_t",
+         "text_lid": "l_fin",
+         "font_size": 16,
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "horizontal_alignment": "center"
+        }
+       ],
+       "size": {
+        "width": {
+         "type": "fill"
+        },
+        "height": {
+         "type": "fit"
+        }
+       },
+       "dimension": {
+        "type": "vertical",
+        "alignment": "center",
+        "distribution": "start"
+       },
+       "spacing": 8,
+       "padding": {
+        "top": 12,
+        "bottom": 12,
+        "leading": 16,
+        "trailing": 16
+       }
+      },
+      "triggers": {
+       "on_press": "finish"
+      }
+     },
+     {
+      "type": "button",
+      "id": "back",
+      "name": "Back",
+      "action": {
+       "type": "workflow"
+      },
+      "stack": {
+       "type": "stack",
+       "id": "back_s",
+       "components": [
+        {
+         "type": "text",
+         "id": "back_t",
+         "name": "back_t",
+         "text_lid": "l_back",
+         "font_size": 16,
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "horizontal_alignment": "center"
+        }
+       ],
+       "size": {
+        "width": {
+         "type": "fill"
+        },
+        "height": {
+         "type": "fit"
+        }
+       },
+       "dimension": {
+        "type": "vertical",
+        "alignment": "center",
+        "distribution": "start"
+       },
+       "spacing": 8,
+       "padding": {
+        "top": 12,
+        "bottom": 12,
+        "leading": 16,
+        "trailing": 16
+       }
+      },
+      "triggers": {
+       "on_press": "screen:back"
+      }
+     }
+    ]
+   }
+  }
+ }
+}

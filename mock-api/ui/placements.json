@@ -1,0 +1,1293 @@
+{
+ "onboarding": {
+  "placement": "onboarding",
+  "paywallId": "ui_paywall",
+  "version": 1,
+  "paywall": {
+   "id": "ui_paywall",
+   "default_locale": "en_US",
+   "components_localizations": {
+    "en_US": {
+     "l_title": "Go Pro",
+     "l_monthly": "Monthly {{ product.price }}",
+     "l_annual": "Annual {{ product.price }}",
+     "l_buy": "Subscribe",
+     "l_restore": "Restore purchases"
+    }
+   },
+   "components_config": {
+    "base": {
+     "stack": {
+      "type": "stack",
+      "id": "root",
+      "size": {
+       "width": {
+        "type": "fill"
+       },
+       "height": {
+        "type": "fill"
+       }
+      },
+      "dimension": {
+       "type": "vertical",
+       "alignment": "center",
+       "distribution": "start"
+      },
+      "spacing": 12,
+      "components": [
+       {
+        "type": "button",
+        "id": "close",
+        "name": "Close",
+        "action": {
+         "type": "navigate_back"
+        },
+        "stack": {
+         "type": "stack",
+         "id": "close_s",
+         "components": [],
+         "size": {
+          "width": {
+           "type": "fixed",
+           "value": 44
+          },
+          "height": {
+           "type": "fixed",
+           "value": 44
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        }
+       },
+       {
+        "type": "text",
+        "id": "title",
+        "name": "title",
+        "text_lid": "l_title",
+        "font_size": 16,
+        "size": {
+         "width": {
+          "type": "fill"
+         },
+         "height": {
+          "type": "fit"
+         }
+        },
+        "horizontal_alignment": "center"
+       },
+       {
+        "type": "package",
+        "id": "pk_m",
+        "package_id": "monthly",
+        "stack": {
+         "type": "stack",
+         "id": "pk_m_s",
+         "components": [
+          {
+           "type": "text",
+           "id": "pk_m_t",
+           "name": "pk_m_t",
+           "text_lid": "l_monthly",
+           "font_size": 16,
+           "size": {
+            "width": {
+             "type": "fill"
+            },
+            "height": {
+             "type": "fit"
+            }
+           },
+           "horizontal_alignment": "center"
+          }
+         ],
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        }
+       },
+       {
+        "type": "package",
+        "id": "pk_a",
+        "package_id": "annual",
+        "stack": {
+         "type": "stack",
+         "id": "pk_a_s",
+         "components": [
+          {
+           "type": "text",
+           "id": "pk_a_t",
+           "name": "pk_a_t",
+           "text_lid": "l_annual",
+           "font_size": 16,
+           "size": {
+            "width": {
+             "type": "fill"
+            },
+            "height": {
+             "type": "fit"
+            }
+           },
+           "horizontal_alignment": "center"
+          }
+         ],
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        },
+        "is_selected_by_default": true
+       },
+       {
+        "type": "purchase_button",
+        "id": "buy",
+        "stack": {
+         "type": "stack",
+         "id": "buy_s",
+         "components": [
+          {
+           "type": "text",
+           "id": "buy_t",
+           "name": "buy_t",
+           "text_lid": "l_buy",
+           "font_size": 16,
+           "size": {
+            "width": {
+             "type": "fill"
+            },
+            "height": {
+             "type": "fit"
+            }
+           },
+           "horizontal_alignment": "center"
+          }
+         ],
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        }
+       },
+       {
+        "type": "button",
+        "id": "restore",
+        "name": "Restore",
+        "action": {
+         "type": "restore_purchases"
+        },
+        "stack": {
+         "type": "stack",
+         "id": "restore_s",
+         "components": [
+          {
+           "type": "text",
+           "id": "restore_t",
+           "name": "restore_t",
+           "text_lid": "l_restore",
+           "font_size": 16,
+           "size": {
+            "width": {
+             "type": "fill"
+            },
+            "height": {
+             "type": "fit"
+            }
+           },
+           "horizontal_alignment": "center"
+          }
+         ],
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        }
+       }
+      ]
+     }
+    }
+   }
+  }
+ },
+ "flow": {
+  "placement": "flow",
+  "paywallId": "flow_welcome",
+  "version": 1,
+  "paywall": {
+   "id": "flow_welcome",
+   "default_locale": "en_US",
+   "components_localizations": {
+    "en_US": {
+     "l_h": "Welcome aboard",
+     "l_next": "Next"
+    }
+   },
+   "components_config": {
+    "base": {
+     "stack": {
+      "type": "stack",
+      "id": "root",
+      "size": {
+       "width": {
+        "type": "fill"
+       },
+       "height": {
+        "type": "fill"
+       }
+      },
+      "dimension": {
+       "type": "vertical",
+       "alignment": "center",
+       "distribution": "start"
+      },
+      "spacing": 12,
+      "components": [
+       {
+        "type": "button",
+        "id": "close",
+        "name": "Close",
+        "action": {
+         "type": "navigate_back"
+        },
+        "stack": {
+         "type": "stack",
+         "id": "close_s",
+         "components": [],
+         "size": {
+          "width": {
+           "type": "fixed",
+           "value": 44
+          },
+          "height": {
+           "type": "fixed",
+           "value": 44
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        }
+       },
+       {
+        "type": "text",
+        "id": "h",
+        "name": "h",
+        "text_lid": "l_h",
+        "font_size": 16,
+        "size": {
+         "width": {
+          "type": "fill"
+         },
+         "height": {
+          "type": "fit"
+         }
+        },
+        "horizontal_alignment": "center"
+       },
+       {
+        "type": "button",
+        "id": "next",
+        "name": "Next",
+        "action": {
+         "type": "workflow"
+        },
+        "stack": {
+         "type": "stack",
+         "id": "next_s",
+         "components": [
+          {
+           "type": "text",
+           "id": "next_t",
+           "name": "next_t",
+           "text_lid": "l_next",
+           "font_size": 16,
+           "size": {
+            "width": {
+             "type": "fill"
+            },
+            "height": {
+             "type": "fit"
+            }
+           },
+           "horizontal_alignment": "center"
+          }
+         ],
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        },
+        "triggers": {
+         "on_press": "screen:flow_question"
+        }
+       }
+      ]
+     }
+    }
+   }
+  }
+ },
+ "capped": {
+  "placement": "capped",
+  "paywallId": "ui_paywall",
+  "version": 1,
+  "paywall": {
+   "id": "ui_paywall",
+   "default_locale": "en_US",
+   "components_localizations": {
+    "en_US": {
+     "l_title": "Go Pro",
+     "l_monthly": "Monthly {{ product.price }}",
+     "l_annual": "Annual {{ product.price }}",
+     "l_buy": "Subscribe",
+     "l_restore": "Restore purchases"
+    }
+   },
+   "components_config": {
+    "base": {
+     "stack": {
+      "type": "stack",
+      "id": "root",
+      "size": {
+       "width": {
+        "type": "fill"
+       },
+       "height": {
+        "type": "fill"
+       }
+      },
+      "dimension": {
+       "type": "vertical",
+       "alignment": "center",
+       "distribution": "start"
+      },
+      "spacing": 12,
+      "components": [
+       {
+        "type": "button",
+        "id": "close",
+        "name": "Close",
+        "action": {
+         "type": "navigate_back"
+        },
+        "stack": {
+         "type": "stack",
+         "id": "close_s",
+         "components": [],
+         "size": {
+          "width": {
+           "type": "fixed",
+           "value": 44
+          },
+          "height": {
+           "type": "fixed",
+           "value": 44
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        }
+       },
+       {
+        "type": "text",
+        "id": "title",
+        "name": "title",
+        "text_lid": "l_title",
+        "font_size": 16,
+        "size": {
+         "width": {
+          "type": "fill"
+         },
+         "height": {
+          "type": "fit"
+         }
+        },
+        "horizontal_alignment": "center"
+       },
+       {
+        "type": "package",
+        "id": "pk_m",
+        "package_id": "monthly",
+        "stack": {
+         "type": "stack",
+         "id": "pk_m_s",
+         "components": [
+          {
+           "type": "text",
+           "id": "pk_m_t",
+           "name": "pk_m_t",
+           "text_lid": "l_monthly",
+           "font_size": 16,
+           "size": {
+            "width": {
+             "type": "fill"
+            },
+            "height": {
+             "type": "fit"
+            }
+           },
+           "horizontal_alignment": "center"
+          }
+         ],
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        }
+       },
+       {
+        "type": "package",
+        "id": "pk_a",
+        "package_id": "annual",
+        "stack": {
+         "type": "stack",
+         "id": "pk_a_s",
+         "components": [
+          {
+           "type": "text",
+           "id": "pk_a_t",
+           "name": "pk_a_t",
+           "text_lid": "l_annual",
+           "font_size": 16,
+           "size": {
+            "width": {
+             "type": "fill"
+            },
+            "height": {
+             "type": "fit"
+            }
+           },
+           "horizontal_alignment": "center"
+          }
+         ],
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        },
+        "is_selected_by_default": true
+       },
+       {
+        "type": "purchase_button",
+        "id": "buy",
+        "stack": {
+         "type": "stack",
+         "id": "buy_s",
+         "components": [
+          {
+           "type": "text",
+           "id": "buy_t",
+           "name": "buy_t",
+           "text_lid": "l_buy",
+           "font_size": 16,
+           "size": {
+            "width": {
+             "type": "fill"
+            },
+            "height": {
+             "type": "fit"
+            }
+           },
+           "horizontal_alignment": "center"
+          }
+         ],
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        }
+       },
+       {
+        "type": "button",
+        "id": "restore",
+        "name": "Restore",
+        "action": {
+         "type": "restore_purchases"
+        },
+        "stack": {
+         "type": "stack",
+         "id": "restore_s",
+         "components": [
+          {
+           "type": "text",
+           "id": "restore_t",
+           "name": "restore_t",
+           "text_lid": "l_restore",
+           "font_size": 16,
+           "size": {
+            "width": {
+             "type": "fill"
+            },
+            "height": {
+             "type": "fit"
+            }
+           },
+           "horizontal_alignment": "center"
+          }
+         ],
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        }
+       }
+      ]
+     }
+    }
+   }
+  },
+  "frequency": {
+   "max": 1,
+   "per": "ever"
+  }
+ },
+ "holdout": {
+  "placement": "holdout",
+  "paywallId": "ui_paywall",
+  "version": 1,
+  "paywall": {
+   "id": "ui_paywall",
+   "default_locale": "en_US",
+   "components_localizations": {
+    "en_US": {
+     "l_title": "Go Pro",
+     "l_monthly": "Monthly {{ product.price }}",
+     "l_annual": "Annual {{ product.price }}",
+     "l_buy": "Subscribe",
+     "l_restore": "Restore purchases"
+    }
+   },
+   "components_config": {
+    "base": {
+     "stack": {
+      "type": "stack",
+      "id": "root",
+      "size": {
+       "width": {
+        "type": "fill"
+       },
+       "height": {
+        "type": "fill"
+       }
+      },
+      "dimension": {
+       "type": "vertical",
+       "alignment": "center",
+       "distribution": "start"
+      },
+      "spacing": 12,
+      "components": [
+       {
+        "type": "button",
+        "id": "close",
+        "name": "Close",
+        "action": {
+         "type": "navigate_back"
+        },
+        "stack": {
+         "type": "stack",
+         "id": "close_s",
+         "components": [],
+         "size": {
+          "width": {
+           "type": "fixed",
+           "value": 44
+          },
+          "height": {
+           "type": "fixed",
+           "value": 44
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        }
+       },
+       {
+        "type": "text",
+        "id": "title",
+        "name": "title",
+        "text_lid": "l_title",
+        "font_size": 16,
+        "size": {
+         "width": {
+          "type": "fill"
+         },
+         "height": {
+          "type": "fit"
+         }
+        },
+        "horizontal_alignment": "center"
+       },
+       {
+        "type": "package",
+        "id": "pk_m",
+        "package_id": "monthly",
+        "stack": {
+         "type": "stack",
+         "id": "pk_m_s",
+         "components": [
+          {
+           "type": "text",
+           "id": "pk_m_t",
+           "name": "pk_m_t",
+           "text_lid": "l_monthly",
+           "font_size": 16,
+           "size": {
+            "width": {
+             "type": "fill"
+            },
+            "height": {
+             "type": "fit"
+            }
+           },
+           "horizontal_alignment": "center"
+          }
+         ],
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        }
+       },
+       {
+        "type": "package",
+        "id": "pk_a",
+        "package_id": "annual",
+        "stack": {
+         "type": "stack",
+         "id": "pk_a_s",
+         "components": [
+          {
+           "type": "text",
+           "id": "pk_a_t",
+           "name": "pk_a_t",
+           "text_lid": "l_annual",
+           "font_size": 16,
+           "size": {
+            "width": {
+             "type": "fill"
+            },
+            "height": {
+             "type": "fit"
+            }
+           },
+           "horizontal_alignment": "center"
+          }
+         ],
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        },
+        "is_selected_by_default": true
+       },
+       {
+        "type": "purchase_button",
+        "id": "buy",
+        "stack": {
+         "type": "stack",
+         "id": "buy_s",
+         "components": [
+          {
+           "type": "text",
+           "id": "buy_t",
+           "name": "buy_t",
+           "text_lid": "l_buy",
+           "font_size": 16,
+           "size": {
+            "width": {
+             "type": "fill"
+            },
+            "height": {
+             "type": "fit"
+            }
+           },
+           "horizontal_alignment": "center"
+          }
+         ],
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        }
+       },
+       {
+        "type": "button",
+        "id": "restore",
+        "name": "Restore",
+        "action": {
+         "type": "restore_purchases"
+        },
+        "stack": {
+         "type": "stack",
+         "id": "restore_s",
+         "components": [
+          {
+           "type": "text",
+           "id": "restore_t",
+           "name": "restore_t",
+           "text_lid": "l_restore",
+           "font_size": 16,
+           "size": {
+            "width": {
+             "type": "fill"
+            },
+            "height": {
+             "type": "fit"
+            }
+           },
+           "horizontal_alignment": "center"
+          }
+         ],
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        }
+       }
+      ]
+     }
+    }
+   }
+  },
+  "holdout": {
+   "id": "h1",
+   "share": 100
+  }
+ },
+ "toast": {
+  "placement": "toast",
+  "paywallId": "ui_paywall",
+  "version": 1,
+  "paywall": {
+   "id": "ui_paywall",
+   "default_locale": "en_US",
+   "components_localizations": {
+    "en_US": {
+     "l_title": "Go Pro",
+     "l_monthly": "Monthly {{ product.price }}",
+     "l_annual": "Annual {{ product.price }}",
+     "l_buy": "Subscribe",
+     "l_restore": "Restore purchases"
+    }
+   },
+   "components_config": {
+    "base": {
+     "stack": {
+      "type": "stack",
+      "id": "root",
+      "size": {
+       "width": {
+        "type": "fill"
+       },
+       "height": {
+        "type": "fill"
+       }
+      },
+      "dimension": {
+       "type": "vertical",
+       "alignment": "center",
+       "distribution": "start"
+      },
+      "spacing": 12,
+      "components": [
+       {
+        "type": "button",
+        "id": "close",
+        "name": "Close",
+        "action": {
+         "type": "navigate_back"
+        },
+        "stack": {
+         "type": "stack",
+         "id": "close_s",
+         "components": [],
+         "size": {
+          "width": {
+           "type": "fixed",
+           "value": 44
+          },
+          "height": {
+           "type": "fixed",
+           "value": 44
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        }
+       },
+       {
+        "type": "text",
+        "id": "title",
+        "name": "title",
+        "text_lid": "l_title",
+        "font_size": 16,
+        "size": {
+         "width": {
+          "type": "fill"
+         },
+         "height": {
+          "type": "fit"
+         }
+        },
+        "horizontal_alignment": "center"
+       },
+       {
+        "type": "package",
+        "id": "pk_m",
+        "package_id": "monthly",
+        "stack": {
+         "type": "stack",
+         "id": "pk_m_s",
+         "components": [
+          {
+           "type": "text",
+           "id": "pk_m_t",
+           "name": "pk_m_t",
+           "text_lid": "l_monthly",
+           "font_size": 16,
+           "size": {
+            "width": {
+             "type": "fill"
+            },
+            "height": {
+             "type": "fit"
+            }
+           },
+           "horizontal_alignment": "center"
+          }
+         ],
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        }
+       },
+       {
+        "type": "package",
+        "id": "pk_a",
+        "package_id": "annual",
+        "stack": {
+         "type": "stack",
+         "id": "pk_a_s",
+         "components": [
+          {
+           "type": "text",
+           "id": "pk_a_t",
+           "name": "pk_a_t",
+           "text_lid": "l_annual",
+           "font_size": 16,
+           "size": {
+            "width": {
+             "type": "fill"
+            },
+            "height": {
+             "type": "fit"
+            }
+           },
+           "horizontal_alignment": "center"
+          }
+         ],
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        },
+        "is_selected_by_default": true
+       },
+       {
+        "type": "purchase_button",
+        "id": "buy",
+        "stack": {
+         "type": "stack",
+         "id": "buy_s",
+         "components": [
+          {
+           "type": "text",
+           "id": "buy_t",
+           "name": "buy_t",
+           "text_lid": "l_buy",
+           "font_size": 16,
+           "size": {
+            "width": {
+             "type": "fill"
+            },
+            "height": {
+             "type": "fit"
+            }
+           },
+           "horizontal_alignment": "center"
+          }
+         ],
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        }
+       },
+       {
+        "type": "button",
+        "id": "restore",
+        "name": "Restore",
+        "action": {
+         "type": "restore_purchases"
+        },
+        "stack": {
+         "type": "stack",
+         "id": "restore_s",
+         "components": [
+          {
+           "type": "text",
+           "id": "restore_t",
+           "name": "restore_t",
+           "text_lid": "l_restore",
+           "font_size": 16,
+           "size": {
+            "width": {
+             "type": "fill"
+            },
+            "height": {
+             "type": "fit"
+            }
+           },
+           "horizontal_alignment": "center"
+          }
+         ],
+         "size": {
+          "width": {
+           "type": "fill"
+          },
+          "height": {
+           "type": "fit"
+          }
+         },
+         "dimension": {
+          "type": "vertical",
+          "alignment": "center",
+          "distribution": "start"
+         },
+         "spacing": 8,
+         "padding": {
+          "top": 12,
+          "bottom": 12,
+          "leading": 16,
+          "trailing": 16
+         }
+        }
+       }
+      ]
+     }
+    }
+   }
+  },
+  "display": {
+   "format": "toast",
+   "duration": 3
+  }
+ }
+}

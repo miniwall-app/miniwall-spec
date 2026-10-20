@@ -1,0 +1,240 @@
+{
+  "description": "Z-layer stack, alignment trailing",
+  "paywall": {
+    "id": "stack-zlayer-trailing",
+    "default_locale": "en_US",
+    "components_config": {
+      "base": {
+        "background": {
+          "type": "color",
+          "value": {
+            "light": {
+              "type": "hex",
+              "value": "#FFFFFF"
+            }
+          }
+        },
+        "stack": {
+          "type": "stack",
+          "id": "root",
+          "name": "root",
+          "components": [
+            {
+              "type": "stack",
+              "id": "z",
+              "name": "z",
+              "components": [
+                {
+                  "type": "stack",
+                  "id": "base",
+                  "name": "base",
+                  "components": [],
+                  "size": {
+                    "width": {
+                      "type": "fill"
+                    },
+                    "height": {
+                      "type": "fill"
+                    }
+                  },
+                  "dimension": {
+                    "type": "vertical",
+                    "alignment": "leading",
+                    "distribution": "start"
+                  },
+                  "spacing": 0,
+                  "margin": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "background_color": {
+                    "light": {
+                      "type": "hex",
+                      "value": "#6366F1"
+                    }
+                  },
+                  "background": null,
+                  "border": null,
+                  "shape": null,
+                  "shadow": null
+                },
+                {
+                  "type": "stack",
+                  "id": "a",
+                  "name": "a",
+                  "components": [],
+                  "size": {
+                    "width": {
+                      "type": "fixed",
+                      "value": 80
+                    },
+                    "height": {
+                      "type": "fixed",
+                      "value": 40
+                    }
+                  },
+                  "dimension": {
+                    "type": "vertical",
+                    "alignment": "leading",
+                    "distribution": "start"
+                  },
+                  "spacing": 0,
+                  "margin": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "background_color": {
+                    "light": {
+                      "type": "hex",
+                      "value": "#F59E0B"
+                    }
+                  },
+                  "background": null,
+                  "border": null,
+                  "shape": null,
+                  "shadow": null
+                },
+                {
+                  "type": "stack",
+                  "id": "b",
+                  "name": "b",
+                  "components": [],
+                  "size": {
+                    "width": {
+                      "type": "fixed",
+                      "value": 40
+                    },
+                    "height": {
+                      "type": "fixed",
+                      "value": 90
+                    }
+                  },
+                  "dimension": {
+                    "type": "vertical",
+                    "alignment": "leading",
+                    "distribution": "start"
+                  },
+                  "spacing": 0,
+                  "margin": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "background_color": {
+                    "light": {
+                      "type": "hex",
+                      "value": "#10B981"
+                    }
+                  },
+                  "background": null,
+                  "border": null,
+                  "shape": null,
+                  "shadow": null
+                }
+              ],
+              "size": {
+                "width": {
+                  "type": "fixed",
+                  "value": 240
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 160
+                }
+              },
+              "dimension": {
+                "type": "zlayer",
+                "alignment": "trailing"
+              },
+              "spacing": 0,
+              "margin": {
+                "top": 0,
+                "bottom": 0,
+                "leading": 0,
+                "trailing": 0
+              },
+              "padding": {
+                "top": 10,
+                "bottom": 10,
+                "leading": 10,
+                "trailing": 10
+              },
+              "background_color": {
+                "light": {
+                  "type": "hex",
+                  "value": "#EF4444"
+                }
+              },
+              "background": null,
+              "border": null,
+              "shape": null,
+              "shadow": null
+            }
+          ],
+          "size": {
+            "width": {
+              "type": "fill"
+            },
+            "height": {
+              "type": "fill"
+            }
+          },
+          "dimension": {
+            "type": "vertical",
+            "alignment": "leading",
+            "distribution": "start"
+          },
+          "spacing": 0,
+          "margin": {
+            "top": 0,
+            "bottom": 0,
+            "leading": 0,
+            "trailing": 0
+          },
+          "padding": {
+            "top": 0,
+            "bottom": 0,
+            "leading": 0,
+            "trailing": 0
+          },
+          "background_color": {
+            "light": {
+              "type": "hex",
+              "value": "#F8FAFC"
+            }
+          },
+          "background": null,
+          "border": null,
+          "shape": null,
+          "shadow": null
+        }
+      }
+    },
+    "components_localizations": {
+      "en_US": {}
+    }
+  }
+}

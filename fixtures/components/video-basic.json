@@ -1,0 +1,259 @@
+{
+  "description": "A fixed-height video (cover, rounded, controls shown, no autoplay) between two fixed boxes",
+  "paywall": {
+    "id": "video-basic",
+    "default_locale": "en_US",
+    "components_config": {
+      "base": {
+        "background": {
+          "type": "color",
+          "value": {
+            "light": {
+              "type": "hex",
+              "value": "#FFFFFF"
+            }
+          }
+        },
+        "stack": {
+          "type": "stack",
+          "id": "root",
+          "name": "root",
+          "components": [
+            {
+              "type": "stack",
+              "id": "before",
+              "name": "before",
+              "components": [],
+              "size": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 40
+                }
+              },
+              "dimension": {
+                "type": "vertical",
+                "alignment": "leading",
+                "distribution": "start"
+              },
+              "spacing": 0,
+              "margin": {
+                "top": 0,
+                "bottom": 0,
+                "leading": 0,
+                "trailing": 0
+              },
+              "padding": {
+                "top": 0,
+                "bottom": 0,
+                "leading": 0,
+                "trailing": 0
+              },
+              "background_color": {
+                "light": {
+                  "type": "hex",
+                  "value": "#6366F1"
+                }
+              },
+              "background": null,
+              "border": null,
+              "shape": null,
+              "shadow": null
+            },
+            {
+              "type": "stack",
+              "id": "wrap",
+              "name": "wrap",
+              "components": [
+                {
+                  "type": "video",
+                  "id": "vid",
+                  "name": "vid",
+                  "visible": true,
+                  "source": {
+                    "light": {
+                      "width": 1280,
+                      "height": 720,
+                      "url": "https://example.com/video.mp4",
+                      "url_low_res": "https://example.com/video.mp4",
+                      "checksum": null
+                    }
+                  },
+                  "fallback_source": {
+                    "light": {
+                      "original": "https://example.com/poster.png",
+                      "width": 1280,
+                      "height": 720,
+                      "webp": "https://example.com/poster.png",
+                      "webp_low_res": "https://example.com/poster.png",
+                      "heic": "https://example.com/poster.png",
+                      "heic_low_res": "https://example.com/poster.png"
+                    }
+                  },
+                  "size": {
+                    "width": {
+                      "type": "fill"
+                    },
+                    "height": {
+                      "type": "fixed",
+                      "value": 200
+                    }
+                  },
+                  "mask_shape": {
+                    "type": "rectangle",
+                    "corners": {
+                      "top_leading": 16,
+                      "top_trailing": 16,
+                      "bottom_leading": 16,
+                      "bottom_trailing": 16
+                    }
+                  },
+                  "fit_mode": "fill",
+                  "padding": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "margin": {
+                    "top": 0,
+                    "bottom": 0,
+                    "leading": 0,
+                    "trailing": 0
+                  },
+                  "color_overlay": null,
+                  "border": null,
+                  "shadow": null,
+                  "auto_play": false,
+                  "loop": false,
+                  "mute_audio": true,
+                  "show_controls": true
+                }
+              ],
+              "size": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "fit"
+                }
+              },
+              "dimension": {
+                "type": "vertical",
+                "alignment": "leading",
+                "distribution": "start"
+              },
+              "spacing": 0,
+              "margin": {
+                "top": 0,
+                "bottom": 0,
+                "leading": 0,
+                "trailing": 0
+              },
+              "padding": {
+                "top": 16,
+                "bottom": 16,
+                "leading": 16,
+                "trailing": 16
+              },
+              "background_color": {
+                "light": {
+                  "type": "hex",
+                  "value": "#F59E0B"
+                }
+              },
+              "background": null,
+              "border": null,
+              "shape": null,
+              "shadow": null
+            },
+            {
+              "type": "stack",
+              "id": "after",
+              "name": "after",
+              "components": [],
+              "size": {
+                "width": {
+                  "type": "fill"
+                },
+                "height": {
+                  "type": "fixed",
+                  "value": 40
+                }
+              },
+              "dimension": {
+                "type": "vertical",
+                "alignment": "leading",
+                "distribution": "start"
+              },
+              "spacing": 0,
+              "margin": {
+                "top": 0,
+                "bottom": 0,
+                "leading": 0,
+                "trailing": 0
+              },
+              "padding": {
+                "top": 0,
+                "bottom": 0,
+                "leading": 0,
+                "trailing": 0
+              },
+              "background_color": {
+                "light": {
+                  "type": "hex",
+                  "value": "#10B981"
+                }
+              },
+              "background": null,
+              "border": null,
+              "shape": null,
+              "shadow": null
+            }
+          ],
+          "size": {
+            "width": {
+              "type": "fill"
+            },
+            "height": {
+              "type": "fill"
+            }
+          },
+          "dimension": {
+            "type": "vertical",
+            "alignment": "leading",
+            "distribution": "start"
+          },
+          "spacing": 0,
+          "margin": {
+            "top": 0,
+            "bottom": 0,
+            "leading": 0,
+            "trailing": 0
+          },
+          "padding": {
+            "top": 0,
+            "bottom": 0,
+            "leading": 0,
+            "trailing": 0
+          },
+          "background_color": {
+            "light": {
+              "type": "hex",
+              "value": "#F8FAFC"
+            }
+          },
+          "background": null,
+          "border": null,
+          "shape": null,
+          "shadow": null
+        }
+      }
+    },
+    "components_localizations": {
+      "en_US": {}
+    }
+  }
+}

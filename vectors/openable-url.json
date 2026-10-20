@@ -1,0 +1,104 @@
+{
+  "description": "isOpenableUrl(url): links a paywall may open",
+  "source": "Web SDK: which links may be opened",
+  "node": "22.22.2",
+  "icu": "78.2",
+  "cases": [
+    {
+      "input": {
+        "url": "https://a.b"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "url": "http://a.b"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "url": "mailto:x@y.z"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "url": "tel:+1"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "url": "/pricing"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "url": "//evil.com"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "url": "javascript:alert(1)"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "url": " javascript:x"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "url": "JAVASCRIPT:x"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "url": "java\tscript:x"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "url": "data:text/html,1"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "url": "ftp://x"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "url": "relative"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "url": "#x"
+      },
+      "expected": false
+    },
+    {
+      "input": {
+        "url": "HTTPS://A.B"
+      },
+      "expected": true
+    },
+    {
+      "input": {
+        "url": ""
+      },
+      "expected": false
+    }
+  ]
+}

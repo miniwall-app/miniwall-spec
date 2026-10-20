@@ -1,0 +1,2738 @@
+{
+  "description": "buildProductVariables(products, locale): the {{ product.* }} values per package",
+  "source": "Web SDK: product price variables",
+  "node": "22.22.2",
+  "icu": "78.2",
+  "cases": [
+    {
+      "input": {
+        "products": {
+          "monthly": {
+            "price": 9.99,
+            "currency": "usd",
+            "period": "month",
+            "title": "Pro Monthly"
+          },
+          "annual": {
+            "price": 79.99,
+            "currency": "usd",
+            "period": "year",
+            "title": "Pro Annual",
+            "offer": {
+              "price": 0,
+              "period": {
+                "unit": "day",
+                "count": 7
+              }
+            }
+          }
+        },
+        "locale": "en_US"
+      },
+      "expected": {
+        "monthly": {
+          "product.price": "$9.99",
+          "product.currency_code": "USD",
+          "product.currency_symbol": "$",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "$0.33",
+          "product.price_per_week": "$2.30",
+          "product.price_per_month": "$9.99",
+          "product.price_per_year": "$119.88",
+          "product.price_per_period": "$9.99/month",
+          "product.price_per_period_abbreviated": "$9.99/mo",
+          "product.store_product_name": "Pro Monthly"
+        },
+        "annual": {
+          "product.price": "$79.99",
+          "product.currency_code": "USD",
+          "product.currency_symbol": "$",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "$0.22",
+          "product.price_per_week": "$1.53",
+          "product.price_per_month": "$6.67",
+          "product.price_per_year": "$79.99",
+          "product.price_per_period": "$79.99/year",
+          "product.price_per_period_abbreviated": "$79.99/yr",
+          "product.store_product_name": "Pro Annual",
+          "product.relative_discount": "33%",
+          "product.offer_price": "$0.00",
+          "product.offer_period": "7 days",
+          "product.offer_period_abbreviated": "7 day",
+          "product.offer_period_with_unit": "7 days",
+          "product.offer_period_in_days": "7",
+          "product.offer_period_in_weeks": "1",
+          "product.offer_period_in_months": "0",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "$0.00",
+          "product.offer_price_per_week": "$0.00",
+          "product.offer_price_per_month": "$0.00",
+          "product.offer_price_per_year": "$0.00"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "monthly": {
+            "price": 9.99,
+            "currency": "usd",
+            "period": "month",
+            "title": "Pro Monthly"
+          },
+          "annual": {
+            "price": 79.99,
+            "currency": "usd",
+            "period": "year",
+            "title": "Pro Annual",
+            "offer": {
+              "price": 0,
+              "period": {
+                "unit": "day",
+                "count": 7
+              }
+            }
+          }
+        },
+        "locale": "vi_VN"
+      },
+      "expected": {
+        "monthly": {
+          "product.price": "9,99 US$",
+          "product.currency_code": "USD",
+          "product.currency_symbol": "US$",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "0,33 US$",
+          "product.price_per_week": "2,30 US$",
+          "product.price_per_month": "9,99 US$",
+          "product.price_per_year": "119,88 US$",
+          "product.price_per_period": "9,99 US$/month",
+          "product.price_per_period_abbreviated": "9,99 US$/mo",
+          "product.store_product_name": "Pro Monthly"
+        },
+        "annual": {
+          "product.price": "79,99 US$",
+          "product.currency_code": "USD",
+          "product.currency_symbol": "US$",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "0,22 US$",
+          "product.price_per_week": "1,53 US$",
+          "product.price_per_month": "6,67 US$",
+          "product.price_per_year": "79,99 US$",
+          "product.price_per_period": "79,99 US$/year",
+          "product.price_per_period_abbreviated": "79,99 US$/yr",
+          "product.store_product_name": "Pro Annual",
+          "product.relative_discount": "33%",
+          "product.offer_price": "0,00 US$",
+          "product.offer_period": "7 days",
+          "product.offer_period_abbreviated": "7 day",
+          "product.offer_period_with_unit": "7 days",
+          "product.offer_period_in_days": "7",
+          "product.offer_period_in_weeks": "1",
+          "product.offer_period_in_months": "0",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "0,00 US$",
+          "product.offer_price_per_week": "0,00 US$",
+          "product.offer_price_per_month": "0,00 US$",
+          "product.offer_price_per_year": "0,00 US$"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "monthly": {
+            "price": 9.99,
+            "currency": "usd",
+            "period": "month",
+            "title": "Pro Monthly"
+          },
+          "annual": {
+            "price": 79.99,
+            "currency": "usd",
+            "period": "year",
+            "title": "Pro Annual",
+            "offer": {
+              "price": 0,
+              "period": {
+                "unit": "day",
+                "count": 7
+              }
+            }
+          }
+        },
+        "locale": "fr_FR"
+      },
+      "expected": {
+        "monthly": {
+          "product.price": "9,99 $US",
+          "product.currency_code": "USD",
+          "product.currency_symbol": "$US",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "0,33 $US",
+          "product.price_per_week": "2,30 $US",
+          "product.price_per_month": "9,99 $US",
+          "product.price_per_year": "119,88 $US",
+          "product.price_per_period": "9,99 $US/month",
+          "product.price_per_period_abbreviated": "9,99 $US/mo",
+          "product.store_product_name": "Pro Monthly"
+        },
+        "annual": {
+          "product.price": "79,99 $US",
+          "product.currency_code": "USD",
+          "product.currency_symbol": "$US",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "0,22 $US",
+          "product.price_per_week": "1,53 $US",
+          "product.price_per_month": "6,67 $US",
+          "product.price_per_year": "79,99 $US",
+          "product.price_per_period": "79,99 $US/year",
+          "product.price_per_period_abbreviated": "79,99 $US/yr",
+          "product.store_product_name": "Pro Annual",
+          "product.relative_discount": "33%",
+          "product.offer_price": "0,00 $US",
+          "product.offer_period": "7 days",
+          "product.offer_period_abbreviated": "7 day",
+          "product.offer_period_with_unit": "7 days",
+          "product.offer_period_in_days": "7",
+          "product.offer_period_in_weeks": "1",
+          "product.offer_period_in_months": "0",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "0,00 $US",
+          "product.offer_price_per_week": "0,00 $US",
+          "product.offer_price_per_month": "0,00 $US",
+          "product.offer_price_per_year": "0,00 $US"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "monthly": {
+            "price": 9.99,
+            "currency": "usd",
+            "period": "month",
+            "title": "Pro Monthly"
+          },
+          "annual": {
+            "price": 79.99,
+            "currency": "usd",
+            "period": "year",
+            "title": "Pro Annual",
+            "offer": {
+              "price": 0,
+              "period": {
+                "unit": "day",
+                "count": 7
+              }
+            }
+          }
+        },
+        "locale": "de_DE"
+      },
+      "expected": {
+        "monthly": {
+          "product.price": "9,99 $",
+          "product.currency_code": "USD",
+          "product.currency_symbol": "$",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "0,33 $",
+          "product.price_per_week": "2,30 $",
+          "product.price_per_month": "9,99 $",
+          "product.price_per_year": "119,88 $",
+          "product.price_per_period": "9,99 $/month",
+          "product.price_per_period_abbreviated": "9,99 $/mo",
+          "product.store_product_name": "Pro Monthly"
+        },
+        "annual": {
+          "product.price": "79,99 $",
+          "product.currency_code": "USD",
+          "product.currency_symbol": "$",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "0,22 $",
+          "product.price_per_week": "1,53 $",
+          "product.price_per_month": "6,67 $",
+          "product.price_per_year": "79,99 $",
+          "product.price_per_period": "79,99 $/year",
+          "product.price_per_period_abbreviated": "79,99 $/yr",
+          "product.store_product_name": "Pro Annual",
+          "product.relative_discount": "33%",
+          "product.offer_price": "0,00 $",
+          "product.offer_period": "7 days",
+          "product.offer_period_abbreviated": "7 day",
+          "product.offer_period_with_unit": "7 days",
+          "product.offer_period_in_days": "7",
+          "product.offer_period_in_weeks": "1",
+          "product.offer_period_in_months": "0",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "0,00 $",
+          "product.offer_price_per_week": "0,00 $",
+          "product.offer_price_per_month": "0,00 $",
+          "product.offer_price_per_year": "0,00 $"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "monthly": {
+            "price": 9.99,
+            "currency": "usd",
+            "period": "month",
+            "title": "Pro Monthly"
+          },
+          "annual": {
+            "price": 79.99,
+            "currency": "usd",
+            "period": "year",
+            "title": "Pro Annual",
+            "offer": {
+              "price": 0,
+              "period": {
+                "unit": "day",
+                "count": 7
+              }
+            }
+          }
+        },
+        "locale": "ja_JP"
+      },
+      "expected": {
+        "monthly": {
+          "product.price": "$9.99",
+          "product.currency_code": "USD",
+          "product.currency_symbol": "$",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "$0.33",
+          "product.price_per_week": "$2.30",
+          "product.price_per_month": "$9.99",
+          "product.price_per_year": "$119.88",
+          "product.price_per_period": "$9.99/month",
+          "product.price_per_period_abbreviated": "$9.99/mo",
+          "product.store_product_name": "Pro Monthly"
+        },
+        "annual": {
+          "product.price": "$79.99",
+          "product.currency_code": "USD",
+          "product.currency_symbol": "$",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "$0.22",
+          "product.price_per_week": "$1.53",
+          "product.price_per_month": "$6.67",
+          "product.price_per_year": "$79.99",
+          "product.price_per_period": "$79.99/year",
+          "product.price_per_period_abbreviated": "$79.99/yr",
+          "product.store_product_name": "Pro Annual",
+          "product.relative_discount": "33%",
+          "product.offer_price": "$0.00",
+          "product.offer_period": "7 days",
+          "product.offer_period_abbreviated": "7 day",
+          "product.offer_period_with_unit": "7 days",
+          "product.offer_period_in_days": "7",
+          "product.offer_period_in_weeks": "1",
+          "product.offer_period_in_months": "0",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "$0.00",
+          "product.offer_price_per_week": "$0.00",
+          "product.offer_price_per_month": "$0.00",
+          "product.offer_price_per_year": "$0.00"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "monthly": {
+            "price": 9.99,
+            "currency": "usd",
+            "period": "month",
+            "title": "Pro Monthly"
+          },
+          "annual": {
+            "price": 79.99,
+            "currency": "usd",
+            "period": "year",
+            "title": "Pro Annual",
+            "offer": {
+              "price": 0,
+              "period": {
+                "unit": "day",
+                "count": 7
+              }
+            }
+          }
+        },
+        "locale": "pt_BR"
+      },
+      "expected": {
+        "monthly": {
+          "product.price": "US$ 9,99",
+          "product.currency_code": "USD",
+          "product.currency_symbol": "US$",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "US$ 0,33",
+          "product.price_per_week": "US$ 2,30",
+          "product.price_per_month": "US$ 9,99",
+          "product.price_per_year": "US$ 119,88",
+          "product.price_per_period": "US$ 9,99/month",
+          "product.price_per_period_abbreviated": "US$ 9,99/mo",
+          "product.store_product_name": "Pro Monthly"
+        },
+        "annual": {
+          "product.price": "US$ 79,99",
+          "product.currency_code": "USD",
+          "product.currency_symbol": "US$",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "US$ 0,22",
+          "product.price_per_week": "US$ 1,53",
+          "product.price_per_month": "US$ 6,67",
+          "product.price_per_year": "US$ 79,99",
+          "product.price_per_period": "US$ 79,99/year",
+          "product.price_per_period_abbreviated": "US$ 79,99/yr",
+          "product.store_product_name": "Pro Annual",
+          "product.relative_discount": "33%",
+          "product.offer_price": "US$ 0,00",
+          "product.offer_period": "7 days",
+          "product.offer_period_abbreviated": "7 day",
+          "product.offer_period_with_unit": "7 days",
+          "product.offer_period_in_days": "7",
+          "product.offer_period_in_weeks": "1",
+          "product.offer_period_in_months": "0",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "US$ 0,00",
+          "product.offer_price_per_week": "US$ 0,00",
+          "product.offer_price_per_month": "US$ 0,00",
+          "product.offer_price_per_year": "US$ 0,00"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "monthly": {
+            "price": 9.99,
+            "currency": "usd",
+            "period": "month",
+            "title": "Pro Monthly"
+          },
+          "annual": {
+            "price": 79.99,
+            "currency": "usd",
+            "period": "year",
+            "title": "Pro Annual",
+            "offer": {
+              "price": 0,
+              "period": {
+                "unit": "day",
+                "count": 7
+              }
+            }
+          }
+        },
+        "locale": null
+      },
+      "expected": {
+        "monthly": {
+          "product.price": "$9.99",
+          "product.currency_code": "USD",
+          "product.currency_symbol": "$",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "$0.33",
+          "product.price_per_week": "$2.30",
+          "product.price_per_month": "$9.99",
+          "product.price_per_year": "$119.88",
+          "product.price_per_period": "$9.99/month",
+          "product.price_per_period_abbreviated": "$9.99/mo",
+          "product.store_product_name": "Pro Monthly"
+        },
+        "annual": {
+          "product.price": "$79.99",
+          "product.currency_code": "USD",
+          "product.currency_symbol": "$",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "$0.22",
+          "product.price_per_week": "$1.53",
+          "product.price_per_month": "$6.67",
+          "product.price_per_year": "$79.99",
+          "product.price_per_period": "$79.99/year",
+          "product.price_per_period_abbreviated": "$79.99/yr",
+          "product.store_product_name": "Pro Annual",
+          "product.relative_discount": "33%",
+          "product.offer_price": "$0.00",
+          "product.offer_period": "7 days",
+          "product.offer_period_abbreviated": "7 day",
+          "product.offer_period_with_unit": "7 days",
+          "product.offer_period_in_days": "7",
+          "product.offer_period_in_weeks": "1",
+          "product.offer_period_in_months": "0",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "$0.00",
+          "product.offer_price_per_week": "$0.00",
+          "product.offer_price_per_month": "$0.00",
+          "product.offer_price_per_year": "$0.00"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "weekly": {
+            "price": 2.99,
+            "currency": "eur",
+            "period": "week"
+          },
+          "monthly": {
+            "price": 8.49,
+            "currency": "eur",
+            "period": "month"
+          },
+          "lifetime": {
+            "price": 149,
+            "currency": "eur",
+            "period": "lifetime"
+          }
+        },
+        "locale": "en_US"
+      },
+      "expected": {
+        "weekly": {
+          "product.price": "€2.99",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "week",
+          "product.period_abbreviated": "wk",
+          "product.period_with_unit": "1 week",
+          "product.period_in_days": "7",
+          "product.period_in_weeks": "1",
+          "product.period_in_months": "0",
+          "product.period_in_years": "0",
+          "product.periodly": "weekly",
+          "product.price_per_day": "€0.43",
+          "product.price_per_week": "€2.99",
+          "product.price_per_month": "€12.99",
+          "product.price_per_year": "€155.91",
+          "product.price_per_period": "€2.99/week",
+          "product.price_per_period_abbreviated": "€2.99/wk"
+        },
+        "monthly": {
+          "product.price": "€8.49",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "€0.28",
+          "product.price_per_week": "€1.95",
+          "product.price_per_month": "€8.49",
+          "product.price_per_year": "€101.88",
+          "product.price_per_period": "€8.49/month",
+          "product.price_per_period_abbreviated": "€8.49/mo",
+          "product.relative_discount": "35%"
+        },
+        "lifetime": {
+          "product.price": "€149.00",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "lifetime",
+          "product.period_abbreviated": "lifetime",
+          "product.period_with_unit": "lifetime",
+          "product.price_per_period": "€149.00",
+          "product.price_per_period_abbreviated": "€149.00"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "weekly": {
+            "price": 2.99,
+            "currency": "eur",
+            "period": "week"
+          },
+          "monthly": {
+            "price": 8.49,
+            "currency": "eur",
+            "period": "month"
+          },
+          "lifetime": {
+            "price": 149,
+            "currency": "eur",
+            "period": "lifetime"
+          }
+        },
+        "locale": "vi_VN"
+      },
+      "expected": {
+        "weekly": {
+          "product.price": "2,99 €",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "week",
+          "product.period_abbreviated": "wk",
+          "product.period_with_unit": "1 week",
+          "product.period_in_days": "7",
+          "product.period_in_weeks": "1",
+          "product.period_in_months": "0",
+          "product.period_in_years": "0",
+          "product.periodly": "weekly",
+          "product.price_per_day": "0,43 €",
+          "product.price_per_week": "2,99 €",
+          "product.price_per_month": "12,99 €",
+          "product.price_per_year": "155,91 €",
+          "product.price_per_period": "2,99 €/week",
+          "product.price_per_period_abbreviated": "2,99 €/wk"
+        },
+        "monthly": {
+          "product.price": "8,49 €",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "0,28 €",
+          "product.price_per_week": "1,95 €",
+          "product.price_per_month": "8,49 €",
+          "product.price_per_year": "101,88 €",
+          "product.price_per_period": "8,49 €/month",
+          "product.price_per_period_abbreviated": "8,49 €/mo",
+          "product.relative_discount": "35%"
+        },
+        "lifetime": {
+          "product.price": "149,00 €",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "lifetime",
+          "product.period_abbreviated": "lifetime",
+          "product.period_with_unit": "lifetime",
+          "product.price_per_period": "149,00 €",
+          "product.price_per_period_abbreviated": "149,00 €"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "weekly": {
+            "price": 2.99,
+            "currency": "eur",
+            "period": "week"
+          },
+          "monthly": {
+            "price": 8.49,
+            "currency": "eur",
+            "period": "month"
+          },
+          "lifetime": {
+            "price": 149,
+            "currency": "eur",
+            "period": "lifetime"
+          }
+        },
+        "locale": "fr_FR"
+      },
+      "expected": {
+        "weekly": {
+          "product.price": "2,99 €",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "week",
+          "product.period_abbreviated": "wk",
+          "product.period_with_unit": "1 week",
+          "product.period_in_days": "7",
+          "product.period_in_weeks": "1",
+          "product.period_in_months": "0",
+          "product.period_in_years": "0",
+          "product.periodly": "weekly",
+          "product.price_per_day": "0,43 €",
+          "product.price_per_week": "2,99 €",
+          "product.price_per_month": "12,99 €",
+          "product.price_per_year": "155,91 €",
+          "product.price_per_period": "2,99 €/week",
+          "product.price_per_period_abbreviated": "2,99 €/wk"
+        },
+        "monthly": {
+          "product.price": "8,49 €",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "0,28 €",
+          "product.price_per_week": "1,95 €",
+          "product.price_per_month": "8,49 €",
+          "product.price_per_year": "101,88 €",
+          "product.price_per_period": "8,49 €/month",
+          "product.price_per_period_abbreviated": "8,49 €/mo",
+          "product.relative_discount": "35%"
+        },
+        "lifetime": {
+          "product.price": "149,00 €",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "lifetime",
+          "product.period_abbreviated": "lifetime",
+          "product.period_with_unit": "lifetime",
+          "product.price_per_period": "149,00 €",
+          "product.price_per_period_abbreviated": "149,00 €"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "weekly": {
+            "price": 2.99,
+            "currency": "eur",
+            "period": "week"
+          },
+          "monthly": {
+            "price": 8.49,
+            "currency": "eur",
+            "period": "month"
+          },
+          "lifetime": {
+            "price": 149,
+            "currency": "eur",
+            "period": "lifetime"
+          }
+        },
+        "locale": "de_DE"
+      },
+      "expected": {
+        "weekly": {
+          "product.price": "2,99 €",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "week",
+          "product.period_abbreviated": "wk",
+          "product.period_with_unit": "1 week",
+          "product.period_in_days": "7",
+          "product.period_in_weeks": "1",
+          "product.period_in_months": "0",
+          "product.period_in_years": "0",
+          "product.periodly": "weekly",
+          "product.price_per_day": "0,43 €",
+          "product.price_per_week": "2,99 €",
+          "product.price_per_month": "12,99 €",
+          "product.price_per_year": "155,91 €",
+          "product.price_per_period": "2,99 €/week",
+          "product.price_per_period_abbreviated": "2,99 €/wk"
+        },
+        "monthly": {
+          "product.price": "8,49 €",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "0,28 €",
+          "product.price_per_week": "1,95 €",
+          "product.price_per_month": "8,49 €",
+          "product.price_per_year": "101,88 €",
+          "product.price_per_period": "8,49 €/month",
+          "product.price_per_period_abbreviated": "8,49 €/mo",
+          "product.relative_discount": "35%"
+        },
+        "lifetime": {
+          "product.price": "149,00 €",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "lifetime",
+          "product.period_abbreviated": "lifetime",
+          "product.period_with_unit": "lifetime",
+          "product.price_per_period": "149,00 €",
+          "product.price_per_period_abbreviated": "149,00 €"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "weekly": {
+            "price": 2.99,
+            "currency": "eur",
+            "period": "week"
+          },
+          "monthly": {
+            "price": 8.49,
+            "currency": "eur",
+            "period": "month"
+          },
+          "lifetime": {
+            "price": 149,
+            "currency": "eur",
+            "period": "lifetime"
+          }
+        },
+        "locale": "ja_JP"
+      },
+      "expected": {
+        "weekly": {
+          "product.price": "€2.99",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "week",
+          "product.period_abbreviated": "wk",
+          "product.period_with_unit": "1 week",
+          "product.period_in_days": "7",
+          "product.period_in_weeks": "1",
+          "product.period_in_months": "0",
+          "product.period_in_years": "0",
+          "product.periodly": "weekly",
+          "product.price_per_day": "€0.43",
+          "product.price_per_week": "€2.99",
+          "product.price_per_month": "€12.99",
+          "product.price_per_year": "€155.91",
+          "product.price_per_period": "€2.99/week",
+          "product.price_per_period_abbreviated": "€2.99/wk"
+        },
+        "monthly": {
+          "product.price": "€8.49",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "€0.28",
+          "product.price_per_week": "€1.95",
+          "product.price_per_month": "€8.49",
+          "product.price_per_year": "€101.88",
+          "product.price_per_period": "€8.49/month",
+          "product.price_per_period_abbreviated": "€8.49/mo",
+          "product.relative_discount": "35%"
+        },
+        "lifetime": {
+          "product.price": "€149.00",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "lifetime",
+          "product.period_abbreviated": "lifetime",
+          "product.period_with_unit": "lifetime",
+          "product.price_per_period": "€149.00",
+          "product.price_per_period_abbreviated": "€149.00"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "weekly": {
+            "price": 2.99,
+            "currency": "eur",
+            "period": "week"
+          },
+          "monthly": {
+            "price": 8.49,
+            "currency": "eur",
+            "period": "month"
+          },
+          "lifetime": {
+            "price": 149,
+            "currency": "eur",
+            "period": "lifetime"
+          }
+        },
+        "locale": "pt_BR"
+      },
+      "expected": {
+        "weekly": {
+          "product.price": "€ 2,99",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "week",
+          "product.period_abbreviated": "wk",
+          "product.period_with_unit": "1 week",
+          "product.period_in_days": "7",
+          "product.period_in_weeks": "1",
+          "product.period_in_months": "0",
+          "product.period_in_years": "0",
+          "product.periodly": "weekly",
+          "product.price_per_day": "€ 0,43",
+          "product.price_per_week": "€ 2,99",
+          "product.price_per_month": "€ 12,99",
+          "product.price_per_year": "€ 155,91",
+          "product.price_per_period": "€ 2,99/week",
+          "product.price_per_period_abbreviated": "€ 2,99/wk"
+        },
+        "monthly": {
+          "product.price": "€ 8,49",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "€ 0,28",
+          "product.price_per_week": "€ 1,95",
+          "product.price_per_month": "€ 8,49",
+          "product.price_per_year": "€ 101,88",
+          "product.price_per_period": "€ 8,49/month",
+          "product.price_per_period_abbreviated": "€ 8,49/mo",
+          "product.relative_discount": "35%"
+        },
+        "lifetime": {
+          "product.price": "€ 149,00",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "lifetime",
+          "product.period_abbreviated": "lifetime",
+          "product.period_with_unit": "lifetime",
+          "product.price_per_period": "€ 149,00",
+          "product.price_per_period_abbreviated": "€ 149,00"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "weekly": {
+            "price": 2.99,
+            "currency": "eur",
+            "period": "week"
+          },
+          "monthly": {
+            "price": 8.49,
+            "currency": "eur",
+            "period": "month"
+          },
+          "lifetime": {
+            "price": 149,
+            "currency": "eur",
+            "period": "lifetime"
+          }
+        },
+        "locale": null
+      },
+      "expected": {
+        "weekly": {
+          "product.price": "€2.99",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "week",
+          "product.period_abbreviated": "wk",
+          "product.period_with_unit": "1 week",
+          "product.period_in_days": "7",
+          "product.period_in_weeks": "1",
+          "product.period_in_months": "0",
+          "product.period_in_years": "0",
+          "product.periodly": "weekly",
+          "product.price_per_day": "€0.43",
+          "product.price_per_week": "€2.99",
+          "product.price_per_month": "€12.99",
+          "product.price_per_year": "€155.91",
+          "product.price_per_period": "€2.99/week",
+          "product.price_per_period_abbreviated": "€2.99/wk"
+        },
+        "monthly": {
+          "product.price": "€8.49",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "€0.28",
+          "product.price_per_week": "€1.95",
+          "product.price_per_month": "€8.49",
+          "product.price_per_year": "€101.88",
+          "product.price_per_period": "€8.49/month",
+          "product.price_per_period_abbreviated": "€8.49/mo",
+          "product.relative_discount": "35%"
+        },
+        "lifetime": {
+          "product.price": "€149.00",
+          "product.currency_code": "EUR",
+          "product.currency_symbol": "€",
+          "product.period": "lifetime",
+          "product.period_abbreviated": "lifetime",
+          "product.period_with_unit": "lifetime",
+          "product.price_per_period": "€149.00",
+          "product.price_per_period_abbreviated": "€149.00"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "monthly": {
+            "price": 99000,
+            "currency": "vnd",
+            "period": "month"
+          },
+          "annual": {
+            "price": 990000,
+            "currency": "vnd",
+            "period": "year",
+            "offer": {
+              "price": 49000,
+              "period": "month"
+            }
+          }
+        },
+        "locale": "en_US"
+      },
+      "expected": {
+        "monthly": {
+          "product.price": "₫99,000",
+          "product.currency_code": "VND",
+          "product.currency_symbol": "₫",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "₫3,255",
+          "product.price_per_week": "₫22,784",
+          "product.price_per_month": "₫99,000",
+          "product.price_per_year": "₫1,188,000",
+          "product.price_per_period": "₫99,000/month",
+          "product.price_per_period_abbreviated": "₫99,000/mo"
+        },
+        "annual": {
+          "product.price": "₫990,000",
+          "product.currency_code": "VND",
+          "product.currency_symbol": "₫",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "₫2,712",
+          "product.price_per_week": "₫18,986",
+          "product.price_per_month": "₫82,500",
+          "product.price_per_year": "₫990,000",
+          "product.price_per_period": "₫990,000/year",
+          "product.price_per_period_abbreviated": "₫990,000/yr",
+          "product.relative_discount": "17%",
+          "product.offer_price": "₫49,000",
+          "product.offer_period": "month",
+          "product.offer_period_abbreviated": "mo",
+          "product.offer_period_with_unit": "1 month",
+          "product.offer_period_in_days": "30",
+          "product.offer_period_in_weeks": "4",
+          "product.offer_period_in_months": "1",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "₫1,611",
+          "product.offer_price_per_week": "₫11,277",
+          "product.offer_price_per_month": "₫49,000",
+          "product.offer_price_per_year": "₫588,000"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "monthly": {
+            "price": 99000,
+            "currency": "vnd",
+            "period": "month"
+          },
+          "annual": {
+            "price": 990000,
+            "currency": "vnd",
+            "period": "year",
+            "offer": {
+              "price": 49000,
+              "period": "month"
+            }
+          }
+        },
+        "locale": "vi_VN"
+      },
+      "expected": {
+        "monthly": {
+          "product.price": "99.000 ₫",
+          "product.currency_code": "VND",
+          "product.currency_symbol": "₫",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "3.255 ₫",
+          "product.price_per_week": "22.784 ₫",
+          "product.price_per_month": "99.000 ₫",
+          "product.price_per_year": "1.188.000 ₫",
+          "product.price_per_period": "99.000 ₫/month",
+          "product.price_per_period_abbreviated": "99.000 ₫/mo"
+        },
+        "annual": {
+          "product.price": "990.000 ₫",
+          "product.currency_code": "VND",
+          "product.currency_symbol": "₫",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "2.712 ₫",
+          "product.price_per_week": "18.986 ₫",
+          "product.price_per_month": "82.500 ₫",
+          "product.price_per_year": "990.000 ₫",
+          "product.price_per_period": "990.000 ₫/year",
+          "product.price_per_period_abbreviated": "990.000 ₫/yr",
+          "product.relative_discount": "17%",
+          "product.offer_price": "49.000 ₫",
+          "product.offer_period": "month",
+          "product.offer_period_abbreviated": "mo",
+          "product.offer_period_with_unit": "1 month",
+          "product.offer_period_in_days": "30",
+          "product.offer_period_in_weeks": "4",
+          "product.offer_period_in_months": "1",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "1.611 ₫",
+          "product.offer_price_per_week": "11.277 ₫",
+          "product.offer_price_per_month": "49.000 ₫",
+          "product.offer_price_per_year": "588.000 ₫"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "monthly": {
+            "price": 99000,
+            "currency": "vnd",
+            "period": "month"
+          },
+          "annual": {
+            "price": 990000,
+            "currency": "vnd",
+            "period": "year",
+            "offer": {
+              "price": 49000,
+              "period": "month"
+            }
+          }
+        },
+        "locale": "fr_FR"
+      },
+      "expected": {
+        "monthly": {
+          "product.price": "99 000 ₫",
+          "product.currency_code": "VND",
+          "product.currency_symbol": "₫",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "3 255 ₫",
+          "product.price_per_week": "22 784 ₫",
+          "product.price_per_month": "99 000 ₫",
+          "product.price_per_year": "1 188 000 ₫",
+          "product.price_per_period": "99 000 ₫/month",
+          "product.price_per_period_abbreviated": "99 000 ₫/mo"
+        },
+        "annual": {
+          "product.price": "990 000 ₫",
+          "product.currency_code": "VND",
+          "product.currency_symbol": "₫",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "2 712 ₫",
+          "product.price_per_week": "18 986 ₫",
+          "product.price_per_month": "82 500 ₫",
+          "product.price_per_year": "990 000 ₫",
+          "product.price_per_period": "990 000 ₫/year",
+          "product.price_per_period_abbreviated": "990 000 ₫/yr",
+          "product.relative_discount": "17%",
+          "product.offer_price": "49 000 ₫",
+          "product.offer_period": "month",
+          "product.offer_period_abbreviated": "mo",
+          "product.offer_period_with_unit": "1 month",
+          "product.offer_period_in_days": "30",
+          "product.offer_period_in_weeks": "4",
+          "product.offer_period_in_months": "1",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "1 611 ₫",
+          "product.offer_price_per_week": "11 277 ₫",
+          "product.offer_price_per_month": "49 000 ₫",
+          "product.offer_price_per_year": "588 000 ₫"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "monthly": {
+            "price": 99000,
+            "currency": "vnd",
+            "period": "month"
+          },
+          "annual": {
+            "price": 990000,
+            "currency": "vnd",
+            "period": "year",
+            "offer": {
+              "price": 49000,
+              "period": "month"
+            }
+          }
+        },
+        "locale": "de_DE"
+      },
+      "expected": {
+        "monthly": {
+          "product.price": "99.000 ₫",
+          "product.currency_code": "VND",
+          "product.currency_symbol": "₫",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "3.255 ₫",
+          "product.price_per_week": "22.784 ₫",
+          "product.price_per_month": "99.000 ₫",
+          "product.price_per_year": "1.188.000 ₫",
+          "product.price_per_period": "99.000 ₫/month",
+          "product.price_per_period_abbreviated": "99.000 ₫/mo"
+        },
+        "annual": {
+          "product.price": "990.000 ₫",
+          "product.currency_code": "VND",
+          "product.currency_symbol": "₫",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "2.712 ₫",
+          "product.price_per_week": "18.986 ₫",
+          "product.price_per_month": "82.500 ₫",
+          "product.price_per_year": "990.000 ₫",
+          "product.price_per_period": "990.000 ₫/year",
+          "product.price_per_period_abbreviated": "990.000 ₫/yr",
+          "product.relative_discount": "17%",
+          "product.offer_price": "49.000 ₫",
+          "product.offer_period": "month",
+          "product.offer_period_abbreviated": "mo",
+          "product.offer_period_with_unit": "1 month",
+          "product.offer_period_in_days": "30",
+          "product.offer_period_in_weeks": "4",
+          "product.offer_period_in_months": "1",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "1.611 ₫",
+          "product.offer_price_per_week": "11.277 ₫",
+          "product.offer_price_per_month": "49.000 ₫",
+          "product.offer_price_per_year": "588.000 ₫"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "monthly": {
+            "price": 99000,
+            "currency": "vnd",
+            "period": "month"
+          },
+          "annual": {
+            "price": 990000,
+            "currency": "vnd",
+            "period": "year",
+            "offer": {
+              "price": 49000,
+              "period": "month"
+            }
+          }
+        },
+        "locale": "ja_JP"
+      },
+      "expected": {
+        "monthly": {
+          "product.price": "₫99,000",
+          "product.currency_code": "VND",
+          "product.currency_symbol": "₫",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "₫3,255",
+          "product.price_per_week": "₫22,784",
+          "product.price_per_month": "₫99,000",
+          "product.price_per_year": "₫1,188,000",
+          "product.price_per_period": "₫99,000/month",
+          "product.price_per_period_abbreviated": "₫99,000/mo"
+        },
+        "annual": {
+          "product.price": "₫990,000",
+          "product.currency_code": "VND",
+          "product.currency_symbol": "₫",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "₫2,712",
+          "product.price_per_week": "₫18,986",
+          "product.price_per_month": "₫82,500",
+          "product.price_per_year": "₫990,000",
+          "product.price_per_period": "₫990,000/year",
+          "product.price_per_period_abbreviated": "₫990,000/yr",
+          "product.relative_discount": "17%",
+          "product.offer_price": "₫49,000",
+          "product.offer_period": "month",
+          "product.offer_period_abbreviated": "mo",
+          "product.offer_period_with_unit": "1 month",
+          "product.offer_period_in_days": "30",
+          "product.offer_period_in_weeks": "4",
+          "product.offer_period_in_months": "1",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "₫1,611",
+          "product.offer_price_per_week": "₫11,277",
+          "product.offer_price_per_month": "₫49,000",
+          "product.offer_price_per_year": "₫588,000"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "monthly": {
+            "price": 99000,
+            "currency": "vnd",
+            "period": "month"
+          },
+          "annual": {
+            "price": 990000,
+            "currency": "vnd",
+            "period": "year",
+            "offer": {
+              "price": 49000,
+              "period": "month"
+            }
+          }
+        },
+        "locale": "pt_BR"
+      },
+      "expected": {
+        "monthly": {
+          "product.price": "₫ 99.000",
+          "product.currency_code": "VND",
+          "product.currency_symbol": "₫",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "₫ 3.255",
+          "product.price_per_week": "₫ 22.784",
+          "product.price_per_month": "₫ 99.000",
+          "product.price_per_year": "₫ 1.188.000",
+          "product.price_per_period": "₫ 99.000/month",
+          "product.price_per_period_abbreviated": "₫ 99.000/mo"
+        },
+        "annual": {
+          "product.price": "₫ 990.000",
+          "product.currency_code": "VND",
+          "product.currency_symbol": "₫",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "₫ 2.712",
+          "product.price_per_week": "₫ 18.986",
+          "product.price_per_month": "₫ 82.500",
+          "product.price_per_year": "₫ 990.000",
+          "product.price_per_period": "₫ 990.000/year",
+          "product.price_per_period_abbreviated": "₫ 990.000/yr",
+          "product.relative_discount": "17%",
+          "product.offer_price": "₫ 49.000",
+          "product.offer_period": "month",
+          "product.offer_period_abbreviated": "mo",
+          "product.offer_period_with_unit": "1 month",
+          "product.offer_period_in_days": "30",
+          "product.offer_period_in_weeks": "4",
+          "product.offer_period_in_months": "1",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "₫ 1.611",
+          "product.offer_price_per_week": "₫ 11.277",
+          "product.offer_price_per_month": "₫ 49.000",
+          "product.offer_price_per_year": "₫ 588.000"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "monthly": {
+            "price": 99000,
+            "currency": "vnd",
+            "period": "month"
+          },
+          "annual": {
+            "price": 990000,
+            "currency": "vnd",
+            "period": "year",
+            "offer": {
+              "price": 49000,
+              "period": "month"
+            }
+          }
+        },
+        "locale": null
+      },
+      "expected": {
+        "monthly": {
+          "product.price": "₫99,000",
+          "product.currency_code": "VND",
+          "product.currency_symbol": "₫",
+          "product.period": "month",
+          "product.period_abbreviated": "mo",
+          "product.period_with_unit": "1 month",
+          "product.period_in_days": "30",
+          "product.period_in_weeks": "4",
+          "product.period_in_months": "1",
+          "product.period_in_years": "0",
+          "product.periodly": "monthly",
+          "product.price_per_day": "₫3,255",
+          "product.price_per_week": "₫22,784",
+          "product.price_per_month": "₫99,000",
+          "product.price_per_year": "₫1,188,000",
+          "product.price_per_period": "₫99,000/month",
+          "product.price_per_period_abbreviated": "₫99,000/mo"
+        },
+        "annual": {
+          "product.price": "₫990,000",
+          "product.currency_code": "VND",
+          "product.currency_symbol": "₫",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "₫2,712",
+          "product.price_per_week": "₫18,986",
+          "product.price_per_month": "₫82,500",
+          "product.price_per_year": "₫990,000",
+          "product.price_per_period": "₫990,000/year",
+          "product.price_per_period_abbreviated": "₫990,000/yr",
+          "product.relative_discount": "17%",
+          "product.offer_price": "₫49,000",
+          "product.offer_period": "month",
+          "product.offer_period_abbreviated": "mo",
+          "product.offer_period_with_unit": "1 month",
+          "product.offer_period_in_days": "30",
+          "product.offer_period_in_weeks": "4",
+          "product.offer_period_in_months": "1",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "₫1,611",
+          "product.offer_price_per_week": "₫11,277",
+          "product.offer_price_per_month": "₫49,000",
+          "product.offer_price_per_year": "₫588,000"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "quarterly": {
+            "price": 1200,
+            "currency": "jpy",
+            "period": {
+              "unit": "month",
+              "count": 3
+            }
+          },
+          "semiannual": {
+            "price": 2000,
+            "currency": "jpy",
+            "period": {
+              "unit": "month",
+              "count": 6
+            }
+          }
+        },
+        "locale": "en_US"
+      },
+      "expected": {
+        "quarterly": {
+          "product.price": "¥1,200",
+          "product.currency_code": "JPY",
+          "product.currency_symbol": "¥",
+          "product.period": "3 months",
+          "product.period_abbreviated": "3 mo",
+          "product.period_with_unit": "3 months",
+          "product.period_in_days": "91",
+          "product.period_in_weeks": "13",
+          "product.period_in_months": "3",
+          "product.period_in_years": "0",
+          "product.periodly": "every 3 months",
+          "product.price_per_day": "¥13",
+          "product.price_per_week": "¥92",
+          "product.price_per_month": "¥400",
+          "product.price_per_year": "¥4,800",
+          "product.price_per_period": "¥1,200/3 months",
+          "product.price_per_period_abbreviated": "¥1,200/3 mo"
+        },
+        "semiannual": {
+          "product.price": "¥2,000",
+          "product.currency_code": "JPY",
+          "product.currency_symbol": "¥",
+          "product.period": "6 months",
+          "product.period_abbreviated": "6 mo",
+          "product.period_with_unit": "6 months",
+          "product.period_in_days": "183",
+          "product.period_in_weeks": "26",
+          "product.period_in_months": "6",
+          "product.period_in_years": "0",
+          "product.periodly": "every 6 months",
+          "product.price_per_day": "¥11",
+          "product.price_per_week": "¥77",
+          "product.price_per_month": "¥333",
+          "product.price_per_year": "¥4,000",
+          "product.price_per_period": "¥2,000/6 months",
+          "product.price_per_period_abbreviated": "¥2,000/6 mo",
+          "product.relative_discount": "17%"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "quarterly": {
+            "price": 1200,
+            "currency": "jpy",
+            "period": {
+              "unit": "month",
+              "count": 3
+            }
+          },
+          "semiannual": {
+            "price": 2000,
+            "currency": "jpy",
+            "period": {
+              "unit": "month",
+              "count": 6
+            }
+          }
+        },
+        "locale": "vi_VN"
+      },
+      "expected": {
+        "quarterly": {
+          "product.price": "1.200 ¥",
+          "product.currency_code": "JPY",
+          "product.currency_symbol": "¥",
+          "product.period": "3 months",
+          "product.period_abbreviated": "3 mo",
+          "product.period_with_unit": "3 months",
+          "product.period_in_days": "91",
+          "product.period_in_weeks": "13",
+          "product.period_in_months": "3",
+          "product.period_in_years": "0",
+          "product.periodly": "every 3 months",
+          "product.price_per_day": "13 ¥",
+          "product.price_per_week": "92 ¥",
+          "product.price_per_month": "400 ¥",
+          "product.price_per_year": "4.800 ¥",
+          "product.price_per_period": "1.200 ¥/3 months",
+          "product.price_per_period_abbreviated": "1.200 ¥/3 mo"
+        },
+        "semiannual": {
+          "product.price": "2.000 ¥",
+          "product.currency_code": "JPY",
+          "product.currency_symbol": "¥",
+          "product.period": "6 months",
+          "product.period_abbreviated": "6 mo",
+          "product.period_with_unit": "6 months",
+          "product.period_in_days": "183",
+          "product.period_in_weeks": "26",
+          "product.period_in_months": "6",
+          "product.period_in_years": "0",
+          "product.periodly": "every 6 months",
+          "product.price_per_day": "11 ¥",
+          "product.price_per_week": "77 ¥",
+          "product.price_per_month": "333 ¥",
+          "product.price_per_year": "4.000 ¥",
+          "product.price_per_period": "2.000 ¥/6 months",
+          "product.price_per_period_abbreviated": "2.000 ¥/6 mo",
+          "product.relative_discount": "17%"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "quarterly": {
+            "price": 1200,
+            "currency": "jpy",
+            "period": {
+              "unit": "month",
+              "count": 3
+            }
+          },
+          "semiannual": {
+            "price": 2000,
+            "currency": "jpy",
+            "period": {
+              "unit": "month",
+              "count": 6
+            }
+          }
+        },
+        "locale": "fr_FR"
+      },
+      "expected": {
+        "quarterly": {
+          "product.price": "1 200 JPY",
+          "product.currency_code": "JPY",
+          "product.currency_symbol": "JPY",
+          "product.period": "3 months",
+          "product.period_abbreviated": "3 mo",
+          "product.period_with_unit": "3 months",
+          "product.period_in_days": "91",
+          "product.period_in_weeks": "13",
+          "product.period_in_months": "3",
+          "product.period_in_years": "0",
+          "product.periodly": "every 3 months",
+          "product.price_per_day": "13 JPY",
+          "product.price_per_week": "92 JPY",
+          "product.price_per_month": "400 JPY",
+          "product.price_per_year": "4 800 JPY",
+          "product.price_per_period": "1 200 JPY/3 months",
+          "product.price_per_period_abbreviated": "1 200 JPY/3 mo"
+        },
+        "semiannual": {
+          "product.price": "2 000 JPY",
+          "product.currency_code": "JPY",
+          "product.currency_symbol": "JPY",
+          "product.period": "6 months",
+          "product.period_abbreviated": "6 mo",
+          "product.period_with_unit": "6 months",
+          "product.period_in_days": "183",
+          "product.period_in_weeks": "26",
+          "product.period_in_months": "6",
+          "product.period_in_years": "0",
+          "product.periodly": "every 6 months",
+          "product.price_per_day": "11 JPY",
+          "product.price_per_week": "77 JPY",
+          "product.price_per_month": "333 JPY",
+          "product.price_per_year": "4 000 JPY",
+          "product.price_per_period": "2 000 JPY/6 months",
+          "product.price_per_period_abbreviated": "2 000 JPY/6 mo",
+          "product.relative_discount": "17%"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "quarterly": {
+            "price": 1200,
+            "currency": "jpy",
+            "period": {
+              "unit": "month",
+              "count": 3
+            }
+          },
+          "semiannual": {
+            "price": 2000,
+            "currency": "jpy",
+            "period": {
+              "unit": "month",
+              "count": 6
+            }
+          }
+        },
+        "locale": "de_DE"
+      },
+      "expected": {
+        "quarterly": {
+          "product.price": "1.200 ¥",
+          "product.currency_code": "JPY",
+          "product.currency_symbol": "¥",
+          "product.period": "3 months",
+          "product.period_abbreviated": "3 mo",
+          "product.period_with_unit": "3 months",
+          "product.period_in_days": "91",
+          "product.period_in_weeks": "13",
+          "product.period_in_months": "3",
+          "product.period_in_years": "0",
+          "product.periodly": "every 3 months",
+          "product.price_per_day": "13 ¥",
+          "product.price_per_week": "92 ¥",
+          "product.price_per_month": "400 ¥",
+          "product.price_per_year": "4.800 ¥",
+          "product.price_per_period": "1.200 ¥/3 months",
+          "product.price_per_period_abbreviated": "1.200 ¥/3 mo"
+        },
+        "semiannual": {
+          "product.price": "2.000 ¥",
+          "product.currency_code": "JPY",
+          "product.currency_symbol": "¥",
+          "product.period": "6 months",
+          "product.period_abbreviated": "6 mo",
+          "product.period_with_unit": "6 months",
+          "product.period_in_days": "183",
+          "product.period_in_weeks": "26",
+          "product.period_in_months": "6",
+          "product.period_in_years": "0",
+          "product.periodly": "every 6 months",
+          "product.price_per_day": "11 ¥",
+          "product.price_per_week": "77 ¥",
+          "product.price_per_month": "333 ¥",
+          "product.price_per_year": "4.000 ¥",
+          "product.price_per_period": "2.000 ¥/6 months",
+          "product.price_per_period_abbreviated": "2.000 ¥/6 mo",
+          "product.relative_discount": "17%"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "quarterly": {
+            "price": 1200,
+            "currency": "jpy",
+            "period": {
+              "unit": "month",
+              "count": 3
+            }
+          },
+          "semiannual": {
+            "price": 2000,
+            "currency": "jpy",
+            "period": {
+              "unit": "month",
+              "count": 6
+            }
+          }
+        },
+        "locale": "ja_JP"
+      },
+      "expected": {
+        "quarterly": {
+          "product.price": "￥1,200",
+          "product.currency_code": "JPY",
+          "product.currency_symbol": "￥",
+          "product.period": "3 months",
+          "product.period_abbreviated": "3 mo",
+          "product.period_with_unit": "3 months",
+          "product.period_in_days": "91",
+          "product.period_in_weeks": "13",
+          "product.period_in_months": "3",
+          "product.period_in_years": "0",
+          "product.periodly": "every 3 months",
+          "product.price_per_day": "￥13",
+          "product.price_per_week": "￥92",
+          "product.price_per_month": "￥400",
+          "product.price_per_year": "￥4,800",
+          "product.price_per_period": "￥1,200/3 months",
+          "product.price_per_period_abbreviated": "￥1,200/3 mo"
+        },
+        "semiannual": {
+          "product.price": "￥2,000",
+          "product.currency_code": "JPY",
+          "product.currency_symbol": "￥",
+          "product.period": "6 months",
+          "product.period_abbreviated": "6 mo",
+          "product.period_with_unit": "6 months",
+          "product.period_in_days": "183",
+          "product.period_in_weeks": "26",
+          "product.period_in_months": "6",
+          "product.period_in_years": "0",
+          "product.periodly": "every 6 months",
+          "product.price_per_day": "￥11",
+          "product.price_per_week": "￥77",
+          "product.price_per_month": "￥333",
+          "product.price_per_year": "￥4,000",
+          "product.price_per_period": "￥2,000/6 months",
+          "product.price_per_period_abbreviated": "￥2,000/6 mo",
+          "product.relative_discount": "17%"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "quarterly": {
+            "price": 1200,
+            "currency": "jpy",
+            "period": {
+              "unit": "month",
+              "count": 3
+            }
+          },
+          "semiannual": {
+            "price": 2000,
+            "currency": "jpy",
+            "period": {
+              "unit": "month",
+              "count": 6
+            }
+          }
+        },
+        "locale": "pt_BR"
+      },
+      "expected": {
+        "quarterly": {
+          "product.price": "JP¥ 1.200",
+          "product.currency_code": "JPY",
+          "product.currency_symbol": "JP¥",
+          "product.period": "3 months",
+          "product.period_abbreviated": "3 mo",
+          "product.period_with_unit": "3 months",
+          "product.period_in_days": "91",
+          "product.period_in_weeks": "13",
+          "product.period_in_months": "3",
+          "product.period_in_years": "0",
+          "product.periodly": "every 3 months",
+          "product.price_per_day": "JP¥ 13",
+          "product.price_per_week": "JP¥ 92",
+          "product.price_per_month": "JP¥ 400",
+          "product.price_per_year": "JP¥ 4.800",
+          "product.price_per_period": "JP¥ 1.200/3 months",
+          "product.price_per_period_abbreviated": "JP¥ 1.200/3 mo"
+        },
+        "semiannual": {
+          "product.price": "JP¥ 2.000",
+          "product.currency_code": "JPY",
+          "product.currency_symbol": "JP¥",
+          "product.period": "6 months",
+          "product.period_abbreviated": "6 mo",
+          "product.period_with_unit": "6 months",
+          "product.period_in_days": "183",
+          "product.period_in_weeks": "26",
+          "product.period_in_months": "6",
+          "product.period_in_years": "0",
+          "product.periodly": "every 6 months",
+          "product.price_per_day": "JP¥ 11",
+          "product.price_per_week": "JP¥ 77",
+          "product.price_per_month": "JP¥ 333",
+          "product.price_per_year": "JP¥ 4.000",
+          "product.price_per_period": "JP¥ 2.000/6 months",
+          "product.price_per_period_abbreviated": "JP¥ 2.000/6 mo",
+          "product.relative_discount": "17%"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "quarterly": {
+            "price": 1200,
+            "currency": "jpy",
+            "period": {
+              "unit": "month",
+              "count": 3
+            }
+          },
+          "semiannual": {
+            "price": 2000,
+            "currency": "jpy",
+            "period": {
+              "unit": "month",
+              "count": 6
+            }
+          }
+        },
+        "locale": null
+      },
+      "expected": {
+        "quarterly": {
+          "product.price": "¥1,200",
+          "product.currency_code": "JPY",
+          "product.currency_symbol": "¥",
+          "product.period": "3 months",
+          "product.period_abbreviated": "3 mo",
+          "product.period_with_unit": "3 months",
+          "product.period_in_days": "91",
+          "product.period_in_weeks": "13",
+          "product.period_in_months": "3",
+          "product.period_in_years": "0",
+          "product.periodly": "every 3 months",
+          "product.price_per_day": "¥13",
+          "product.price_per_week": "¥92",
+          "product.price_per_month": "¥400",
+          "product.price_per_year": "¥4,800",
+          "product.price_per_period": "¥1,200/3 months",
+          "product.price_per_period_abbreviated": "¥1,200/3 mo"
+        },
+        "semiannual": {
+          "product.price": "¥2,000",
+          "product.currency_code": "JPY",
+          "product.currency_symbol": "¥",
+          "product.period": "6 months",
+          "product.period_abbreviated": "6 mo",
+          "product.period_with_unit": "6 months",
+          "product.period_in_days": "183",
+          "product.period_in_weeks": "26",
+          "product.period_in_months": "6",
+          "product.period_in_years": "0",
+          "product.periodly": "every 6 months",
+          "product.price_per_day": "¥11",
+          "product.price_per_week": "¥77",
+          "product.price_per_month": "¥333",
+          "product.price_per_year": "¥4,000",
+          "product.price_per_period": "¥2,000/6 months",
+          "product.price_per_period_abbreviated": "¥2,000/6 mo",
+          "product.relative_discount": "17%"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "single": {
+            "price": 4.5,
+            "currency": "gbp"
+          }
+        },
+        "locale": "en_US"
+      },
+      "expected": {
+        "single": {
+          "product.price": "£4.50",
+          "product.currency_code": "GBP",
+          "product.currency_symbol": "£"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "single": {
+            "price": 4.5,
+            "currency": "gbp"
+          }
+        },
+        "locale": "vi_VN"
+      },
+      "expected": {
+        "single": {
+          "product.price": "4,50 £",
+          "product.currency_code": "GBP",
+          "product.currency_symbol": "£"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "single": {
+            "price": 4.5,
+            "currency": "gbp"
+          }
+        },
+        "locale": "fr_FR"
+      },
+      "expected": {
+        "single": {
+          "product.price": "4,50 £GB",
+          "product.currency_code": "GBP",
+          "product.currency_symbol": "£GB"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "single": {
+            "price": 4.5,
+            "currency": "gbp"
+          }
+        },
+        "locale": "de_DE"
+      },
+      "expected": {
+        "single": {
+          "product.price": "4,50 £",
+          "product.currency_code": "GBP",
+          "product.currency_symbol": "£"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "single": {
+            "price": 4.5,
+            "currency": "gbp"
+          }
+        },
+        "locale": "ja_JP"
+      },
+      "expected": {
+        "single": {
+          "product.price": "£4.50",
+          "product.currency_code": "GBP",
+          "product.currency_symbol": "£"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "single": {
+            "price": 4.5,
+            "currency": "gbp"
+          }
+        },
+        "locale": "pt_BR"
+      },
+      "expected": {
+        "single": {
+          "product.price": "£ 4,50",
+          "product.currency_code": "GBP",
+          "product.currency_symbol": "£"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "single": {
+            "price": 4.5,
+            "currency": "gbp"
+          }
+        },
+        "locale": null
+      },
+      "expected": {
+        "single": {
+          "product.price": "£4.50",
+          "product.currency_code": "GBP",
+          "product.currency_symbol": "£"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "biweekly": {
+            "price": 19.9,
+            "currency": "brl",
+            "period": {
+              "unit": "week",
+              "count": 2
+            }
+          },
+          "annual": {
+            "price": 199.9,
+            "currency": "brl",
+            "period": "year",
+            "offer": {
+              "price": 9.9,
+              "period": {
+                "unit": "month",
+                "count": 3
+              }
+            }
+          }
+        },
+        "locale": "en_US"
+      },
+      "expected": {
+        "biweekly": {
+          "product.price": "R$19.90",
+          "product.currency_code": "BRL",
+          "product.currency_symbol": "R$",
+          "product.period": "2 weeks",
+          "product.period_abbreviated": "2 wk",
+          "product.period_with_unit": "2 weeks",
+          "product.period_in_days": "14",
+          "product.period_in_weeks": "2",
+          "product.period_in_months": "0",
+          "product.period_in_years": "0",
+          "product.periodly": "every 2 weeks",
+          "product.price_per_day": "R$1.42",
+          "product.price_per_week": "R$9.95",
+          "product.price_per_month": "R$43.24",
+          "product.price_per_year": "R$518.82",
+          "product.price_per_period": "R$19.90/2 weeks",
+          "product.price_per_period_abbreviated": "R$19.90/2 wk"
+        },
+        "annual": {
+          "product.price": "R$199.90",
+          "product.currency_code": "BRL",
+          "product.currency_symbol": "R$",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "R$0.55",
+          "product.price_per_week": "R$3.83",
+          "product.price_per_month": "R$16.66",
+          "product.price_per_year": "R$199.90",
+          "product.price_per_period": "R$199.90/year",
+          "product.price_per_period_abbreviated": "R$199.90/yr",
+          "product.relative_discount": "61%",
+          "product.offer_price": "R$9.90",
+          "product.offer_period": "3 months",
+          "product.offer_period_abbreviated": "3 mo",
+          "product.offer_period_with_unit": "3 months",
+          "product.offer_period_in_days": "91",
+          "product.offer_period_in_weeks": "13",
+          "product.offer_period_in_months": "3",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "R$0.11",
+          "product.offer_price_per_week": "R$0.76",
+          "product.offer_price_per_month": "R$3.30",
+          "product.offer_price_per_year": "R$39.60"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "biweekly": {
+            "price": 19.9,
+            "currency": "brl",
+            "period": {
+              "unit": "week",
+              "count": 2
+            }
+          },
+          "annual": {
+            "price": 199.9,
+            "currency": "brl",
+            "period": "year",
+            "offer": {
+              "price": 9.9,
+              "period": {
+                "unit": "month",
+                "count": 3
+              }
+            }
+          }
+        },
+        "locale": "vi_VN"
+      },
+      "expected": {
+        "biweekly": {
+          "product.price": "19,90 R$",
+          "product.currency_code": "BRL",
+          "product.currency_symbol": "R$",
+          "product.period": "2 weeks",
+          "product.period_abbreviated": "2 wk",
+          "product.period_with_unit": "2 weeks",
+          "product.period_in_days": "14",
+          "product.period_in_weeks": "2",
+          "product.period_in_months": "0",
+          "product.period_in_years": "0",
+          "product.periodly": "every 2 weeks",
+          "product.price_per_day": "1,42 R$",
+          "product.price_per_week": "9,95 R$",
+          "product.price_per_month": "43,24 R$",
+          "product.price_per_year": "518,82 R$",
+          "product.price_per_period": "19,90 R$/2 weeks",
+          "product.price_per_period_abbreviated": "19,90 R$/2 wk"
+        },
+        "annual": {
+          "product.price": "199,90 R$",
+          "product.currency_code": "BRL",
+          "product.currency_symbol": "R$",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "0,55 R$",
+          "product.price_per_week": "3,83 R$",
+          "product.price_per_month": "16,66 R$",
+          "product.price_per_year": "199,90 R$",
+          "product.price_per_period": "199,90 R$/year",
+          "product.price_per_period_abbreviated": "199,90 R$/yr",
+          "product.relative_discount": "61%",
+          "product.offer_price": "9,90 R$",
+          "product.offer_period": "3 months",
+          "product.offer_period_abbreviated": "3 mo",
+          "product.offer_period_with_unit": "3 months",
+          "product.offer_period_in_days": "91",
+          "product.offer_period_in_weeks": "13",
+          "product.offer_period_in_months": "3",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "0,11 R$",
+          "product.offer_price_per_week": "0,76 R$",
+          "product.offer_price_per_month": "3,30 R$",
+          "product.offer_price_per_year": "39,60 R$"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "biweekly": {
+            "price": 19.9,
+            "currency": "brl",
+            "period": {
+              "unit": "week",
+              "count": 2
+            }
+          },
+          "annual": {
+            "price": 199.9,
+            "currency": "brl",
+            "period": "year",
+            "offer": {
+              "price": 9.9,
+              "period": {
+                "unit": "month",
+                "count": 3
+              }
+            }
+          }
+        },
+        "locale": "fr_FR"
+      },
+      "expected": {
+        "biweekly": {
+          "product.price": "19,90 R$",
+          "product.currency_code": "BRL",
+          "product.currency_symbol": "R$",
+          "product.period": "2 weeks",
+          "product.period_abbreviated": "2 wk",
+          "product.period_with_unit": "2 weeks",
+          "product.period_in_days": "14",
+          "product.period_in_weeks": "2",
+          "product.period_in_months": "0",
+          "product.period_in_years": "0",
+          "product.periodly": "every 2 weeks",
+          "product.price_per_day": "1,42 R$",
+          "product.price_per_week": "9,95 R$",
+          "product.price_per_month": "43,24 R$",
+          "product.price_per_year": "518,82 R$",
+          "product.price_per_period": "19,90 R$/2 weeks",
+          "product.price_per_period_abbreviated": "19,90 R$/2 wk"
+        },
+        "annual": {
+          "product.price": "199,90 R$",
+          "product.currency_code": "BRL",
+          "product.currency_symbol": "R$",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "0,55 R$",
+          "product.price_per_week": "3,83 R$",
+          "product.price_per_month": "16,66 R$",
+          "product.price_per_year": "199,90 R$",
+          "product.price_per_period": "199,90 R$/year",
+          "product.price_per_period_abbreviated": "199,90 R$/yr",
+          "product.relative_discount": "61%",
+          "product.offer_price": "9,90 R$",
+          "product.offer_period": "3 months",
+          "product.offer_period_abbreviated": "3 mo",
+          "product.offer_period_with_unit": "3 months",
+          "product.offer_period_in_days": "91",
+          "product.offer_period_in_weeks": "13",
+          "product.offer_period_in_months": "3",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "0,11 R$",
+          "product.offer_price_per_week": "0,76 R$",
+          "product.offer_price_per_month": "3,30 R$",
+          "product.offer_price_per_year": "39,60 R$"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "biweekly": {
+            "price": 19.9,
+            "currency": "brl",
+            "period": {
+              "unit": "week",
+              "count": 2
+            }
+          },
+          "annual": {
+            "price": 199.9,
+            "currency": "brl",
+            "period": "year",
+            "offer": {
+              "price": 9.9,
+              "period": {
+                "unit": "month",
+                "count": 3
+              }
+            }
+          }
+        },
+        "locale": "de_DE"
+      },
+      "expected": {
+        "biweekly": {
+          "product.price": "19,90 R$",
+          "product.currency_code": "BRL",
+          "product.currency_symbol": "R$",
+          "product.period": "2 weeks",
+          "product.period_abbreviated": "2 wk",
+          "product.period_with_unit": "2 weeks",
+          "product.period_in_days": "14",
+          "product.period_in_weeks": "2",
+          "product.period_in_months": "0",
+          "product.period_in_years": "0",
+          "product.periodly": "every 2 weeks",
+          "product.price_per_day": "1,42 R$",
+          "product.price_per_week": "9,95 R$",
+          "product.price_per_month": "43,24 R$",
+          "product.price_per_year": "518,82 R$",
+          "product.price_per_period": "19,90 R$/2 weeks",
+          "product.price_per_period_abbreviated": "19,90 R$/2 wk"
+        },
+        "annual": {
+          "product.price": "199,90 R$",
+          "product.currency_code": "BRL",
+          "product.currency_symbol": "R$",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "0,55 R$",
+          "product.price_per_week": "3,83 R$",
+          "product.price_per_month": "16,66 R$",
+          "product.price_per_year": "199,90 R$",
+          "product.price_per_period": "199,90 R$/year",
+          "product.price_per_period_abbreviated": "199,90 R$/yr",
+          "product.relative_discount": "61%",
+          "product.offer_price": "9,90 R$",
+          "product.offer_period": "3 months",
+          "product.offer_period_abbreviated": "3 mo",
+          "product.offer_period_with_unit": "3 months",
+          "product.offer_period_in_days": "91",
+          "product.offer_period_in_weeks": "13",
+          "product.offer_period_in_months": "3",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "0,11 R$",
+          "product.offer_price_per_week": "0,76 R$",
+          "product.offer_price_per_month": "3,30 R$",
+          "product.offer_price_per_year": "39,60 R$"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "biweekly": {
+            "price": 19.9,
+            "currency": "brl",
+            "period": {
+              "unit": "week",
+              "count": 2
+            }
+          },
+          "annual": {
+            "price": 199.9,
+            "currency": "brl",
+            "period": "year",
+            "offer": {
+              "price": 9.9,
+              "period": {
+                "unit": "month",
+                "count": 3
+              }
+            }
+          }
+        },
+        "locale": "ja_JP"
+      },
+      "expected": {
+        "biweekly": {
+          "product.price": "R$19.90",
+          "product.currency_code": "BRL",
+          "product.currency_symbol": "R$",
+          "product.period": "2 weeks",
+          "product.period_abbreviated": "2 wk",
+          "product.period_with_unit": "2 weeks",
+          "product.period_in_days": "14",
+          "product.period_in_weeks": "2",
+          "product.period_in_months": "0",
+          "product.period_in_years": "0",
+          "product.periodly": "every 2 weeks",
+          "product.price_per_day": "R$1.42",
+          "product.price_per_week": "R$9.95",
+          "product.price_per_month": "R$43.24",
+          "product.price_per_year": "R$518.82",
+          "product.price_per_period": "R$19.90/2 weeks",
+          "product.price_per_period_abbreviated": "R$19.90/2 wk"
+        },
+        "annual": {
+          "product.price": "R$199.90",
+          "product.currency_code": "BRL",
+          "product.currency_symbol": "R$",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "R$0.55",
+          "product.price_per_week": "R$3.83",
+          "product.price_per_month": "R$16.66",
+          "product.price_per_year": "R$199.90",
+          "product.price_per_period": "R$199.90/year",
+          "product.price_per_period_abbreviated": "R$199.90/yr",
+          "product.relative_discount": "61%",
+          "product.offer_price": "R$9.90",
+          "product.offer_period": "3 months",
+          "product.offer_period_abbreviated": "3 mo",
+          "product.offer_period_with_unit": "3 months",
+          "product.offer_period_in_days": "91",
+          "product.offer_period_in_weeks": "13",
+          "product.offer_period_in_months": "3",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "R$0.11",
+          "product.offer_price_per_week": "R$0.76",
+          "product.offer_price_per_month": "R$3.30",
+          "product.offer_price_per_year": "R$39.60"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "biweekly": {
+            "price": 19.9,
+            "currency": "brl",
+            "period": {
+              "unit": "week",
+              "count": 2
+            }
+          },
+          "annual": {
+            "price": 199.9,
+            "currency": "brl",
+            "period": "year",
+            "offer": {
+              "price": 9.9,
+              "period": {
+                "unit": "month",
+                "count": 3
+              }
+            }
+          }
+        },
+        "locale": "pt_BR"
+      },
+      "expected": {
+        "biweekly": {
+          "product.price": "R$ 19,90",
+          "product.currency_code": "BRL",
+          "product.currency_symbol": "R$",
+          "product.period": "2 weeks",
+          "product.period_abbreviated": "2 wk",
+          "product.period_with_unit": "2 weeks",
+          "product.period_in_days": "14",
+          "product.period_in_weeks": "2",
+          "product.period_in_months": "0",
+          "product.period_in_years": "0",
+          "product.periodly": "every 2 weeks",
+          "product.price_per_day": "R$ 1,42",
+          "product.price_per_week": "R$ 9,95",
+          "product.price_per_month": "R$ 43,24",
+          "product.price_per_year": "R$ 518,82",
+          "product.price_per_period": "R$ 19,90/2 weeks",
+          "product.price_per_period_abbreviated": "R$ 19,90/2 wk"
+        },
+        "annual": {
+          "product.price": "R$ 199,90",
+          "product.currency_code": "BRL",
+          "product.currency_symbol": "R$",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "R$ 0,55",
+          "product.price_per_week": "R$ 3,83",
+          "product.price_per_month": "R$ 16,66",
+          "product.price_per_year": "R$ 199,90",
+          "product.price_per_period": "R$ 199,90/year",
+          "product.price_per_period_abbreviated": "R$ 199,90/yr",
+          "product.relative_discount": "61%",
+          "product.offer_price": "R$ 9,90",
+          "product.offer_period": "3 months",
+          "product.offer_period_abbreviated": "3 mo",
+          "product.offer_period_with_unit": "3 months",
+          "product.offer_period_in_days": "91",
+          "product.offer_period_in_weeks": "13",
+          "product.offer_period_in_months": "3",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "R$ 0,11",
+          "product.offer_price_per_week": "R$ 0,76",
+          "product.offer_price_per_month": "R$ 3,30",
+          "product.offer_price_per_year": "R$ 39,60"
+        }
+      }
+    },
+    {
+      "input": {
+        "products": {
+          "biweekly": {
+            "price": 19.9,
+            "currency": "brl",
+            "period": {
+              "unit": "week",
+              "count": 2
+            }
+          },
+          "annual": {
+            "price": 199.9,
+            "currency": "brl",
+            "period": "year",
+            "offer": {
+              "price": 9.9,
+              "period": {
+                "unit": "month",
+                "count": 3
+              }
+            }
+          }
+        },
+        "locale": null
+      },
+      "expected": {
+        "biweekly": {
+          "product.price": "R$19.90",
+          "product.currency_code": "BRL",
+          "product.currency_symbol": "R$",
+          "product.period": "2 weeks",
+          "product.period_abbreviated": "2 wk",
+          "product.period_with_unit": "2 weeks",
+          "product.period_in_days": "14",
+          "product.period_in_weeks": "2",
+          "product.period_in_months": "0",
+          "product.period_in_years": "0",
+          "product.periodly": "every 2 weeks",
+          "product.price_per_day": "R$1.42",
+          "product.price_per_week": "R$9.95",
+          "product.price_per_month": "R$43.24",
+          "product.price_per_year": "R$518.82",
+          "product.price_per_period": "R$19.90/2 weeks",
+          "product.price_per_period_abbreviated": "R$19.90/2 wk"
+        },
+        "annual": {
+          "product.price": "R$199.90",
+          "product.currency_code": "BRL",
+          "product.currency_symbol": "R$",
+          "product.period": "year",
+          "product.period_abbreviated": "yr",
+          "product.period_with_unit": "1 year",
+          "product.period_in_days": "365",
+          "product.period_in_weeks": "52",
+          "product.period_in_months": "12",
+          "product.period_in_years": "1",
+          "product.periodly": "yearly",
+          "product.price_per_day": "R$0.55",
+          "product.price_per_week": "R$3.83",
+          "product.price_per_month": "R$16.66",
+          "product.price_per_year": "R$199.90",
+          "product.price_per_period": "R$199.90/year",
+          "product.price_per_period_abbreviated": "R$199.90/yr",
+          "product.relative_discount": "61%",
+          "product.offer_price": "R$9.90",
+          "product.offer_period": "3 months",
+          "product.offer_period_abbreviated": "3 mo",
+          "product.offer_period_with_unit": "3 months",
+          "product.offer_period_in_days": "91",
+          "product.offer_period_in_weeks": "13",
+          "product.offer_period_in_months": "3",
+          "product.offer_period_in_years": "0",
+          "product.offer_price_per_day": "R$0.11",
+          "product.offer_price_per_week": "R$0.76",
+          "product.offer_price_per_month": "R$3.30",
+          "product.offer_price_per_year": "R$39.60"
+        }
+      }
+    }
+  ]
+}

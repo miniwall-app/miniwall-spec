@@ -1,0 +1,104 @@
+{
+  "description": "calculateCountdownValues(target) at a fixed now",
+  "source": "reference renderer: countdown text",
+  "node": "22.22.2",
+  "icu": "78.2",
+  "cases": [
+    {
+      "input": {
+        "now": "2026-01-01T00:00:00Z",
+        "target": "2026-01-01T00:00:00Z"
+      },
+      "expected": {
+        "count_days_with_zero": "00",
+        "count_days_without_zero": "0",
+        "count_hours_with_zero": "00",
+        "count_hours_without_zero": "0",
+        "count_minutes_with_zero": "00",
+        "count_minutes_without_zero": "0",
+        "count_seconds_with_zero": "00",
+        "count_seconds_without_zero": "0"
+      }
+    },
+    {
+      "input": {
+        "now": "2026-01-01T00:00:00Z",
+        "target": "2025-12-31T23:59:59Z"
+      },
+      "expected": {
+        "count_days_with_zero": "00",
+        "count_days_without_zero": "0",
+        "count_hours_with_zero": "00",
+        "count_hours_without_zero": "0",
+        "count_minutes_with_zero": "00",
+        "count_minutes_without_zero": "0",
+        "count_seconds_with_zero": "00",
+        "count_seconds_without_zero": "0"
+      }
+    },
+    {
+      "input": {
+        "now": "2026-01-01T00:00:00Z",
+        "target": "2026-01-01T00:00:09.999Z"
+      },
+      "expected": {
+        "count_days_with_zero": "00",
+        "count_days_without_zero": "0",
+        "count_hours_with_zero": "00",
+        "count_hours_without_zero": "0",
+        "count_minutes_with_zero": "00",
+        "count_minutes_without_zero": "0",
+        "count_seconds_with_zero": "09",
+        "count_seconds_without_zero": "9"
+      }
+    },
+    {
+      "input": {
+        "now": "2026-01-01T00:00:00Z",
+        "target": "2026-01-02T03:04:05Z"
+      },
+      "expected": {
+        "count_days_with_zero": "01",
+        "count_days_without_zero": "1",
+        "count_hours_with_zero": "03",
+        "count_hours_without_zero": "3",
+        "count_minutes_with_zero": "04",
+        "count_minutes_without_zero": "4",
+        "count_seconds_with_zero": "05",
+        "count_seconds_without_zero": "5"
+      }
+    },
+    {
+      "input": {
+        "now": "2026-01-01T00:00:00Z",
+        "target": "2026-03-15T12:00:00Z"
+      },
+      "expected": {
+        "count_days_with_zero": "73",
+        "count_days_without_zero": "73",
+        "count_hours_with_zero": "12",
+        "count_hours_without_zero": "12",
+        "count_minutes_with_zero": "00",
+        "count_minutes_without_zero": "0",
+        "count_seconds_with_zero": "00",
+        "count_seconds_without_zero": "0"
+      }
+    },
+    {
+      "input": {
+        "now": "2026-01-01T12:30:00Z",
+        "target": "2026-01-01T13:00:00+01:00"
+      },
+      "expected": {
+        "count_days_with_zero": "00",
+        "count_days_without_zero": "0",
+        "count_hours_with_zero": "00",
+        "count_hours_without_zero": "0",
+        "count_minutes_with_zero": "00",
+        "count_minutes_without_zero": "0",
+        "count_seconds_with_zero": "00",
+        "count_seconds_without_zero": "0"
+      }
+    }
+  ]
+}

@@ -1,0 +1,500 @@
+{
+ "lucide/activity": {
+  "x": 2,
+  "y": 2,
+  "w": 20,
+  "h": 20
+ },
+ "lucide/arrow-left-right": {
+  "x": 4,
+  "y": 3,
+  "w": 16,
+  "h": 18
+ },
+ "lucide/ban": {
+  "x": 2,
+  "y": 2,
+  "w": 20,
+  "h": 20
+ },
+ "lucide/battery-charging": {
+  "x": 2,
+  "y": 6,
+  "w": 20,
+  "h": 12
+ },
+ "lucide/bell": {
+  "x": 3.001,
+  "y": 2,
+  "w": 18,
+  "h": 20
+ },
+ "lucide/bell-off": {
+  "x": 2,
+  "y": 2,
+  "w": 20,
+  "h": 20
+ },
+ "lucide/book-open": {
+  "x": 2,
+  "y": 3,
+  "w": 20,
+  "h": 18
+ },
+ "lucide/bookmark": {
+  "x": 5,
+  "y": 3,
+  "w": 14,
+  "h": 18
+ },
+ "lucide/briefcase": {
+  "x": 2,
+  "y": 2,
+  "w": 20,
+  "h": 18
+ },
+ "lucide/calendar": {
+  "x": 3,
+  "y": 2,
+  "w": 18,
+  "h": 19
+ },
+ "lucide/calendar-days": {
+  "x": 3,
+  "y": 2,
+  "w": 18,
+  "h": 19
+ },
+ "lucide/calendar-plus": {
+  "x": 3,
+  "y": 2,
+  "w": 19,
+  "h": 19
+ },
+ "lucide/calendar-x": {
+  "x": 3,
+  "y": 2,
+  "w": 18,
+  "h": 19
+ },
+ "lucide/chart-line": {
+  "x": 3,
+  "y": 3,
+  "w": 18,
+  "h": 18
+ },
+ "lucide/check": {
+  "x": 4,
+  "y": 6,
+  "w": 16,
+  "h": 11
+ },
+ "lucide/circle": {
+  "x": 2,
+  "y": 2,
+  "w": 20,
+  "h": 20
+ },
+ "lucide/circle-check": {
+  "x": 2,
+  "y": 2,
+  "w": 20,
+  "h": 20
+ },
+ "lucide/circle-check-big": {
+  "x": 2.002,
+  "y": 1.997,
+  "w": 20,
+  "h": 20
+ },
+ "lucide/clock": {
+  "x": 2,
+  "y": 2,
+  "w": 20,
+  "h": 20
+ },
+ "lucide/code": {
+  "x": 2,
+  "y": 6,
+  "w": 20,
+  "h": 12
+ },
+ "lucide/credit-card": {
+  "x": 2,
+  "y": 5,
+  "w": 20,
+  "h": 14
+ },
+ "lucide/door-open": {
+  "x": 2,
+  "y": 2,
+  "w": 20,
+  "h": 20
+ },
+ "lucide/download": {
+  "x": 3,
+  "y": 3,
+  "w": 18,
+  "h": 18
+ },
+ "lucide/dumbbell": {
+  "x": 1.929,
+  "y": 1.929,
+  "w": 20.141,
+  "h": 20.142
+ },
+ "lucide/file-down": {
+  "x": 4,
+  "y": 2,
+  "w": 16,
+  "h": 20
+ },
+ "lucide/flame": {
+  "x": 5,
+  "y": 3,
+  "w": 14,
+  "h": 19
+ },
+ "lucide/folder": {
+  "x": 2,
+  "y": 3,
+  "w": 20,
+  "h": 17
+ },
+ "lucide/footprints": {
+  "x": 2.999,
+  "y": 2,
+  "w": 18.001,
+  "h": 20
+ },
+ "lucide/gauge": {
+  "x": 2,
+  "y": 4,
+  "w": 20,
+  "h": 15
+ },
+ "lucide/gift": {
+  "x": 3,
+  "y": 2,
+  "w": 18,
+  "h": 19
+ },
+ "lucide/hand-heart": {
+  "x": 2,
+  "y": 2.999,
+  "w": 20.026,
+  "h": 18.001
+ },
+ "lucide/headphones": {
+  "x": 3,
+  "y": 3.003,
+  "w": 18,
+  "h": 17.997
+ },
+ "lucide/headset": {
+  "x": 3,
+  "y": 1.997,
+  "w": 18,
+  "h": 20.003
+ },
+ "lucide/heart": {
+  "x": 2,
+  "y": 3.984,
+  "w": 20,
+  "h": 17.016
+ },
+ "lucide/image": {
+  "x": 3,
+  "y": 3,
+  "w": 18,
+  "h": 18
+ },
+ "lucide/infinity": {
+  "x": 2,
+  "y": 8,
+  "w": 20,
+  "h": 8
+ },
+ "lucide/keyboard": {
+  "x": 2,
+  "y": 4,
+  "w": 20,
+  "h": 16
+ },
+ "lucide/laptop": {
+  "x": 2.613,
+  "y": 5,
+  "w": 18.774,
+  "h": 15
+ },
+ "lucide/layers": {
+  "x": 2,
+  "y": 2,
+  "w": 20.017,
+  "h": 19.998
+ },
+ "lucide/link": {
+  "x": 2.056,
+  "y": 2.066,
+  "w": 19.887,
+  "h": 19.867
+ },
+ "lucide/lock": {
+  "x": 3,
+  "y": 2,
+  "w": 18,
+  "h": 20
+ },
+ "lucide/lock-keyhole": {
+  "x": 3,
+  "y": 2,
+  "w": 18,
+  "h": 20
+ },
+ "lucide/map": {
+  "x": 3,
+  "y": 3.236,
+  "w": 18,
+  "h": 17.529
+ },
+ "lucide/map-pin": {
+  "x": 4,
+  "y": 2,
+  "w": 16,
+  "h": 20
+ },
+ "lucide/megaphone": {
+  "x": 3,
+  "y": 3,
+  "w": 18,
+  "h": 18.999
+ },
+ "lucide/message-circle": {
+  "x": 2,
+  "y": 2,
+  "w": 20,
+  "h": 20
+ },
+ "lucide/mic": {
+  "x": 5,
+  "y": 2,
+  "w": 14,
+  "h": 20
+ },
+ "lucide/minus": {
+  "x": 5,
+  "y": 12,
+  "w": 14,
+  "h": 0
+ },
+ "lucide/moon": {
+  "x": 2.998,
+  "y": 3.013,
+  "w": 17.988,
+  "h": 17.988
+ },
+ "lucide/moon-star": {
+  "x": 2.998,
+  "y": 3,
+  "w": 19.002,
+  "h": 18.001
+ },
+ "lucide/notebook-pen": {
+  "x": 2,
+  "y": 2,
+  "w": 20,
+  "h": 20
+ },
+ "lucide/palette": {
+  "x": 2,
+  "y": 2,
+  "w": 20,
+  "h": 20
+ },
+ "lucide/party-popper": {
+  "x": 2,
+  "y": 2,
+  "w": 20.01,
+  "h": 20
+ },
+ "lucide/pause": {
+  "x": 5,
+  "y": 3,
+  "w": 14,
+  "h": 18
+ },
+ "lucide/pen-tool": {
+  "x": 2,
+  "y": 2,
+  "w": 19.586,
+  "h": 19.586
+ },
+ "lucide/piggy-bank": {
+  "x": 2,
+  "y": 3,
+  "w": 20,
+  "h": 17
+ },
+ "lucide/puzzle": {
+  "x": 1.999,
+  "y": 2,
+  "w": 20.002,
+  "h": 20
+ },
+ "lucide/refresh-cw": {
+  "x": 3,
+  "y": 3,
+  "w": 18,
+  "h": 18
+ },
+ "lucide/repeat": {
+  "x": 3,
+  "y": 2,
+  "w": 18,
+  "h": 20
+ },
+ "lucide/rocket": {
+  "x": 2.5,
+  "y": 2,
+  "w": 19.5,
+  "h": 19.5
+ },
+ "lucide/rotate-ccw": {
+  "x": 3,
+  "y": 3,
+  "w": 18,
+  "h": 18
+ },
+ "lucide/route": {
+  "x": 3,
+  "y": 2,
+  "w": 18,
+  "h": 20
+ },
+ "lucide/send": {
+  "x": 2,
+  "y": 1.998,
+  "w": 20.002,
+  "h": 20.002
+ },
+ "lucide/shield-check": {
+  "x": 4,
+  "y": 2,
+  "w": 16,
+  "h": 20.003
+ },
+ "lucide/shopping-basket": {
+  "x": 2,
+  "y": 4,
+  "w": 20,
+  "h": 16
+ },
+ "lucide/sliders-horizontal": {
+  "x": 3,
+  "y": 3,
+  "w": 18,
+  "h": 18
+ },
+ "lucide/sparkles": {
+  "x": 1.998,
+  "y": 1.998,
+  "w": 20.005,
+  "h": 20.005
+ },
+ "lucide/star": {
+  "x": 1.998,
+  "y": 2,
+  "w": 20.002,
+  "h": 19.072
+ },
+ "lucide/sunrise": {
+  "x": 2,
+  "y": 2,
+  "w": 20,
+  "h": 20
+ },
+ "lucide/target": {
+  "x": 2,
+  "y": 2,
+  "w": 20,
+  "h": 20
+ },
+ "lucide/timer": {
+  "x": 4,
+  "y": 2,
+  "w": 16,
+  "h": 20
+ },
+ "lucide/trophy": {
+  "x": 2,
+  "y": 2,
+  "w": 20,
+  "h": 20
+ },
+ "lucide/user": {
+  "x": 5,
+  "y": 3,
+  "w": 14,
+  "h": 18
+ },
+ "lucide/user-plus": {
+  "x": 2,
+  "y": 3,
+  "w": 20,
+  "h": 18
+ },
+ "lucide/users": {
+  "x": 2,
+  "y": 3,
+  "w": 20,
+  "h": 18
+ },
+ "lucide/utensils": {
+  "x": 3,
+  "y": 2,
+  "w": 18,
+  "h": 20
+ },
+ "lucide/wallet": {
+  "x": 3,
+  "y": 3,
+  "w": 19,
+  "h": 18
+ },
+ "lucide/wifi-off": {
+  "x": 2,
+  "y": 2,
+  "w": 20,
+  "h": 20
+ },
+ "lucide/wind": {
+  "x": 2,
+  "y": 4,
+  "w": 20,
+  "h": 16
+ },
+ "lucide/wrench": {
+  "x": 2,
+  "y": 1.996,
+  "w": 20.004,
+  "h": 20.005
+ },
+ "lucide/x": {
+  "x": 6,
+  "y": 6,
+  "w": 12,
+  "h": 12
+ },
+ "lucide/zap": {
+  "x": 4,
+  "y": 2.001,
+  "w": 15.999,
+  "h": 19.998
+ },
+ "mdi/star": {
+  "x": 2,
+  "y": 2,
+  "w": 20,
+  "h": 19
+ }
+}
