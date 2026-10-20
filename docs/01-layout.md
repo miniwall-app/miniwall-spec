@@ -5,8 +5,9 @@ frame for frame. The web is the reference: every rule below is what Chrome does 
 the CSS that the reference renderer produces for a stack, and each rule is pinned by a fixture in
 `fixtures/layout/` whose golden frames come from that CSS.
 
-Reference implementations: the Android and iOS SDKs (same algorithm; their tests check every golden
-within 0.1 pt). Change the rules here, in the SDKs and in the fixtures together.
+Reference implementations: `core/.../layout/LayoutEngine.kt` in the public miniwall-android repository and
+`Sources/MiniwallCore/LayoutEngine.swift` in miniwall-ios (same algorithm, both pass every golden
+within 0.1 pt). Change the rules here, in both engines and in the fixtures together.
 
 ## Units and boxes
 
