@@ -118,7 +118,7 @@ test('the published templates are a small set and valid screens', () => {
 });
 
 test('nothing private is in the repository', () => {
-  const FORBIDDEN_TEXT = /packages\/ui-sdk|apps\/(dashboard|api|web)|sdks\/|\.svelte\b|\bs_[a-z-]+\.d\.ts|sourceMappingURL|sk_(live|test)_|SUPABASE|POLAR_/;
+  const FORBIDDEN_TEXT = /packages\/|apps\/(dashboard|api|web)|sdks\/|\.svelte\b|\bs_[a-z-]+\.d\.ts|sourceMappingURL|sk_(live|test)_|SUPABASE|POLAR_/;
   const problems = [];
   for (const file of walk(root)) {
     const rel = relative(root, file);
